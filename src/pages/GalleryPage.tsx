@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS } from "@/data/business";
 import { X } from "lucide-react";
@@ -30,12 +30,9 @@ const GalleryPage = () => {
         canonical="/gallery"
       />
       <Header />
+      <PageHero title="Our Work — Recent Projects in Las Vegas" subtitle="Browse recent plumbing, HVAC, and electrical projects across Las Vegas, Henderson, and Boulder City." bgImage="/media/right-on-plumbing-heating-and-air-project-02-las-vegas-nv.jpg" />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Project Gallery" }]} />
       <main className="container-custom section-padding">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">Our Work — Recent Projects in Las Vegas</h1>
-        <p className="text-muted-foreground mb-10 max-w-2xl">
-          Browse recent plumbing, HVAC, and electrical projects completed by {BUSINESS.name} across Las Vegas, Henderson, and Boulder City.
-        </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {images.map((img, i) => (

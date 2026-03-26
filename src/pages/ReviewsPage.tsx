@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS } from "@/data/business";
 import { Star, ExternalLink } from "lucide-react";
@@ -24,9 +24,9 @@ const ReviewsPage = () => {
         canonical="/reviews"
       />
       <Header />
+      <PageHero title={`${BUSINESS.name} Customer Reviews`} subtitle={`Rated ${BUSINESS.reviews.average}/5 stars from ${BUSINESS.reviews.count}+ reviews across Las Vegas, Henderson, and Boulder City.`} bgImage="/media/right-on-plumbing-heating-and-air-project-03-las-vegas-nv.jpg" />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Reviews" }]} />
       <main className="container-custom section-padding">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">{BUSINESS.name} Customer Reviews</h1>
 
         {/* Rating Summary */}
         <div className="bg-brand-navy text-primary-foreground rounded-lg p-8 mb-10 flex flex-col md:flex-row items-center gap-6">

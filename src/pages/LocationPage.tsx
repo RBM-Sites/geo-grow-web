@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { getLocationBySlug, BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Phone } from "lucide-react";
@@ -21,9 +21,9 @@ const LocationPage = () => {
         canonical={`/${slug}`}
       />
       <Header />
+      <PageHero title={`${BUSINESS.industry} in ${location.city}, ${location.state}`} subtitle={`Trusted plumbing, HVAC, and electrical services for ${location.city} homeowners.`} bgImage={`/media/right-on-plumbing-heating-and-air-project-0${location.slug === "las-vegas" ? "1" : location.slug === "henderson" ? "3" : "5"}-las-vegas-nv.jpg`} />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: `${location.city}, ${location.state}` }]} />
       <main className="container-custom section-padding">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">{BUSINESS.industry} in {location.city}, {location.state}</h1>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
