@@ -30,8 +30,8 @@ export const Header = () => {
       </div>
       <nav className="bg-card shadow-md sticky top-0 z-50">
         <div className="container-custom flex items-center justify-between py-3">
-          <Link to="/" className="flex-shrink-0">
-            <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-14 w-auto" width="120" height="56" />
+          <Link to="/" className="flex-shrink-0 relative">
+            <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-20 md:h-24 w-auto -my-4 drop-shadow-md" width="120" height="96" />
           </Link>
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-6 text-sm font-semibold font-heading">

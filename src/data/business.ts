@@ -26,7 +26,7 @@ export const BUSINESS = {
     facebook: "https://www.facebook.com/RightOnHVAC/",
     google: "https://maps.app.goo.gl/KBYTqh5z2msDs6NT6",
   },
-  logo: "/media/right-on-plumbing-heating-and-air-logo.jpeg",
+  logo: "/media/right-on-plumbing-logo.png",
   logoAlt: "Right On Plumbing, Heating and Air logo — Plumbing and HVAC company in Las Vegas, NV",
   industry: "Plumbing & HVAC",
   geo: { lat: 36.1699, lng: -115.1398 },
