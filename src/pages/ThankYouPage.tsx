@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import { Header, Footer } from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { BUSINESS } from "@/data/business";
 import { Phone, CheckCircle } from "lucide-react";
 
 const ThankYouPage = () => {
-  document.title = `Thank You | ${BUSINESS.name}`;
-
   return (
     <>
+      <SEO
+        title={`Thank You | ${BUSINESS.name}`}
+        description={`Thank you for contacting ${BUSINESS.name}. We'll respond within one business day. For immediate assistance, call ${BUSINESS.phoneFormatted}.`}
+        canonical="/thank-you"
+        noindex
+      />
       <Header />
       <main className="container-custom section-padding text-center min-h-[60vh] flex flex-col items-center justify-center">
         <div className="bg-secondary text-secondary-foreground w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -24,9 +29,9 @@ const ThankYouPage = () => {
           <Phone className="h-5 w-5" /> {BUSINESS.phoneFormatted}
         </a>
         <div className="flex flex-wrap gap-4 justify-center">
-          <Link to="/" className="text-secondary font-semibold hover:underline">← Back to Home</Link>
-          <Link to="/gallery" className="text-secondary font-semibold hover:underline">View Our Work</Link>
-          <Link to="/reviews" className="text-secondary font-semibold hover:underline">Read Reviews</Link>
+          <Link to="/" className="text-secondary font-semibold hover:underline">← Return to Homepage</Link>
+          <Link to="/gallery" className="text-secondary font-semibold hover:underline">Browse Our Project Gallery</Link>
+          <Link to="/reviews" className="text-secondary font-semibold hover:underline">Read Customer Reviews</Link>
         </div>
       </main>
       <Footer />

@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { getCategoryBySlug, getServiceBySlug, BUSINESS, SERVICE_CATEGORIES } from "@/data/business";
 import { Phone } from "lucide-react";
 
@@ -7,6 +8,11 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
   if (!category) return null;
   return (
     <>
+      <SEO
+        title={`${category.name} in Las Vegas, NV | ${BUSINESS.name}`}
+        description={`Professional ${category.name.toLowerCase()} services in Las Vegas, NV. ${BUSINESS.name} offers expert solutions — licensed, insured, free estimates. Call ${BUSINESS.phoneFormatted}.`}
+        canonical={`/${category.slug}`}
+      />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: category.name }]} />
       <main className="container-custom section-padding">
         <h1 className="text-3xl md:text-4xl font-bold mb-6">{category.name} in Las Vegas, NV</h1>
@@ -16,7 +22,7 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
             <Link to={`/${category.slug}/${s.slug}`} key={s.slug} className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow group">
               <h2 className="text-lg font-bold mb-2 group-hover:text-secondary transition-colors">{s.name}</h2>
               <p className="text-sm text-muted-foreground mb-3">{s.description.slice(0, 150)}...</p>
-              <span className="text-secondary text-sm font-semibold">Learn More →</span>
+              <span className="text-secondary text-sm font-semibold">Get {s.name} Details →</span>
             </Link>
           ))}
         </div>
@@ -34,15 +40,20 @@ const ServiceDetailPage = ({ service, parentName }: { service: ReturnType<typeof
   const imgNum = String(imgIdx).padStart(2, "0");
   return (
     <>
+      <SEO
+        title={`${service.name} in Las Vegas, NV | ${BUSINESS.name}`}
+        description={`Need ${service.name.toLowerCase()} in Las Vegas? ${BUSINESS.name} provides fast, reliable service — licensed & insured. Free estimates. Call ${BUSINESS.phoneFormatted}.`}
+        canonical={`/${service.parentSlug}/${service.slug}`}
+      />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: parentName, href: `/${service.parentSlug}` }, { label: service.name }]} />
       <main className="container-custom section-padding">
         <article>
           <h1 className="text-3xl md:text-4xl font-bold mb-6">{service.name} in Las Vegas, NV</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <img src={`/media/right-on-plumbing-heating-and-air-project-${imgNum}-las-vegas-nv.jpg`} alt={`${service.name} service — Right On Plumbing, Heating and Air Las Vegas, NV`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
+              <img src={`/media/right-on-plumbing-heating-and-air-project-${imgNum}-las-vegas-nv.jpg`} alt={`${service.name} completed by ${BUSINESS.name} for a Las Vegas, NV homeowner`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
               <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
-              <h2 className="text-2xl font-bold mb-4">Benefits of {service.name}</h2>
+              <h2 className="text-2xl font-bold mb-4">Benefits of Professional {service.name}</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
                 {service.benefits.map((b, i) => <li key={i} className="flex items-center gap-2 text-sm"><span className="text-secondary font-bold">✓</span> {b}</li>)}
               </ul>
@@ -70,7 +81,7 @@ const ServiceDetailPage = ({ service, parentName }: { service: ReturnType<typeof
                 <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground w-full py-3 rounded-md font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
                   <Phone className="h-5 w-5" /> {BUSINESS.phoneFormatted}
                 </a>
-                <Link to="/contact" className="block text-center mt-3 text-sm underline opacity-80 hover:opacity-100">Or Contact Us Online</Link>
+                <Link to="/contact" className="block text-center mt-3 text-sm underline opacity-80 hover:opacity-100">Request a Free {service.name} Estimate</Link>
               </div>
             </aside>
           </div>
@@ -93,11 +104,9 @@ const ServicePage = () => {
   if (serviceSlug) {
     const service = getServiceBySlug(categorySlug, serviceSlug);
     if (!service) return null;
-    document.title = `${service.name} in Las Vegas, NV | ${BUSINESS.name}`;
     return <><Header /><ServiceDetailPage service={service} parentName={category.name} /><Footer /></>;
   }
 
-  document.title = `${category.name} in Las Vegas, NV | ${BUSINESS.name}`;
   return <><Header /><ServiceCategoryPage category={category} /><Footer /></>;
 };
 
