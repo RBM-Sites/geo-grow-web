@@ -4,6 +4,16 @@ import SEO from "@/components/SEO";
 import { getLocationBySlug, BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Phone } from "lucide-react";
 
+/** Splits a long text block into shorter paragraphs of ~2-3 sentences each. */
+const splitIntoParagraphs = (text: string): string[] => {
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+  const paragraphs: string[] = [];
+  for (let i = 0; i < sentences.length; i += 3) {
+    paragraphs.push(sentences.slice(i, i + 3).join("").trim());
+  }
+  return paragraphs.filter(p => p.length > 0);
+};
+
 const LocationPage = () => {
   const { citySlug, categorySlug } = useParams();
   const slug = citySlug || categorySlug;
@@ -29,7 +39,10 @@ const LocationPage = () => {
           <div className="lg:col-span-2">
             <img src={`/media/right-on-plumbing-heating-and-air-project-0${location.slug === "las-vegas" ? "1" : location.slug === "henderson" ? "3" : "5"}-las-vegas-nv.jpg`} alt={`${BUSINESS.name} technician providing ${BUSINESS.industry.toLowerCase()} service in ${location.city}, ${location.state}`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
             
-            <p className="text-muted-foreground mb-6 leading-relaxed">{location.content}</p>
+            {/* Split long location content into shorter paragraphs */}
+            {splitIntoParagraphs(location.content).map((para, i) => (
+              <p key={i} className="text-muted-foreground mb-4 leading-relaxed">{para}</p>
+            ))}
 
             {/* === Drainage Service === */}
             <h2 className="text-2xl font-bold mb-3">Drainage Service in {location.city}, {location.state}</h2>
