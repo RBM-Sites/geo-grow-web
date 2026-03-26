@@ -56,6 +56,27 @@ const LocationPage = () => {
               <Link to="/contact" className="text-secondary font-semibold hover:underline">Contact us to schedule a free estimate</Link> or call <a href={`tel:${BUSINESS.phone}`} className="text-secondary font-semibold hover:underline">{BUSINESS.phoneFormatted}</a> today.
             </p>
 
+            {/* Full service directory by category — every service linked for location+service ranking */}
+            <h2 className="text-2xl font-bold mb-6">{BUSINESS.industry} Services in {location.city}, {location.state}</h2>
+            {SERVICE_CATEGORIES.map(category => (
+              <div key={category.slug} className="mb-8">
+                <h3 className="text-xl font-bold mb-3">
+                  <Link to={`/${category.slug}`} className="text-secondary hover:underline">{category.name}</Link> in {location.city}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
+                  {category.services.map(service => (
+                    <Link
+                      key={service.slug}
+                      to={`/${category.slug}/${service.slug}`}
+                      className="flex items-center gap-2 px-3 py-2 rounded-md bg-muted hover:bg-accent transition-colors text-sm font-medium"
+                    >
+                      <span className="text-secondary">→</span> {service.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+
             <h2 className="text-2xl font-bold mb-4">Local Landmarks Near Our Service Area</h2>
             <p className="text-muted-foreground mb-6">
               {location.landmarks.map((l, i) => (
