@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 const images = Array.from({ length: 12 }, (_, i) => {
   const num = String(i + 1).padStart(2, "0");
   return {
-    src: `/images/right-on-plumbing-heating-and-air-project-${num}-las-vegas-nv.jpg`,
+    src: `/media/right-on-plumbing-heating-and-air-project-${num}-las-vegas-nv.jpg`,
     alt: `Right On Plumbing, Heating and Air project Las Vegas, NV`,
   };
 });
