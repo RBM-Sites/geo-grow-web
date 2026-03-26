@@ -129,7 +129,7 @@ export const Header = () => {
 
 /** Reusable inner-page hero banner */
 export const PageHero = ({ title, subtitle, bgImage }: { title: string; subtitle?: string; bgImage: string }) => (
-  <section className="relative min-h-[35vh] flex items-center" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+  <section className="relative min-h-[35vh] flex items-center pt-24 md:pt-28" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
     <div className="hero-overlay absolute inset-0" />
     <div className="container-custom relative z-10 py-16">
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-primary-foreground max-w-3xl leading-tight">{title}</h1>
