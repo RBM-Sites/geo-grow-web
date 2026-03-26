@@ -9,7 +9,7 @@ const NotFoundPage = () => {
     <>
       <SEO
         title={`Page Not Found | ${BUSINESS.name}`}
-        description={`The page you're looking for doesn't exist. Visit ${BUSINESS.name} for plumbing, HVAC, and electrical services in Las Vegas, NV.`}
+        description={`The page you're looking for doesn't exist. Visit ${BUSINESS.name} for plumbing and HVAC services in Las Vegas, NV.`}
         canonical="/404"
         noindex
       />

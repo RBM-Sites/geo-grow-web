@@ -9,7 +9,7 @@ const ContactPage = () => {
     <>
       <SEO
         title={`Contact ${BUSINESS.name} | ${BUSINESS.industry} in Las Vegas, NV`}
-        description={`Contact ${BUSINESS.name} for plumbing, HVAC, and electrical services in Las Vegas, NV. Free estimates, fast response. Call ${BUSINESS.phoneFormatted} or request service online.`}
+        description={`Contact ${BUSINESS.name} for plumbing and HVAC services in Las Vegas, NV. Free estimates, fast response. Call ${BUSINESS.phoneFormatted} or request service online.`}
         canonical="/contact"
       />
       <Header />

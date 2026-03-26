@@ -20,7 +20,7 @@ const ReviewsPage = () => {
     <>
       <SEO
         title={`Customer Reviews | ${BUSINESS.name} | ${BUSINESS.industry} Las Vegas, NV`}
-        description={`Read verified customer reviews of ${BUSINESS.name}. Rated ${BUSINESS.reviews.average}/5 stars from ${BUSINESS.reviews.count} reviews for plumbing, HVAC, and electrical services in Las Vegas, NV.`}
+        description={`Read verified customer reviews of ${BUSINESS.name}. Rated ${BUSINESS.reviews.average}/5 stars from ${BUSINESS.reviews.count} reviews for plumbing and HVAC services in Las Vegas, NV.`}
         canonical="/reviews"
       />
       <Header />
