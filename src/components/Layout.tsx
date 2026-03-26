@@ -114,6 +114,14 @@ export const PageHero = ({ title, subtitle, bgImage }: { title: string; subtitle
     <div className="container-custom relative z-10 py-16">
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-primary-foreground max-w-3xl leading-tight">{title}</h1>
       {subtitle && <p className="text-lg text-primary-foreground/90 max-w-xl mt-4">{subtitle}</p>}
+      <div className="flex flex-col sm:flex-row gap-3 mt-6">
+        <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground px-6 py-3 rounded-md font-bold text-base hover:opacity-90 transition-opacity inline-flex items-center gap-2">
+          <Phone className="h-5 w-5" /> Call {BUSINESS.phoneFormatted}
+        </a>
+        <Link to="/contact" className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-md font-bold text-base hover:bg-primary-foreground/10 transition-colors inline-flex items-center justify-center">
+          Get a Free Estimate
+        </Link>
+      </div>
     </div>
   </section>
 );
