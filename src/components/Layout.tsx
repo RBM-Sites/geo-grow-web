@@ -1,17 +1,20 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BUSINESS } from "@/data/business";
-import { Phone, Mail, MapPin, Clock, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Menu, X } from "lucide-react";
 
 export const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <header className="w-full">
       <div className="bg-brand-dark text-primary-foreground">
         <div className="container-custom flex flex-wrap items-center justify-between py-2 text-sm gap-2">
           <div className="flex items-center gap-4 flex-wrap">
             <a href={`mailto:${BUSINESS.email}`} className="flex items-center gap-1 hover:text-secondary transition-colors">
-              <Mail className="h-3 w-3" /> {BUSINESS.email}
+              <Mail className="h-3 w-3" /> <span className="hidden sm:inline">{BUSINESS.email}</span>
             </a>
-            <span className="flex items-center gap-1">
+            <span className="hidden md:flex items-center gap-1">
               <MapPin className="h-3 w-3" /> {BUSINESS.fullAddress}
             </span>
           </div>
@@ -30,6 +33,7 @@ export const Header = () => {
           <Link to="/" className="flex-shrink-0">
             <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-14 w-auto" width="120" height="56" />
           </Link>
+          {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-6 text-sm font-semibold font-heading">
             <Link to="/" className="hover:text-secondary transition-colors">Home</Link>
             <div className="relative group">
@@ -59,14 +63,60 @@ export const Header = () => {
             <Link to="/reviews" className="hover:text-secondary transition-colors">Reviews</Link>
             <Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link>
           </div>
-          <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground px-5 py-2.5 rounded-md font-bold text-sm hover:opacity-90 transition-opacity flex items-center gap-2">
-            <Phone className="h-4 w-4" /> Call Now
-          </a>
+          <div className="flex items-center gap-3">
+            <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground px-5 py-2.5 rounded-md font-bold text-sm hover:opacity-90 transition-opacity hidden sm:flex items-center gap-2">
+              <Phone className="h-4 w-4" /> Call Now
+            </a>
+            {/* Mobile hamburger */}
+            <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden p-2 text-foreground" aria-label="Toggle navigation menu">
+              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div className="lg:hidden bg-card border-t border-border px-4 pb-4 shadow-lg">
+            <div className="flex flex-col text-sm font-semibold font-heading">
+              <Link to="/" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Home</Link>
+              <span className="py-3 border-b border-border text-muted-foreground text-xs uppercase tracking-wider">Services</span>
+              <Link to="/drainage-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Drainage Service</Link>
+              <Link to="/plumber" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Plumber</Link>
+              <Link to="/air-conditioning-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">AC Contractor</Link>
+              <Link to="/air-conditioning-repair-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">AC Repair Service</Link>
+              <Link to="/air-duct-cleaning-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Air Duct Cleaning</Link>
+              <Link to="/furnace-repair-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Furnace Repair</Link>
+              <Link to="/heating-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Heating Contractor</Link>
+              <Link to="/hvac-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">HVAC Contractor</Link>
+              <Link to="/mechanical-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 border-b border-border hover:text-secondary">Mechanical Contractor</Link>
+              <span className="py-3 border-b border-border text-muted-foreground text-xs uppercase tracking-wider">Service Areas</span>
+              <Link to="/las-vegas" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Las Vegas</Link>
+              <Link to="/henderson" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Henderson</Link>
+              <Link to="/boulder-city" onClick={() => setMobileOpen(false)} className="py-2 pl-4 border-b border-border hover:text-secondary">Boulder City</Link>
+              <Link to="/about" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">About</Link>
+              <Link to="/gallery" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Gallery</Link>
+              <Link to="/reviews" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Reviews</Link>
+              <Link to="/contact" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Contact</Link>
+              <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground mt-4 py-3 rounded-md font-bold text-center flex items-center justify-center gap-2">
+                <Phone className="h-4 w-4" /> Call {BUSINESS.phoneFormatted}
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );
 };
+
+/** Reusable inner-page hero banner */
+export const PageHero = ({ title, subtitle, bgImage }: { title: string; subtitle?: string; bgImage: string }) => (
+  <section className="relative min-h-[35vh] flex items-center" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+    <div className="hero-overlay absolute inset-0" />
+    <div className="container-custom relative z-10 py-16">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-primary-foreground max-w-3xl leading-tight">{title}</h1>
+      {subtitle && <p className="text-lg text-primary-foreground/90 max-w-xl mt-4">{subtitle}</p>}
+    </div>
+  </section>
+);
 
 export const Footer = () => {
   return (
