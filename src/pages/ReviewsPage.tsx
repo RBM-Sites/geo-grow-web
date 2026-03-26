@@ -71,7 +71,15 @@ const ReviewsPage = () => {
           "@type": "AggregateRating",
           ratingValue: String(BUSINESS.reviews.average),
           reviewCount: String(BUSINESS.reviews.count),
+          bestRating: "5",
+          worstRating: "1",
         },
+        review: reviews.map(r => ({
+          "@type": "Review",
+          author: { "@type": "Person", name: r.name },
+          reviewRating: { "@type": "Rating", ratingValue: String(r.rating), bestRating: "5" },
+          reviewBody: r.text,
+        })),
       }} />
       <Footer />
     </>

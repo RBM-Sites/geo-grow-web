@@ -17,7 +17,7 @@ const LocationPage = () => {
     <>
       <SEO
         title={location.metaTitle}
-        description={`${BUSINESS.name} serves ${location.city}, ${location.state} with expert ${BUSINESS.industry.toLowerCase()} services. Licensed & insured, free estimates. Call ${BUSINESS.phoneFormatted}.`}
+        description={location.metaDescription}
         canonical={`/${slug}`}
       />
       <Header />
@@ -27,7 +27,7 @@ const LocationPage = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <img src="/media/right-on-plumbing-heating-and-air-project-03-las-vegas-nv.jpg" alt={`${BUSINESS.name} technician providing ${BUSINESS.industry.toLowerCase()} service in ${location.city}, ${location.state}`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
+            <img src={`/media/right-on-plumbing-heating-and-air-project-0${location.slug === "las-vegas" ? "1" : location.slug === "henderson" ? "3" : "5"}-las-vegas-nv.jpg`} alt={`${BUSINESS.name} technician providing ${BUSINESS.industry.toLowerCase()} service in ${location.city}, ${location.state}`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
             
             <p className="text-muted-foreground mb-6 leading-relaxed">{location.content}</p>
 

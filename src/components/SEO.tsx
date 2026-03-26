@@ -21,6 +21,7 @@ const SEO = ({ title, description, canonical, ogImage = "/media/og-image.png", o
       <meta name="description" content={description} />
       <link rel="canonical" href={fullCanonical} />
       {noindex && <meta name="robots" content="noindex, nofollow" />}
+      <meta property="og:site_name" content="Right On Plumbing, Heating and Air" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={fullCanonical} />
@@ -30,6 +31,7 @@ const SEO = ({ title, description, canonical, ogImage = "/media/og-image.png", o
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={fullOgImage} />
     </Helmet>
   );
 };
