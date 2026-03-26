@@ -46,7 +46,7 @@ export const Header = () => {
               <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className={`w-auto max-w-none drop-shadow-md transition-all duration-300 ${scrolled ? "h-[4.75rem] -mb-[0.75rem]" : "h-[10rem] md:h-[12rem] -mb-[4.5rem]"}`} width="220" height="192" />
             </Link>
             {/* Desktop nav */}
-            <div className={`hidden lg:flex items-center gap-6 text-sm font-semibold font-heading transition-colors duration-300 ${scrolled ? "text-primary-foreground" : ""}`}>
+            <div className={`hidden lg:flex items-center gap-6 text-sm font-semibold font-heading transition-colors duration-300 ${scrolled ? "text-foreground" : ""}`}>
               <Link to="/" className="hover:text-secondary transition-colors">Home</Link>
               <div className="relative group">
                 <span className="cursor-pointer hover:text-secondary transition-colors">Services ▾</span>
