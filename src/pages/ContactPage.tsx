@@ -55,7 +55,7 @@ const ContactPage = () => {
                       {BUSINESS.hours.map(h => (
                         <li key={h.day} className="flex justify-between gap-4">
                           <span className="font-medium">{h.day}</span>
-                          <span>{h.open === "Closed" ? `Closed – ${h.close}` : `${h.open} – ${h.close}`}</span>
+                          <span>{h.open === "Closed" ? "Closed" : `${h.open} – ${h.close}`}</span>
                         </li>
                       ))}
                     </ul>

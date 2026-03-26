@@ -17,7 +17,7 @@ export const BUSINESS = {
     { day: "Thursday", open: "7:30 AM", close: "5:30 PM" },
     { day: "Friday", open: "7:30 AM", close: "5:30 PM" },
     { day: "Saturday", open: "7:30 AM", close: "5:30 PM" },
-    { day: "Sunday", open: "Closed", close: "3:00 PM" },
+    { day: "Sunday", open: "Closed", close: "Closed" },
   ],
   yearsInBusiness: 5,
   reviews: { count: 8, average: 5 },

@@ -161,9 +161,9 @@ export const JsonLd = ({ data }: { data: object }) => (
 
 export const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "Plumber", "HVACBusiness"],
   name: BUSINESS.name,
-  description: `${BUSINESS.industry} services in Las Vegas, NV`,
+  description: `${BUSINESS.industry} services in Las Vegas, NV. Licensed & insured, locally owned & operated. Free estimates.`,
   url: "https://rightonplumbing.org",
   telephone: BUSINESS.phone,
   email: BUSINESS.email,
@@ -173,6 +173,7 @@ export const localBusinessSchema = {
     addressLocality: BUSINESS.address.city,
     addressRegion: BUSINESS.address.state,
     postalCode: BUSINESS.address.zip,
+    addressCountry: "US",
   },
   geo: { "@type": "GeoCoordinates", latitude: BUSINESS.geo.lat, longitude: BUSINESS.geo.lng },
   openingHoursSpecification: BUSINESS.hours.filter(h => h.open !== "Closed").map(h => ({
@@ -182,6 +183,8 @@ export const localBusinessSchema = {
     closes: h.close,
   })),
   areaServed: ["Las Vegas", "Henderson", "Boulder City"].map(c => ({ "@type": "City", name: c })),
-  image: BUSINESS.logo,
-  sameAs: [BUSINESS.social.facebook],
+  image: "https://rightonplumbing.org/media/right-on-plumbing-heating-and-air-logo.jpeg",
+  logo: "https://rightonplumbing.org/media/right-on-plumbing-heating-and-air-logo.jpeg",
+  sameAs: [BUSINESS.social.facebook, BUSINESS.social.google],
+  priceRange: "$$",
 };
