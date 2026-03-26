@@ -168,13 +168,19 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
           {" "}<Link to="/contact" className="text-secondary font-semibold hover:underline">Contact us for a free estimate</Link> — we'll have a licensed technician at your door fast.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {category.services.map(s => (
-            <Link to={`/${category.slug}/${s.slug}`} key={s.slug} className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow group">
-              <h2 className="text-lg font-bold mb-2 group-hover:text-secondary transition-colors">{s.name}</h2>
-              <p className="text-sm text-muted-foreground mb-3">{s.description.slice(0, 150)}...</p>
-              <span className="text-secondary text-sm font-semibold">Get {s.name} Details →</span>
-            </Link>
-          ))}
+          {category.services.map(s => {
+            const img = getServiceImage(s.slug, category.slug);
+            return (
+              <Link to={`/${category.slug}/${s.slug}`} key={s.slug} className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow group">
+                <img src={img.src} alt={img.alt} className="w-full h-40 object-cover" loading="lazy" width="400" height="160" />
+                <div className="p-5">
+                  <h2 className="text-lg font-bold mb-2 group-hover:text-secondary transition-colors">{s.name}</h2>
+                  <p className="text-sm text-muted-foreground mb-3">{s.description.slice(0, 150)}...</p>
+                  <span className="text-secondary text-sm font-semibold">Get {s.name} Details →</span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </main>
       <CTABanner />
