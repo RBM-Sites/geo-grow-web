@@ -4,6 +4,16 @@ import SEO from "@/components/SEO";
 import { getCategoryBySlug, getServiceBySlug, BUSINESS, SERVICE_CATEGORIES, ServiceItem } from "@/data/business";
 import { Phone } from "lucide-react";
 
+/** Splits a long text block into shorter paragraphs of ~2-3 sentences each. */
+const splitIntoParagraphs = (text: string): string[] => {
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+  const paragraphs: string[] = [];
+  for (let i = 0; i < sentences.length; i += 3) {
+    paragraphs.push(sentences.slice(i, i + 3).join("").trim());
+  }
+  return paragraphs.filter(p => p.length > 0);
+};
+
 /** Maps service slugs and category slugs to the most relevant generated image */
 const SERVICE_IMAGES: Record<string, { src: string; alt: string }> = {
   // Drainage category & services

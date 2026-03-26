@@ -4,6 +4,16 @@ import SEO from "@/components/SEO";
 import { getLocationBySlug, BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Phone } from "lucide-react";
 
+/** Splits a long text block into shorter paragraphs of ~2-3 sentences each. */
+const splitIntoParagraphs = (text: string): string[] => {
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+  const paragraphs: string[] = [];
+  for (let i = 0; i < sentences.length; i += 3) {
+    paragraphs.push(sentences.slice(i, i + 3).join("").trim());
+  }
+  return paragraphs.filter(p => p.length > 0);
+};
+
 const LocationPage = () => {
   const { citySlug, categorySlug } = useParams();
   const slug = citySlug || categorySlug;
