@@ -36,10 +36,10 @@ export const Header = () => {
             </div>
           </div>
         </div>
-        <nav className={`sticky top-0 z-50 overflow-visible transition-all duration-300 ${scrolled ? "bg-transparent shadow-none" : "bg-card shadow-md"}`}>
-          <div className="container-custom flex items-center justify-between py-3">
+        <nav className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ${scrolled ? "bg-transparent shadow-none" : "bg-card shadow-md"}`}>
+          <div className="container-custom flex items-center justify-between py-1">
             <Link to="/" className="flex-shrink-0 relative z-10">
-              <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-[10rem] md:h-[12rem] w-auto -mt-4 -mb-[3.75rem] drop-shadow-md" width="220" height="192" />
+              <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-[5.5rem] md:h-[12rem] w-auto -mt-1 -mb-[1.5rem] md:-mt-4 md:-mb-[3.75rem] drop-shadow-md" width="220" height="192" />
             </Link>
             {/* Desktop nav */}
             <div className={`hidden lg:flex items-center gap-6 text-sm font-semibold font-heading transition-colors duration-300 ${scrolled ? "text-primary-foreground" : ""}`}>
@@ -113,11 +113,11 @@ export const Header = () => {
         </nav>
       </header>
 
-      {/* Sticky bottom click-to-call bar — appears on scroll */}
-      <div className={`fixed bottom-0 left-0 right-0 z-[60] lg:hidden transition-transform duration-300 ${scrolled ? "translate-y-0" : "translate-y-full"}`}>
+      {/* Sticky bottom click-to-call button — appears on scroll, mobile only */}
+      <div className={`fixed bottom-4 left-4 right-4 z-[60] lg:hidden transition-all duration-300 ${scrolled ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
         <a
           href={`tel:${BUSINESS.phone}`}
-          className="cta-gradient flex items-center justify-center gap-2 py-4 text-secondary-foreground font-bold text-lg shadow-[0_-4px_12px_rgba(0,0,0,0.15)]"
+          className="cta-gradient flex items-center justify-center gap-2 py-3.5 rounded-xl text-secondary-foreground font-bold text-lg shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
         >
           <Phone className="h-5 w-5" /> Call Now — {BUSINESS.phoneFormatted}
         </a>
