@@ -53,8 +53,24 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Services Overview */}
+        {/* Intro with contextual links */}
         <section className="section-padding bg-background">
+          <div className="container-custom max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Your Trusted Home Service Team in Las Vegas</h2>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              {BUSINESS.name} is the locally owned company <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link> homeowners call for everything from a leaking faucet to a complete HVAC overhaul. Our licensed technicians handle <Link to="/drainage-service" className="text-secondary font-semibold hover:underline">drainage service</Link> — including <Link to="/drainage-service/drain-cleaning" className="text-secondary font-semibold hover:underline">drain cleaning</Link> and <Link to="/drainage-service/sewer-camera-inspection" className="text-secondary font-semibold hover:underline">sewer camera inspections</Link> — alongside full-service <Link to="/plumber" className="text-secondary font-semibold hover:underline">plumbing</Link>, <Link to="/hvac-contractor" className="text-secondary font-semibold hover:underline">HVAC contracting</Link>, and electrical work.
+            </p>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              When summer temperatures push past 115°, a working air conditioner isn't optional — it's survival. That's why our <Link to="/air-conditioning-repair-service" className="text-secondary font-semibold hover:underline">AC repair service</Link> offers same-day response across the valley. And when winter nights dip below freezing, our <Link to="/furnace-repair-service" className="text-secondary font-semibold hover:underline">furnace repair</Link> team keeps your family warm without the runaround.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              We proudly serve homeowners in <Link to="/henderson" className="text-secondary font-semibold hover:underline">Henderson</Link> and <Link to="/boulder-city" className="text-secondary font-semibold hover:underline">Boulder City</Link> with the same dedication. Whether you need a <Link to="/plumber/tankless-water-heater-installation" className="text-secondary font-semibold hover:underline">tankless water heater installation</Link> or <Link to="/air-duct-cleaning-service" className="text-secondary font-semibold hover:underline">air duct cleaning</Link>, <Link to="/contact" className="text-secondary font-semibold hover:underline">contact us for a free estimate</Link> and see why our neighbors trust us with their homes.
+            </p>
+          </div>
+        </section>
+
+        {/* Services Overview */}
+        <section className="section-padding bg-muted">
           <div className="container-custom">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Professional Services</h2>
             <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">From emergency plumbing repairs to complete HVAC system installations, Right On Plumbing, Heating and Air handles every job with expertise and care.</p>
@@ -85,7 +101,7 @@ const HomePage = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="section-padding bg-muted">
+        <section className="section-padding bg-background">
           <div className="container-custom">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Las Vegas Homeowners Choose Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -103,7 +119,7 @@ const HomePage = () => {
         </section>
 
         {/* Recent Work */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-muted">
           <div className="container-custom">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Recent Projects in Las Vegas</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -118,7 +134,7 @@ const HomePage = () => {
         </section>
 
         {/* Service Areas */}
-        <section className="section-padding bg-muted">
+        <section className="section-padding bg-background">
           <div className="container-custom">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Areas We Serve</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -134,7 +150,7 @@ const HomePage = () => {
         </section>
 
         {/* Reviews */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-muted">
           <div className="container-custom">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">What Our Customers Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

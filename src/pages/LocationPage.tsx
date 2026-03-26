@@ -1,14 +1,17 @@
 import { useParams, Link } from "react-router-dom";
 import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
 import SEO from "@/components/SEO";
-import { getLocationBySlug, BUSINESS, SERVICE_CATEGORIES } from "@/data/business";
-import { Phone, MapPin } from "lucide-react";
+import { getLocationBySlug, BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
+import { Phone } from "lucide-react";
 
 const LocationPage = () => {
   const { citySlug, categorySlug } = useParams();
   const slug = citySlug || categorySlug;
   const location = slug ? getLocationBySlug(slug) : undefined;
   if (!location) return null;
+
+  // Other locations for cross-linking
+  const otherLocations = LOCATIONS.filter(l => l.slug !== slug);
 
   return (
     <>
@@ -28,14 +31,30 @@ const LocationPage = () => {
             
             <p className="text-muted-foreground mb-6 leading-relaxed">{location.content}</p>
 
-            <h2 className="text-2xl font-bold mb-4">Services We Offer in {location.city}</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-              {SERVICE_CATEGORIES.map(cat => (
-                <Link key={cat.slug} to={`/${cat.slug}`} className="flex items-center gap-2 text-sm hover:text-secondary transition-colors font-medium">
-                  <span className="text-secondary">✓</span> {cat.name} in {location.city}
-                </Link>
+            {/* Contextual internal links woven into natural prose — NOT a list */}
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              {location.city} homeowners most frequently call us for <Link to="/drainage-service/drain-cleaning" className="text-secondary font-semibold hover:underline">professional drain cleaning</Link> and <Link to="/air-conditioning-repair-service" className="text-secondary font-semibold hover:underline">AC repair</Link> — two services that are essential given Southern Nevada's hard water and extreme summer heat. When an aging water heater starts leaking, our <Link to="/plumber/water-heater-replacement" className="text-secondary font-semibold hover:underline">water heater replacement</Link> team can typically complete the swap in under a day.
+            </p>
+
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              For homes with recurring sewer issues near {location.landmarks[0]}, we recommend starting with a <Link to="/drainage-service/sewer-camera-inspection" className="text-secondary font-semibold hover:underline">sewer camera inspection</Link> to pinpoint the problem before committing to repairs. If the issue turns out to be severe, our <Link to="/drainage-service/trenchless-sewer-repair" className="text-secondary font-semibold hover:underline">trenchless sewer repair</Link> minimizes disruption to your yard and landscaping.
+            </p>
+
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Keeping your <Link to="/hvac-contractor" className="text-secondary font-semibold hover:underline">HVAC system</Link> running efficiently is critical in {location.city}. We install and service all major brands, and our <Link to="/air-duct-cleaning-service" className="text-secondary font-semibold hover:underline">air duct cleaning service</Link> helps improve indoor air quality throughout your home. Whether you need a quick <Link to="/plumber/faucet-repair" className="text-secondary font-semibold hover:underline">faucet repair</Link> or a full <Link to="/heating-contractor" className="text-secondary font-semibold hover:underline">heating system installation</Link>, our licensed technicians arrive prepared to get the job done right.
+            </p>
+
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              We also proudly serve nearby communities — if you have family or neighbors in{" "}
+              {otherLocations.map((loc, i) => (
+                <span key={loc.slug}>
+                  {i > 0 && (i === otherLocations.length - 1 ? " and " : ", ")}
+                  <Link to={`/${loc.slug}`} className="text-secondary font-semibold hover:underline">{loc.city}</Link>
+                </span>
               ))}
-            </div>
+              , we offer the same reliable service throughout the Las Vegas Valley.{" "}
+              <Link to="/contact" className="text-secondary font-semibold hover:underline">Contact us to schedule a free estimate</Link> or call <a href={`tel:${BUSINESS.phone}`} className="text-secondary font-semibold hover:underline">{BUSINESS.phoneFormatted}</a> today.
+            </p>
 
             <h2 className="text-2xl font-bold mb-4">Local Landmarks Near Our Service Area</h2>
             <p className="text-muted-foreground mb-6">
@@ -55,6 +74,23 @@ const LocationPage = () => {
                 <p className="text-muted-foreground text-sm">{faq.a}</p>
               </div>
             ))}
+
+            {/* Neighborhoods directory — appropriate structured list for location parent pages */}
+            <h2 className="text-2xl font-bold mt-10 mb-4">Neighborhoods We Serve in {location.city}</h2>
+            <p className="text-muted-foreground mb-4">
+              Our technicians know {location.city} inside and out. Here are some of the neighborhoods and communities where we regularly provide {BUSINESS.industry.toLowerCase()} services:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">
+              {location.slug === "las-vegas" && ["Summerlin", "Spring Valley", "Downtown Las Vegas", "North Las Vegas", "Enterprise", "Whitney", "Sunrise Manor", "Paradise", "Southwest Las Vegas"].map(n => (
+                <span key={n} className="bg-muted px-3 py-2 rounded-md text-sm font-medium">{n}</span>
+              ))}
+              {location.slug === "henderson" && ["Green Valley", "MacDonald Ranch", "Anthem", "Seven Hills", "Cadence", "Lake Las Vegas", "Inspirada", "The District", "Pittman"].map(n => (
+                <span key={n} className="bg-muted px-3 py-2 rounded-md text-sm font-medium">{n}</span>
+              ))}
+              {location.slug === "boulder-city" && ["Historic District", "Boulder City Golf Course", "Bootleg Canyon", "Lake Mead Area", "Veterans Memorial Drive"].map(n => (
+                <span key={n} className="bg-muted px-3 py-2 rounded-md text-sm font-medium">{n}</span>
+              ))}
+            </div>
           </div>
 
           <aside>
