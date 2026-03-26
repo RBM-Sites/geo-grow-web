@@ -191,8 +191,7 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
 
 const ServiceDetailPage = ({ service, parentName, siblings }: { service: ReturnType<typeof getServiceBySlug>; parentName: string; siblings: ServiceItem[] }) => {
   if (!service) return null;
-  const imgIdx = Math.abs(service.slug.charCodeAt(0) % 12) + 1;
-  const imgNum = String(imgIdx).padStart(2, "0");
+  const img = getServiceImage(service.slug, service.parentSlug);
   return (
     <>
       <SEO
@@ -200,13 +199,13 @@ const ServiceDetailPage = ({ service, parentName, siblings }: { service: ReturnT
         description={`Need ${service.name.toLowerCase()} in Las Vegas? ${BUSINESS.name} provides fast, reliable service — licensed & insured. Free estimates. Call ${BUSINESS.phoneFormatted}.`}
         canonical={`/${service.parentSlug}/${service.slug}`}
       />
-      <PageHero title={`${service.name} in Las Vegas, NV`} subtitle={`Fast, reliable ${service.name.toLowerCase()} by licensed technicians.`} bgImage={`/media/right-on-plumbing-heating-and-air-project-${imgNum}-las-vegas-nv.jpg`} />
+      <PageHero title={`${service.name} in Las Vegas, NV`} subtitle={`Fast, reliable ${service.name.toLowerCase()} by licensed technicians.`} bgImage={img.src} />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: parentName, href: `/${service.parentSlug}` }, { label: service.name }]} />
       <main className="container-custom section-padding">
         <article>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <img src={`/media/right-on-plumbing-heating-and-air-project-${imgNum}-las-vegas-nv.jpg`} alt={`${service.name} completed by ${BUSINESS.name} for a Las Vegas, NV homeowner`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
+              <img src={img.src} alt={img.alt} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
               <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
 
               {/* Contextual internal links — woven naturally into prose */}
