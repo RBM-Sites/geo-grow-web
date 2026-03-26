@@ -29,7 +29,10 @@ const LocationPage = () => {
           <div className="lg:col-span-2">
             <img src={`/media/right-on-plumbing-heating-and-air-project-0${location.slug === "las-vegas" ? "1" : location.slug === "henderson" ? "3" : "5"}-las-vegas-nv.jpg`} alt={`${BUSINESS.name} technician providing ${BUSINESS.industry.toLowerCase()} service in ${location.city}, ${location.state}`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
             
-            <p className="text-muted-foreground mb-6 leading-relaxed">{location.content}</p>
+            {/* Split long location content into shorter paragraphs */}
+            {splitIntoParagraphs(location.content).map((para, i) => (
+              <p key={i} className="text-muted-foreground mb-4 leading-relaxed">{para}</p>
+            ))}
 
             {/* === Drainage Service === */}
             <h2 className="text-2xl font-bold mb-3">Drainage Service in {location.city}, {location.state}</h2>

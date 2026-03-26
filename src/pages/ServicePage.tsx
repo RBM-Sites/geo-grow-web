@@ -427,7 +427,10 @@ const ServiceDetailPage = ({ service, parentName, siblings }: { service: ReturnT
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <img src={img.src} alt={img.alt} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
-              <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
+              {/* Split long description into shorter paragraphs for readability */}
+              {splitIntoParagraphs(service.description).map((para, i) => (
+                <p key={i} className="text-muted-foreground mb-4 leading-relaxed">{para}</p>
+              ))}
 
               {/* Contextual internal links — woven naturally into prose */}
               <ContextualLinks service={service} siblings={siblings} />
