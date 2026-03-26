@@ -39,7 +39,7 @@ export const Header = () => {
         <nav className={`sticky top-0 z-50 overflow-visible transition-all duration-300 ${scrolled ? "bg-transparent shadow-none" : "bg-card shadow-md"}`}>
           <div className="container-custom flex items-center justify-between py-3">
             <Link to="/" className="flex-shrink-0 relative z-10">
-              <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-[7.5rem] md:h-[9rem] w-auto -mt-4 -mb-[2.75rem] drop-shadow-md" width="180" height="144" />
+              <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-[10rem] md:h-[12rem] w-auto -mt-4 -mb-[3.75rem] drop-shadow-md" width="220" height="192" />
             </Link>
             {/* Desktop nav */}
             <div className={`hidden lg:flex items-center gap-6 text-sm font-semibold font-heading transition-colors duration-300 ${scrolled ? "text-primary-foreground" : ""}`}>
