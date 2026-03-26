@@ -26,11 +26,11 @@ const GalleryPage = () => {
     <>
       <SEO
         title={`Project Gallery | ${BUSINESS.name} | ${BUSINESS.industry} Las Vegas, NV`}
-        description={`Browse recent plumbing, HVAC, and electrical projects completed by ${BUSINESS.name} across Las Vegas, Henderson, and Boulder City, NV.`}
+        description={`Browse recent plumbing and HVAC projects completed by ${BUSINESS.name} across Las Vegas, Henderson, and Boulder City, NV.`}
         canonical="/gallery"
       />
       <Header />
-      <PageHero title="Our Work — Recent Projects in Las Vegas" subtitle="Browse recent plumbing, HVAC, and electrical projects across Las Vegas, Henderson, and Boulder City." bgImage="/media/right-on-plumbing-heating-and-air-project-02-las-vegas-nv.jpg" />
+      <PageHero title="Our Work — Recent Projects in Las Vegas" subtitle="Browse recent plumbing and HVAC projects across Las Vegas, Henderson, and Boulder City." bgImage="/media/right-on-plumbing-heating-and-air-project-02-las-vegas-nv.jpg" />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Project Gallery" }]} />
       <main className="container-custom section-padding">
 
