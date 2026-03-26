@@ -37,10 +37,13 @@ export const Header = () => {
             </div>
           </div>
         </div>
-        <nav className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ${scrolled ? "bg-white/10 backdrop-blur-sm shadow-none" : "bg-card shadow-md"}`}>
-          <div className="container-custom flex items-center justify-between py-0 lg:py-1">
+        <nav
+          className={`fixed top-0 left-0 right-0 z-[80] overflow-visible transition-all duration-300 will-change-transform [transform:translateZ(0)] ${scrolled ? "bg-background/75 border-b border-border/60 shadow-sm" : "bg-card shadow-md"}`}
+          style={{ paddingTop: "env(safe-area-inset-top)" }}
+        >
+          <div className="container-custom flex items-center justify-between min-h-[4.5rem] py-0 lg:min-h-[4.25rem] lg:py-1">
             <Link to="/" className="flex-shrink-0 relative z-10">
-              <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className={`w-auto drop-shadow-md transition-all duration-300 ${scrolled ? "h-[5rem] -mb-[1rem]" : "h-[10rem] md:h-[12rem] -mb-[4.5rem]"}`} width="220" height="192" />
+              <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className={`w-auto max-w-none drop-shadow-md transition-all duration-300 ${scrolled ? "h-[4.75rem] -mb-[0.75rem]" : "h-[10rem] md:h-[12rem] -mb-[4.5rem]"}`} width="220" height="192" />
             </Link>
             {/* Desktop nav */}
             <div className={`hidden lg:flex items-center gap-6 text-sm font-semibold font-heading transition-colors duration-300 ${scrolled ? "text-primary-foreground" : ""}`}>
@@ -77,7 +80,7 @@ export const Header = () => {
                 <Phone className="h-4 w-4" /> Call Now
               </a>
               {/* Mobile hamburger — dark pill backing for visibility on scroll */}
-              <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 rounded-full transition-all ${scrolled ? "text-white bg-brand-dark/60 backdrop-blur-sm shadow-md" : "text-foreground"}`} aria-label="Toggle navigation menu">
+              <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 rounded-full transition-all ${scrolled ? "text-primary-foreground bg-brand-navy shadow-md ring-1 ring-primary-foreground/25" : "text-foreground bg-background/90 shadow-sm"}`} aria-label="Toggle navigation menu">
                 {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
