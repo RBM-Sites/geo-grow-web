@@ -13,7 +13,7 @@ const ContactPage = () => {
         canonical="/contact"
       />
       <Header />
-      <PageHero title={`Contact ${BUSINESS.name}`} subtitle="Ready to schedule service or have a question? Reach out — we offer free estimates and fast response times." bgImage="/media/right-on-plumbing-heating-and-air-project-07-las-vegas-nv.jpg" />
+      <PageHero title={`Contact ${BUSINESS.name}`} subtitle="Ready to schedule service or have a question? Reach out — we offer free estimates and fast response times." bgImage="/media/hero-contact-plumbing-las-vegas.jpg" />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
       <main className="container-custom section-padding">
 

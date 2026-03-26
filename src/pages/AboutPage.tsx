@@ -13,7 +13,7 @@ const AboutPage = () => {
         canonical="/about"
       />
       <Header />
-      <PageHero title={`About ${BUSINESS.name}`} subtitle={`Locally owned for ${BUSINESS.yearsInBusiness}+ years — licensed, insured, and committed to quality.`} bgImage="/media/right-on-plumbing-heating-and-air-project-06-las-vegas-nv.jpg" />
+      <PageHero title={`About ${BUSINESS.name}`} subtitle={`Locally owned for ${BUSINESS.yearsInBusiness}+ years — licensed, insured, and committed to quality.`} bgImage="/media/hero-about-plumbing-team-las-vegas.jpg" />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About" }]} />
       <main className="container-custom section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">

@@ -24,7 +24,7 @@ const ReviewsPage = () => {
         canonical="/reviews"
       />
       <Header />
-      <PageHero title={`${BUSINESS.name} Customer Reviews`} subtitle={`Rated ${BUSINESS.reviews.average}/5 stars from ${BUSINESS.reviews.count}+ reviews across Las Vegas, Henderson, and Boulder City.`} bgImage="/media/right-on-plumbing-heating-and-air-project-03-las-vegas-nv.jpg" />
+      <PageHero title={`${BUSINESS.name} Customer Reviews`} subtitle={`Rated ${BUSINESS.reviews.average}/5 stars from ${BUSINESS.reviews.count}+ reviews across Las Vegas, Henderson, and Boulder City.`} bgImage="/media/hero-reviews-plumbing-hvac-las-vegas.jpg" />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Reviews" }]} />
       <main className="container-custom section-padding">
 
