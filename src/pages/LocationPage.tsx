@@ -21,7 +21,7 @@ const LocationPage = () => {
         canonical={`/${slug}`}
       />
       <Header />
-      <PageHero title={`${BUSINESS.industry} in ${location.city}, ${location.state}`} subtitle={`Trusted plumbing, HVAC, and electrical services for ${location.city} homeowners.`} bgImage={`/media/right-on-plumbing-heating-and-air-project-0${location.slug === "las-vegas" ? "1" : location.slug === "henderson" ? "3" : "5"}-las-vegas-nv.jpg`} />
+      <PageHero title={`${BUSINESS.industry} in ${location.city}, ${location.state}`} subtitle={`Trusted plumbing and HVAC services for ${location.city} homeowners.`} bgImage={`/media/right-on-plumbing-heating-and-air-project-0${location.slug === "las-vegas" ? "1" : location.slug === "henderson" ? "3" : "5"}-las-vegas-nv.jpg`} />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: `${location.city}, ${location.state}` }]} />
       <main className="container-custom section-padding">
         

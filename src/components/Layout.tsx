@@ -192,7 +192,7 @@ export const CTABanner = () => (
   <section className="cta-gradient section-padding text-secondary-foreground text-center">
     <div className="container-custom">
       <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-      <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">Contact Right On Plumbing, Heating and Air for a free estimate on any plumbing, HVAC, or electrical service in Las Vegas, NV.</p>
+      <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">Contact Right On Plumbing, Heating and Air for a free estimate on any plumbing or HVAC service in Las Vegas, NV.</p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <a href={`tel:${BUSINESS.phone}`} className="bg-brand-dark text-primary-foreground px-8 py-3 rounded-md font-bold hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2">
           <Phone className="h-5 w-5" /> {BUSINESS.phoneFormatted}

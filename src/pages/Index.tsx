@@ -17,8 +17,8 @@ const HomePage = () => {
   return (
     <>
       <SEO
-        title="Plumbing, HVAC & Electrical in Las Vegas, NV | Right On Plumbing, Heating and Air"
-        description="Right On Plumbing, Heating and Air provides expert plumbing, HVAC, and electrical services in Las Vegas, NV. Licensed & insured, locally owned. Call (503) 932-8244 for a free estimate."
+        title="Plumbing & HVAC in Las Vegas, NV | Right On Plumbing, Heating and Air"
+        description="Right On Plumbing, Heating and Air provides expert plumbing and HVAC services in Las Vegas, NV. Licensed & insured, locally owned. Call (503) 932-8244 for a free estimate."
         canonical="/"
       />
       <Header />
@@ -29,7 +29,7 @@ const HomePage = () => {
           <div className="hero-overlay absolute inset-0" />
           <div className="container-custom relative z-10 py-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary-foreground max-w-3xl leading-tight mb-6">
-              Expert Plumbing, HVAC & Electrical in Las Vegas, NV
+              Expert Plumbing & HVAC in Las Vegas, NV
             </h1>
             <p className="text-lg text-primary-foreground/90 max-w-xl mb-8">Locally owned & operated for over {BUSINESS.yearsInBusiness} years. Licensed, insured, and committed to getting the job done right — the first time.</p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -58,7 +58,7 @@ const HomePage = () => {
           <div className="container-custom max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Your Trusted Home Service Team in Las Vegas</h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              {BUSINESS.name} is the locally owned company <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link> homeowners call for everything from a leaking faucet to a complete HVAC overhaul. Our licensed technicians handle <Link to="/drainage-service" className="text-secondary font-semibold hover:underline">drainage service</Link> — including <Link to="/drainage-service/drain-cleaning" className="text-secondary font-semibold hover:underline">drain cleaning</Link> and <Link to="/drainage-service/sewer-camera-inspection" className="text-secondary font-semibold hover:underline">sewer camera inspections</Link> — alongside full-service <Link to="/plumber" className="text-secondary font-semibold hover:underline">plumbing</Link>, <Link to="/hvac-contractor" className="text-secondary font-semibold hover:underline">HVAC contracting</Link>, and electrical work.
+              {BUSINESS.name} is the locally owned company <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link> homeowners call for everything from a leaking faucet to a complete HVAC overhaul. Our licensed technicians handle <Link to="/drainage-service" className="text-secondary font-semibold hover:underline">drainage service</Link> — including <Link to="/drainage-service/drain-cleaning" className="text-secondary font-semibold hover:underline">drain cleaning</Link> and <Link to="/drainage-service/sewer-camera-inspection" className="text-secondary font-semibold hover:underline">sewer camera inspections</Link> — alongside full-service <Link to="/plumber" className="text-secondary font-semibold hover:underline">plumbing</Link> and <Link to="/hvac-contractor" className="text-secondary font-semibold hover:underline">HVAC contracting</Link>.
             </p>
             <p className="text-muted-foreground mb-4 leading-relaxed">
               When summer temperatures push past 115°, a working air conditioner isn't optional — it's survival. That's why our <Link to="/air-conditioning-repair-service" className="text-secondary font-semibold hover:underline">AC repair service</Link> offers same-day response across the valley. And when winter nights dip below freezing, our <Link to="/furnace-repair-service" className="text-secondary font-semibold hover:underline">furnace repair</Link> team keeps your family warm without the runaround.
@@ -179,9 +179,9 @@ const HomePage = () => {
           <div className="container-custom max-w-3xl">
             <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
             {[
-              { q: "What services does Right On Plumbing, Heating and Air provide?", a: "We provide comprehensive plumbing, HVAC, and electrical services including drain cleaning, water heater installation, AC repair and installation, furnace repair, and much more for residential and commercial properties in Las Vegas, NV." },
+              { q: "What services does Right On Plumbing, Heating and Air provide?", a: "We provide comprehensive plumbing and HVAC services including drain cleaning, water heater installation, AC repair and installation, furnace repair, and much more for residential and commercial properties in Las Vegas, NV." },
               { q: "Do you offer free estimates?", a: "Yes, we provide free estimates and free inspections for all our services. Call (503) 932-8244 to schedule yours." },
-              { q: "Are you licensed and insured?", a: "Yes, Right On Plumbing, Heating and Air is fully licensed and insured to perform plumbing, HVAC, and electrical work in Las Vegas, NV and surrounding areas." },
+              { q: "Are you licensed and insured?", a: "Yes, Right On Plumbing, Heating and Air is fully licensed and insured to perform plumbing and HVAC work in Las Vegas, NV and surrounding areas." },
               { q: "What areas do you serve?", a: "We serve Las Vegas, Henderson, Boulder City, and surrounding communities in the Las Vegas Valley." },
             ].map((faq, i) => (
               <div key={i} className="border-b border-border py-4">
@@ -195,9 +195,9 @@ const HomePage = () => {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: [
-            { "@type": "Question", name: "What services does Right On Plumbing, Heating and Air provide?", acceptedAnswer: { "@type": "Answer", text: "We provide comprehensive plumbing, HVAC, and electrical services including drain cleaning, water heater installation, AC repair and installation, furnace repair, and much more for residential and commercial properties in Las Vegas, NV." }},
+            { "@type": "Question", name: "What services does Right On Plumbing, Heating and Air provide?", acceptedAnswer: { "@type": "Answer", text: "We provide comprehensive plumbing and HVAC services including drain cleaning, water heater installation, AC repair and installation, furnace repair, and much more for residential and commercial properties in Las Vegas, NV." }},
             { "@type": "Question", name: "Do you offer free estimates?", acceptedAnswer: { "@type": "Answer", text: "Yes, we provide free estimates and free inspections for all our services. Call (503) 932-8244 to schedule yours." }},
-            { "@type": "Question", name: "Are you licensed and insured?", acceptedAnswer: { "@type": "Answer", text: "Yes, Right On Plumbing, Heating and Air is fully licensed and insured to perform plumbing, HVAC, and electrical work in Las Vegas, NV and surrounding areas." }},
+            { "@type": "Question", name: "Are you licensed and insured?", acceptedAnswer: { "@type": "Answer", text: "Yes, Right On Plumbing, Heating and Air is fully licensed and insured to perform plumbing and HVAC work in Las Vegas, NV and surrounding areas." }},
             { "@type": "Question", name: "What areas do you serve?", acceptedAnswer: { "@type": "Answer", text: "We serve Las Vegas, Henderson, Boulder City, and surrounding communities in the Las Vegas Valley." }},
           ]
         }} />

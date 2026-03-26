@@ -19,14 +19,14 @@ const AboutPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
           <div>
             <p className="text-muted-foreground mb-4 leading-relaxed">With over {BUSINESS.yearsInBusiness} years of experience serving the Las Vegas Valley, {BUSINESS.name} has built a reputation for honest, reliable, and expert {BUSINESS.industry.toLowerCase()} services. We started as a small, locally owned operation with a simple mission: treat every customer's home like our own.</p>
-            <p className="text-muted-foreground mb-4 leading-relaxed">Today, we're proud to serve homeowners and businesses across <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link>, <Link to="/henderson" className="text-secondary font-semibold hover:underline">Henderson</Link>, and <Link to="/boulder-city" className="text-secondary font-semibold hover:underline">Boulder City</Link> with a full range of plumbing, HVAC, and electrical services.</p>
+            <p className="text-muted-foreground mb-4 leading-relaxed">Today, we're proud to serve homeowners and businesses across <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link>, <Link to="/henderson" className="text-secondary font-semibold hover:underline">Henderson</Link>, and <Link to="/boulder-city" className="text-secondary font-semibold hover:underline">Boulder City</Link> with a full range of plumbing and HVAC services.</p>
             <p className="text-muted-foreground leading-relaxed">Every technician on our team is licensed, insured, and committed to providing the highest quality workmanship. We believe in transparent pricing, clear communication, and standing behind every job we complete.</p>
           </div>
           <img src="/media/right-on-plumbing-heating-and-air-project-06-las-vegas-nv.jpg" alt="Right On Plumbing, Heating and Air team completing a residential HVAC installation in Las Vegas, NV" className="rounded-lg w-full h-80 object-cover" loading="lazy" width="600" height="400" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
           {[
-            { icon: <Shield className="h-8 w-8" />, title: "Licensed & Insured", desc: "Fully licensed for plumbing, HVAC, and electrical work" },
+            { icon: <Shield className="h-8 w-8" />, title: "Licensed & Insured", desc: "Fully licensed for plumbing and HVAC work" },
             { icon: <MapPin className="h-8 w-8" />, title: "Locally Owned", desc: "Proudly serving the Las Vegas Valley community" },
             { icon: <Award className="h-8 w-8" />, title: `${BUSINESS.yearsInBusiness}+ Years`, desc: "Of trusted service and expert workmanship" },
             { icon: <Users className="h-8 w-8" />, title: "Customer First", desc: "Free estimates and transparent pricing always" },

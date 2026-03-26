@@ -103,7 +103,7 @@ const SERVICE_IMAGES: Record<string, { src: string; alt: string }> = {
 
 /** Get image for a service or category slug, with fallback */
 const getServiceImage = (slug: string, parentSlug?: string) => {
-  return SERVICE_IMAGES[slug] || SERVICE_IMAGES[parentSlug || ""] || { src: "/media/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg", alt: "Professional plumbing, HVAC, and electrical service in Las Vegas, NV" };
+  return SERVICE_IMAGES[slug] || SERVICE_IMAGES[parentSlug || ""] || { src: "/media/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg", alt: "Professional plumbing and HVAC service in Las Vegas, NV" };
 };
 
 /** Build a contextual paragraph with natural internal links for a service detail page. */
