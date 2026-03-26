@@ -4,6 +4,108 @@ import SEO from "@/components/SEO";
 import { getCategoryBySlug, getServiceBySlug, BUSINESS, SERVICE_CATEGORIES, ServiceItem } from "@/data/business";
 import { Phone } from "lucide-react";
 
+/** Maps service slugs and category slugs to the most relevant generated image */
+const SERVICE_IMAGES: Record<string, { src: string; alt: string }> = {
+  // Drainage category & services
+  "drainage-service": { src: "/media/service-drainage-drain-cleaning-las-vegas.jpg", alt: "Professional drain cleaning equipment clearing a residential drain in Las Vegas, NV" },
+  "drain-cleaning": { src: "/media/service-drainage-drain-cleaning-las-vegas.jpg", alt: "Drain cleaning service using motorized auger to restore water flow in a Las Vegas home" },
+  "clogged-drain-repair": { src: "/media/service-drainage-drain-cleaning-las-vegas.jpg", alt: "Emergency clogged drain repair at a Las Vegas, NV residence" },
+  "sewer-camera-inspection": { src: "/media/service-drainage-sewer-camera-inspection-las-vegas.jpg", alt: "Sewer camera inspection equipment diagnosing pipe issues in Las Vegas, NV" },
+  "sewer-line-replacement": { src: "/media/service-drainage-sewer-camera-inspection-las-vegas.jpg", alt: "Sewer line assessment and replacement service in Las Vegas, NV" },
+  "trenchless-sewer-repair": { src: "/media/service-drainage-sewer-camera-inspection-las-vegas.jpg", alt: "Trenchless sewer repair technology used in a Las Vegas residential property" },
+  // Plumber category & services
+  "plumber": { src: "/media/service-plumber-water-heater-installation-las-vegas.jpg", alt: "Professional plumbing services including water heater installation in Las Vegas, NV" },
+  "water-heater-replacement": { src: "/media/service-plumber-water-heater-installation-las-vegas.jpg", alt: "Water heater replacement with new tank unit in a Las Vegas home" },
+  "water-heater-installation": { src: "/media/service-plumber-water-heater-installation-las-vegas.jpg", alt: "New water heater installation with copper piping in Las Vegas, NV" },
+  "tankless-water-heater-installation": { src: "/media/service-plumber-water-heater-installation-las-vegas.jpg", alt: "Tankless water heater installation for a Las Vegas, NV homeowner" },
+  "sewer-line-repair": { src: "/media/service-drainage-sewer-camera-inspection-las-vegas.jpg", alt: "Sewer line repair and diagnostics for a Las Vegas property" },
+  "toilet-repair": { src: "/media/service-plumber-bathroom-remodel-las-vegas.jpg", alt: "Toilet repair and bathroom plumbing service in Las Vegas, NV" },
+  "toilet-installation": { src: "/media/service-plumber-bathroom-remodel-las-vegas.jpg", alt: "New toilet installation in a Las Vegas bathroom remodel" },
+  "faucet-repair": { src: "/media/service-plumber-faucet-repair-las-vegas.jpg", alt: "Faucet repair and cartridge replacement in a Las Vegas kitchen" },
+  "faucet-installation": { src: "/media/service-plumber-faucet-repair-las-vegas.jpg", alt: "New faucet installation for a Las Vegas homeowner" },
+  "leak-detection": { src: "/media/service-plumber-faucet-repair-las-vegas.jpg", alt: "Leak detection service for residential plumbing in Las Vegas, NV" },
+  "backflow-testing": { src: "/media/service-plumber-water-heater-installation-las-vegas.jpg", alt: "Backflow testing and prevention service in Las Vegas, NV" },
+  "bathroom-remodeling": { src: "/media/service-plumber-bathroom-remodel-las-vegas.jpg", alt: "Bathroom remodeling plumbing service showing new fixtures in Las Vegas, NV" },
+  "emergency-plumber": { src: "/media/service-plumber-faucet-repair-las-vegas.jpg", alt: "Emergency plumber responding to a residential call in Las Vegas, NV" },
+  "commercial-plumber": { src: "/media/service-plumber-water-heater-installation-las-vegas.jpg", alt: "Commercial plumbing service for a Las Vegas business" },
+  // AC Contractor category & services
+  "air-conditioning-contractor": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "Air conditioning condenser unit installed at a Las Vegas home in the desert heat" },
+  "ac-installation": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "Professional AC installation on a concrete pad at a Las Vegas residence" },
+  "air-conditioner-installation": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "New air conditioner installation for a Las Vegas, NV homeowner" },
+  "central-air-conditioning-installation": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "Central air conditioning system installation in Las Vegas, NV" },
+  "ac-replacement": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "AC replacement with energy-efficient unit in Las Vegas, NV" },
+  "air-conditioner-replacement": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "Air conditioner replacement service for a Las Vegas home" },
+  "ductless-ac-installation": { src: "/media/service-ductless-mini-split-installation-las-vegas.jpg", alt: "Ductless mini-split AC unit installed in a Las Vegas living room" },
+  "central-ac-installation": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "Central AC installation for whole-home cooling in Las Vegas, NV" },
+  "new-ac-unit-installation": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "New AC unit installation for a Las Vegas desert home" },
+  "air-conditioning-system-installation": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "Complete air conditioning system installation in Las Vegas, NV" },
+  "window-ac-installation": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "Window AC unit installation for a Las Vegas room" },
+  // AC Repair category & services
+  "air-conditioning-repair-service": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "AC repair technician diagnosing condenser unit issues in Las Vegas, NV" },
+  "ac-repair": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "AC repair service restoring cooling to a Las Vegas home" },
+  "air-conditioner-repair": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "Air conditioner repair by certified technician in Las Vegas, NV" },
+  "air-conditioning-repair": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "Air conditioning repair and diagnostics in Las Vegas, NV" },
+  "ac-not-cooling-repair": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "Diagnosing an AC not cooling issue at a Las Vegas residence" },
+  "ac-not-turning-on-repair": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "Troubleshooting an AC unit that won't turn on in Las Vegas, NV" },
+  "ac-refrigerant-recharge": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "AC refrigerant recharge service in Las Vegas, NV" },
+  "ac-leak-repair": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "AC leak repair and detection in Las Vegas, NV" },
+  "ac-compressor-repair": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "AC compressor repair by licensed technician in Las Vegas, NV" },
+  "ac-fan-motor-replacement": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "AC fan motor replacement service in Las Vegas, NV" },
+  "ac-capacitor-replacement": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "AC capacitor replacement — common repair in Las Vegas heat" },
+  // Air Duct Cleaning category & services
+  "air-duct-cleaning-service": { src: "/media/service-air-duct-cleaning-las-vegas.jpg", alt: "Professional air duct cleaning equipment connected to a residential vent in Las Vegas, NV" },
+  "air-duct-cleaning": { src: "/media/service-air-duct-cleaning-las-vegas.jpg", alt: "Air duct cleaning service removing dust and allergens in a Las Vegas home" },
+  "dryer-vent-cleaning": { src: "/media/service-dryer-vent-cleaning-las-vegas.jpg", alt: "Dryer vent cleaning with rotary brush to prevent fire hazards in Las Vegas, NV" },
+  "ductwork-installation": { src: "/media/service-air-duct-cleaning-las-vegas.jpg", alt: "New ductwork installation for efficient HVAC distribution in Las Vegas, NV" },
+  "ductwork-repair": { src: "/media/service-air-duct-cleaning-las-vegas.jpg", alt: "Ductwork repair to restore HVAC efficiency in a Las Vegas home" },
+  "duct-sealing": { src: "/media/service-air-duct-cleaning-las-vegas.jpg", alt: "Professional duct sealing to eliminate air leaks in Las Vegas, NV" },
+  // Furnace Repair category & services
+  "furnace-repair-service": { src: "/media/service-furnace-repair-las-vegas.jpg", alt: "Gas furnace open for repair showing burners and heat exchanger in Las Vegas, NV" },
+  "furnace-repair": { src: "/media/service-furnace-repair-las-vegas.jpg", alt: "Furnace repair service for a Las Vegas home during winter" },
+  "furnace-not-heating-repair": { src: "/media/service-furnace-repair-las-vegas.jpg", alt: "Diagnosing a furnace not heating properly in Las Vegas, NV" },
+  "furnace-ignitor-replacement": { src: "/media/service-furnace-repair-las-vegas.jpg", alt: "Furnace ignitor replacement to restore heat in a Las Vegas home" },
+  "furnace-blower-motor-replacement": { src: "/media/service-furnace-repair-las-vegas.jpg", alt: "Furnace blower motor replacement for proper airflow in Las Vegas, NV" },
+  "furnace-flame-sensor-replacement": { src: "/media/service-furnace-repair-las-vegas.jpg", alt: "Furnace flame sensor replacement to stop short cycling in Las Vegas, NV" },
+  "heat-exchanger-replacement": { src: "/media/service-furnace-repair-las-vegas.jpg", alt: "Heat exchanger inspection and replacement for furnace safety in Las Vegas, NV" },
+  "boiler-repair": { src: "/media/service-furnace-repair-las-vegas.jpg", alt: "Boiler repair service for Las Vegas residential and commercial properties" },
+  "heat-pump-repair": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "Heat pump repair for year-round comfort in Las Vegas, NV" },
+  // Heating Contractor category & services
+  "heating-contractor": { src: "/media/service-heating-contractor-furnace-installation-las-vegas.jpg", alt: "New furnace installation with ductwork in a Las Vegas garage" },
+  "furnace-installation": { src: "/media/service-heating-contractor-furnace-installation-las-vegas.jpg", alt: "Professional furnace installation in a Las Vegas home" },
+  "heat-pump-installation": { src: "/media/service-ac-contractor-installation-las-vegas.jpg", alt: "Heat pump installation for efficient heating and cooling in Las Vegas, NV" },
+  "boiler-installation": { src: "/media/service-heating-contractor-furnace-installation-las-vegas.jpg", alt: "Boiler installation for residential heating in Las Vegas, NV" },
+  "boiler-replacement": { src: "/media/service-heating-contractor-furnace-installation-las-vegas.jpg", alt: "Boiler replacement upgrade for a Las Vegas property" },
+  "radiant-floor-heating-installation": { src: "/media/service-heating-contractor-furnace-installation-las-vegas.jpg", alt: "Radiant floor heating installation for a Las Vegas home" },
+  "baseboard-heater-installation": { src: "/media/service-heating-contractor-furnace-installation-las-vegas.jpg", alt: "Baseboard heater installation for supplemental heating in Las Vegas, NV" },
+  "gas-furnace-installation": { src: "/media/service-heating-contractor-furnace-installation-las-vegas.jpg", alt: "Gas furnace installation with proper venting in Las Vegas, NV" },
+  "electric-furnace-installation": { src: "/media/service-heating-contractor-furnace-installation-las-vegas.jpg", alt: "Electric furnace installation for a Las Vegas residence" },
+  "ductless-mini-split-installation": { src: "/media/service-ductless-mini-split-installation-las-vegas.jpg", alt: "Ductless mini-split system installed in a Las Vegas living room" },
+  // HVAC Contractor category & services
+  "hvac-contractor": { src: "/media/service-hvac-contractor-thermostat-las-vegas.jpg", alt: "Smart thermostat installation and HVAC service in Las Vegas, NV" },
+  "hvac-tune-up": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "HVAC tune-up and maintenance service in Las Vegas, NV" },
+  "hvac-maintenance": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "Comprehensive HVAC maintenance for Las Vegas homeowners" },
+  "hvac-inspection": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "HVAC system inspection and performance evaluation in Las Vegas, NV" },
+  "thermostat-installation": { src: "/media/service-hvac-contractor-thermostat-las-vegas.jpg", alt: "Thermostat installation on residential wall in Las Vegas, NV" },
+  "smart-thermostat-installation": { src: "/media/service-hvac-contractor-thermostat-las-vegas.jpg", alt: "Smart thermostat installation for energy savings in Las Vegas, NV" },
+  "whole-house-humidifier-installation": { src: "/media/service-hvac-contractor-thermostat-las-vegas.jpg", alt: "Whole house humidifier installation for dry Las Vegas air" },
+  "whole-house-dehumidifier-installation": { src: "/media/service-hvac-contractor-thermostat-las-vegas.jpg", alt: "Whole house dehumidifier installation in Las Vegas, NV" },
+  "uv-air-purifier-installation": { src: "/media/service-air-duct-cleaning-las-vegas.jpg", alt: "UV air purifier installation inside HVAC ductwork in Las Vegas, NV" },
+  "air-scrubber-installation": { src: "/media/service-air-duct-cleaning-las-vegas.jpg", alt: "Air scrubber installation for improved indoor air quality in Las Vegas, NV" },
+  // Mechanical Contractor category & services
+  "mechanical-contractor": { src: "/media/service-mechanical-contractor-commercial-hvac-las-vegas.jpg", alt: "Commercial rooftop HVAC unit on a Las Vegas building with desert mountains" },
+  "commercial-hvac-installation": { src: "/media/service-mechanical-contractor-commercial-hvac-las-vegas.jpg", alt: "Commercial HVAC installation for a Las Vegas business" },
+  "commercial-hvac-repair": { src: "/media/service-mechanical-contractor-commercial-hvac-las-vegas.jpg", alt: "Commercial HVAC repair service in Las Vegas, NV" },
+  "rooftop-unit-installation": { src: "/media/service-mechanical-contractor-commercial-hvac-las-vegas.jpg", alt: "Rooftop HVAC unit installation on a Las Vegas commercial building" },
+  "commercial-ventilation-installation": { src: "/media/service-mechanical-contractor-commercial-hvac-las-vegas.jpg", alt: "Commercial ventilation system installation in Las Vegas, NV" },
+  "make-up-air-unit-installation": { src: "/media/service-mechanical-contractor-commercial-hvac-las-vegas.jpg", alt: "Make-up air unit installation for a Las Vegas restaurant" },
+  "exhaust-fan-installation": { src: "/media/service-mechanical-contractor-commercial-hvac-las-vegas.jpg", alt: "Commercial exhaust fan installation in Las Vegas, NV" },
+};
+
+/** Get image for a service or category slug, with fallback */
+const getServiceImage = (slug: string, parentSlug?: string) => {
+  return SERVICE_IMAGES[slug] || SERVICE_IMAGES[parentSlug || ""] || { src: "/media/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg", alt: "Professional plumbing, HVAC, and electrical service in Las Vegas, NV" };
+};
+
 /** Build a contextual paragraph with natural internal links for a service detail page. */
 const ContextualLinks = ({ service, siblings }: { service: ServiceItem; siblings: ServiceItem[] }) => {
   const otherServices = siblings.filter(s => s.slug !== service.slug);
