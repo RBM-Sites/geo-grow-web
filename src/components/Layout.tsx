@@ -114,7 +114,7 @@ export const Header = () => {
       </header>
 
       {/* Sticky bottom click-to-call bar — appears on scroll */}
-      <div className={`fixed bottom-0 left-0 right-0 z-[60] transition-transform duration-300 ${scrolled ? "translate-y-0" : "translate-y-full"}`}>
+      <div className={`fixed bottom-0 left-0 right-0 z-[60] lg:hidden transition-transform duration-300 ${scrolled ? "translate-y-0" : "translate-y-full"}`}>
         <a
           href={`tel:${BUSINESS.phone}`}
           className="cta-gradient flex items-center justify-center gap-2 py-4 text-secondary-foreground font-bold text-lg shadow-[0_-4px_12px_rgba(0,0,0,0.15)]"
