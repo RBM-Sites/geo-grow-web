@@ -156,7 +156,7 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
         description={`Professional ${category.name.toLowerCase()} services in Las Vegas, NV. ${BUSINESS.name} offers expert solutions — licensed, insured, free estimates. Call ${BUSINESS.phoneFormatted}.`}
         canonical={`/${category.slug}`}
       />
-      <PageHero title={`${category.name} in Las Vegas, NV`} subtitle={`Professional ${category.name.toLowerCase()} services — licensed, insured, free estimates.`} bgImage="/media/right-on-plumbing-heating-and-air-project-04-las-vegas-nv.jpg" />
+      <PageHero title={`${category.name} in Las Vegas, NV`} subtitle={`Professional ${category.name.toLowerCase()} services — licensed, insured, free estimates.`} bgImage={getServiceImage(category.slug).src} />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: category.name }]} />
       <main className="container-custom section-padding">
         <p className="text-muted-foreground mb-4 max-w-3xl leading-relaxed">{category.description}</p>
