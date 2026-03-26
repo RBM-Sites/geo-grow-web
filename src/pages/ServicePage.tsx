@@ -36,7 +36,7 @@ const SERVICE_IMAGES: Record<string, { src: string; alt: string }> = {
   "ac-replacement": { src: "/media/service-ac-replacement-unique-las-vegas.jpg", alt: "AC replacement project with old and new condenser units at a Las Vegas home" },
   "air-conditioner-replacement": { src: "/media/service-air-conditioner-replacement-las-vegas.jpg", alt: "Air conditioner replacement with upgraded outdoor condenser in Las Vegas, NV" },
   "ductless-ac-installation": { src: "/media/service-ductless-mini-split-installation-las-vegas.jpg", alt: "Ductless mini-split AC unit installed in a Las Vegas living room" },
-  "central-ac-installation": { src: "/media/service-central-ac-installation-las-vegas.jpg", alt: "Central AC air handler installation for whole-home cooling in Las Vegas, NV" },
+  "central-ac-installation": { src: "/media/service-central-ac-installation-unique-las-vegas.jpg", alt: "Central AC air handler installation for whole-home cooling in Las Vegas, NV" },
   "new-ac-unit-installation": { src: "/media/service-new-ac-unit-installation-las-vegas.jpg", alt: "New AC unit installed on concrete pad at a Las Vegas desert home" },
   "air-conditioning-system-installation": { src: "/media/service-air-conditioning-system-installation-las-vegas.jpg", alt: "Complete split air conditioning system installation in Las Vegas, NV" },
   "window-ac-installation": { src: "/media/service-window-ac-installation-las-vegas.jpg", alt: "Window AC unit being installed in a residential window in Las Vegas, NV" },
