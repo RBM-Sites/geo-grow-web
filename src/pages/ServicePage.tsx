@@ -1,11 +1,52 @@
 import { useParams, Link } from "react-router-dom";
 import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
 import SEO from "@/components/SEO";
-import { getCategoryBySlug, getServiceBySlug, BUSINESS, SERVICE_CATEGORIES } from "@/data/business";
+import { getCategoryBySlug, getServiceBySlug, BUSINESS, SERVICE_CATEGORIES, ServiceItem } from "@/data/business";
 import { Phone } from "lucide-react";
+
+/** Build a contextual paragraph with natural internal links for a service detail page. */
+const ContextualLinks = ({ service, siblings }: { service: ServiceItem; siblings: ServiceItem[] }) => {
+  const otherServices = siblings.filter(s => s.slug !== service.slug);
+  // Pick up to 2 related sibling services to mention
+  const related = otherServices.slice(0, 2);
+  // Pick a complementary service from a different category
+  const otherCategory = SERVICE_CATEGORIES.find(c => c.slug !== service.parentSlug);
+  const crossLink = otherCategory?.services[0];
+
+  return (
+    <div className="text-muted-foreground mb-8 leading-relaxed space-y-4">
+      <p>
+        Homeowners in <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link> count on {BUSINESS.name} for dependable {service.name.toLowerCase()} because we combine deep local experience with transparent, upfront pricing. Whether your property is near the Strip, in Summerlin, or in a newer development in the southwest valley, our licensed technicians arrive equipped to handle the job from start to finish.
+      </p>
+      {related.length > 0 && (
+        <p>
+          Many customers who need {service.name.toLowerCase()} also benefit from{" "}
+          <Link to={`/${service.parentSlug}/${related[0].slug}`} className="text-secondary font-semibold hover:underline">{related[0].name.toLowerCase()}</Link>
+          {related[1] && (
+            <> and <Link to={`/${service.parentSlug}/${related[1].slug}`} className="text-secondary font-semibold hover:underline">{related[1].name.toLowerCase()}</Link></>
+          )}
+          {" "}as part of a complete maintenance plan. Addressing multiple issues in a single visit saves time and helps prevent costly callbacks.
+        </p>
+      )}
+      {crossLink && (
+        <p>
+          Beyond {service.parentSlug === "plumber" ? "plumbing" : service.parentSlug === "drainage-service" ? "drainage" : "this service"}, we also provide expert{" "}
+          <Link to={`/${otherCategory!.slug}/${crossLink.slug}`} className="text-secondary font-semibold hover:underline">{crossLink.name.toLowerCase()}</Link>
+          {" "}— a service our <Link to="/henderson" className="text-secondary font-semibold hover:underline">Henderson</Link> and <Link to="/boulder-city" className="text-secondary font-semibold hover:underline">Boulder City</Link> customers frequently pair with {service.name.toLowerCase()} to keep their homes comfortable year-round.
+        </p>
+      )}
+      <p>
+        Ready to schedule? <Link to="/contact" className="text-secondary font-semibold hover:underline">Request your free {service.name.toLowerCase()} estimate</Link> online or call <a href={`tel:${BUSINESS.phone}`} className="text-secondary font-semibold hover:underline">{BUSINESS.phoneFormatted}</a> for same-day availability.
+      </p>
+    </div>
+  );
+};
 
 const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCategoryBySlug> }) => {
   if (!category) return null;
+  // Pick a complementary category for cross-linking
+  const otherCat = SERVICE_CATEGORIES.find(c => c.slug !== category.slug);
+
   return (
     <>
       <SEO
@@ -16,7 +57,14 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: category.name }]} />
       <main className="container-custom section-padding">
         <h1 className="text-3xl md:text-4xl font-bold mb-6">{category.name} in Las Vegas, NV</h1>
-        <p className="text-muted-foreground mb-8 max-w-3xl">{category.description}</p>
+        <p className="text-muted-foreground mb-4 max-w-3xl leading-relaxed">{category.description}</p>
+        <p className="text-muted-foreground mb-8 max-w-3xl leading-relaxed">
+          Our team serves homeowners across <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link>, <Link to="/henderson" className="text-secondary font-semibold hover:underline">Henderson</Link>, and <Link to="/boulder-city" className="text-secondary font-semibold hover:underline">Boulder City</Link> with reliable, same-day {category.name.toLowerCase()} when you need it most.
+          {otherCat && (
+            <> We also specialize in <Link to={`/${otherCat.slug}`} className="text-secondary font-semibold hover:underline">{otherCat.name.toLowerCase()}</Link>, so you can count on one trusted company for all your home comfort needs.</>
+          )}
+          {" "}<Link to="/contact" className="text-secondary font-semibold hover:underline">Contact us for a free estimate</Link> — we'll have a licensed technician at your door fast.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {category.services.map(s => (
             <Link to={`/${category.slug}/${s.slug}`} key={s.slug} className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow group">
@@ -26,7 +74,6 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
             </Link>
           ))}
         </div>
-        <p className="text-muted-foreground">We proudly serve homeowners and businesses in <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link>, <Link to="/henderson" className="text-secondary font-semibold hover:underline">Henderson</Link>, and <Link to="/boulder-city" className="text-secondary font-semibold hover:underline">Boulder City</Link> with expert {category.name.toLowerCase()} services.</p>
       </main>
       <CTABanner />
       <JsonLd data={{ "@context": "https://schema.org", "@type": "Service", name: category.name, provider: { "@type": "LocalBusiness", name: BUSINESS.name }, areaServed: ["Las Vegas", "Henderson", "Boulder City"], serviceType: category.name }} />
@@ -34,7 +81,7 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
   );
 };
 
-const ServiceDetailPage = ({ service, parentName }: { service: ReturnType<typeof getServiceBySlug>; parentName: string }) => {
+const ServiceDetailPage = ({ service, parentName, siblings }: { service: ReturnType<typeof getServiceBySlug>; parentName: string; siblings: ServiceItem[] }) => {
   if (!service) return null;
   const imgIdx = Math.abs(service.slug.charCodeAt(0) % 12) + 1;
   const imgNum = String(imgIdx).padStart(2, "0");
@@ -53,6 +100,10 @@ const ServiceDetailPage = ({ service, parentName }: { service: ReturnType<typeof
             <div className="lg:col-span-2">
               <img src={`/media/right-on-plumbing-heating-and-air-project-${imgNum}-las-vegas-nv.jpg`} alt={`${service.name} completed by ${BUSINESS.name} for a Las Vegas, NV homeowner`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
               <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
+
+              {/* Contextual internal links — woven naturally into prose */}
+              <ContextualLinks service={service} siblings={siblings} />
+
               <h2 className="text-2xl font-bold mb-4">Benefits of Professional {service.name}</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
                 {service.benefits.map((b, i) => <li key={i} className="flex items-center gap-2 text-sm"><span className="text-secondary font-bold">✓</span> {b}</li>)}
@@ -104,7 +155,7 @@ const ServicePage = () => {
   if (serviceSlug) {
     const service = getServiceBySlug(categorySlug, serviceSlug);
     if (!service) return null;
-    return <><Header /><ServiceDetailPage service={service} parentName={category.name} /><Footer /></>;
+    return <><Header /><ServiceDetailPage service={service} parentName={category.name} siblings={category.services} /><Footer /></>;
   }
 
   return <><Header /><ServiceCategoryPage category={category} /><Footer /></>;
