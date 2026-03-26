@@ -4,8 +4,9 @@ import { getLocationBySlug, BUSINESS, SERVICE_CATEGORIES } from "@/data/business
 import { Phone, MapPin } from "lucide-react";
 
 const LocationPage = () => {
-  const { citySlug } = useParams();
-  const location = citySlug ? getLocationBySlug(citySlug) : undefined;
+  const { citySlug, categorySlug } = useParams();
+  const slug = citySlug || categorySlug;
+  const location = slug ? getLocationBySlug(slug) : undefined;
   if (!location) return null;
 
   document.title = location.metaTitle;
