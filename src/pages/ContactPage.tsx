@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 import { Header, Footer, Breadcrumbs, JsonLd, localBusinessSchema } from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const ContactPage = () => {
-  document.title = `Contact ${BUSINESS.name} | ${BUSINESS.industry} Las Vegas, NV`;
-
   return (
     <>
+      <SEO
+        title={`Contact ${BUSINESS.name} | ${BUSINESS.industry} in Las Vegas, NV`}
+        description={`Contact ${BUSINESS.name} for plumbing, HVAC, and electrical services in Las Vegas, NV. Free estimates, fast response. Call ${BUSINESS.phoneFormatted} or request service online.`}
+        canonical="/contact"
+      />
       <Header />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
       <main className="container-custom section-padding">
@@ -78,7 +82,7 @@ const ContactPage = () => {
             <div className="flex flex-wrap gap-3">
               {LOCATIONS.map(loc => (
                 <Link key={loc.slug} to={`/${loc.slug}`} className="bg-muted px-4 py-2 rounded-md text-sm font-medium hover:text-secondary transition-colors">
-                  {loc.city}, {loc.state}
+                  {BUSINESS.industry} in {loc.city}, {loc.state}
                 </Link>
               ))}
             </div>

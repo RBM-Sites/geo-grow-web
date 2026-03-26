@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { getLocationBySlug, BUSINESS, SERVICE_CATEGORIES } from "@/data/business";
 import { Phone, MapPin } from "lucide-react";
 
@@ -9,10 +10,13 @@ const LocationPage = () => {
   const location = slug ? getLocationBySlug(slug) : undefined;
   if (!location) return null;
 
-  document.title = location.metaTitle;
-
   return (
     <>
+      <SEO
+        title={location.metaTitle}
+        description={`${BUSINESS.name} serves ${location.city}, ${location.state} with expert ${BUSINESS.industry.toLowerCase()} services. Licensed & insured, free estimates. Call ${BUSINESS.phoneFormatted}.`}
+        canonical={`/${slug}`}
+      />
       <Header />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: `${location.city}, ${location.state}` }]} />
       <main className="container-custom section-padding">
@@ -20,7 +24,7 @@ const LocationPage = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <img src="/media/right-on-plumbing-heating-and-air-project-03-las-vegas-nv.jpg" alt={`${BUSINESS.industry} services in ${location.city}, ${location.state}`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
+            <img src="/media/right-on-plumbing-heating-and-air-project-03-las-vegas-nv.jpg" alt={`${BUSINESS.name} technician providing ${BUSINESS.industry.toLowerCase()} service in ${location.city}, ${location.state}`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
             
             <p className="text-muted-foreground mb-6 leading-relaxed">{location.content}</p>
 
@@ -28,7 +32,7 @@ const LocationPage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               {SERVICE_CATEGORIES.map(cat => (
                 <Link key={cat.slug} to={`/${cat.slug}`} className="flex items-center gap-2 text-sm hover:text-secondary transition-colors font-medium">
-                  <span className="text-secondary">✓</span> {cat.name}
+                  <span className="text-secondary">✓</span> {cat.name} in {location.city}
                 </Link>
               ))}
             </div>
@@ -60,7 +64,7 @@ const LocationPage = () => {
               <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground w-full py-3 rounded-md font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
                 <Phone className="h-5 w-5" /> {BUSINESS.phoneFormatted}
               </a>
-              <Link to="/contact" className="block text-center mt-3 text-sm underline opacity-80 hover:opacity-100">Contact Us Online</Link>
+              <Link to="/contact" className="block text-center mt-3 text-sm underline opacity-80 hover:opacity-100">Request a Free Estimate in {location.city}</Link>
             </div>
           </aside>
         </div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { BUSINESS } from "@/data/business";
 import { Star, ExternalLink } from "lucide-react";
 
@@ -15,14 +16,17 @@ const reviews = [
 ];
 
 const ReviewsPage = () => {
-  document.title = `${BUSINESS.name} Reviews | ${BUSINESS.industry} Las Vegas, NV`;
-
   return (
     <>
+      <SEO
+        title={`Customer Reviews | ${BUSINESS.name} | ${BUSINESS.industry} Las Vegas, NV`}
+        description={`Read verified customer reviews of ${BUSINESS.name}. Rated ${BUSINESS.reviews.average}/5 stars from ${BUSINESS.reviews.count} reviews for plumbing, HVAC, and electrical services in Las Vegas, NV.`}
+        canonical="/reviews"
+      />
       <Header />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Reviews" }]} />
       <main className="container-custom section-padding">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">{BUSINESS.name} Reviews</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-6">{BUSINESS.name} Customer Reviews</h1>
 
         {/* Rating Summary */}
         <div className="bg-brand-navy text-primary-foreground rounded-lg p-8 mb-10 flex flex-col md:flex-row items-center gap-6">

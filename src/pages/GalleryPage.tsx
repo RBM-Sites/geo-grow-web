@@ -1,26 +1,38 @@
 import { useState } from "react";
 import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { BUSINESS } from "@/data/business";
 import { X } from "lucide-react";
 
-const images = Array.from({ length: 12 }, (_, i) => {
-  const num = String(i + 1).padStart(2, "0");
-  return {
-    src: `/media/right-on-plumbing-heating-and-air-project-${num}-las-vegas-nv.jpg`,
-    alt: `Right On Plumbing, Heating and Air project Las Vegas, NV`,
-  };
-});
+const images = [
+  { src: "/media/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg", alt: "Residential water heater installation by Right On Plumbing in Las Vegas, NV" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-02-las-vegas-nv.jpg", alt: "Emergency drain cleaning service at a Las Vegas home" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-03-las-vegas-nv.jpg", alt: "New AC unit installed for a Henderson, NV homeowner" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-04-las-vegas-nv.jpg", alt: "Whole-home HVAC system replacement in the Las Vegas Valley" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-05-las-vegas-nv.jpg", alt: "Sewer camera inspection revealing root intrusion in Las Vegas" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-06-las-vegas-nv.jpg", alt: "Tankless water heater upgrade for a Boulder City, NV residence" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-07-las-vegas-nv.jpg", alt: "Furnace repair completed during winter in Las Vegas, NV" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-08-las-vegas-nv.jpg", alt: "Air duct cleaning improving indoor air quality in a Las Vegas home" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-09-las-vegas-nv.jpg", alt: "Trenchless sewer line repair minimizing yard disruption in Henderson" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-10-las-vegas-nv.jpg", alt: "Commercial plumbing installation for a Las Vegas business" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-11-las-vegas-nv.jpg", alt: "Bathroom plumbing remodel including new fixtures in Las Vegas" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-12-las-vegas-nv.jpg", alt: "Electrical panel upgrade completed by Right On Plumbing team" },
+];
 
 const GalleryPage = () => {
-  document.title = `Our Work | ${BUSINESS.name} | ${BUSINESS.industry} Las Vegas, NV`;
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
     <>
+      <SEO
+        title={`Project Gallery | ${BUSINESS.name} | ${BUSINESS.industry} Las Vegas, NV`}
+        description={`Browse recent plumbing, HVAC, and electrical projects completed by ${BUSINESS.name} across Las Vegas, Henderson, and Boulder City, NV.`}
+        canonical="/gallery"
+      />
       <Header />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Gallery" }]} />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Project Gallery" }]} />
       <main className="container-custom section-padding">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">Our Work</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">Our Work — Recent Projects in Las Vegas</h1>
         <p className="text-muted-foreground mb-10 max-w-2xl">
           Browse recent plumbing, HVAC, and electrical projects completed by {BUSINESS.name} across Las Vegas, Henderson, and Boulder City.
         </p>

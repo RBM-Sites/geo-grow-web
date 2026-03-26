@@ -1,11 +1,26 @@
 import { Link } from "react-router-dom";
 import { Header, Footer, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Phone, Shield, Award, Star, MapPin, Wrench, Thermometer, Droplets } from "lucide-react";
+
+const projectAltTexts = [
+  "Residential water heater installation completed by Right On Plumbing in Las Vegas, NV",
+  "Emergency drain cleaning service at a Las Vegas home",
+  "New AC unit installed for a Henderson, NV homeowner",
+  "Whole-home HVAC system replacement in the Las Vegas Valley",
+  "Sewer camera inspection revealing root intrusion in a Las Vegas property",
+  "Tankless water heater upgrade for a Boulder City, NV residence",
+];
 
 const HomePage = () => {
   return (
     <>
+      <SEO
+        title="Plumbing, HVAC & Electrical in Las Vegas, NV | Right On Plumbing, Heating and Air"
+        description="Right On Plumbing, Heating and Air provides expert plumbing, HVAC, and electrical services in Las Vegas, NV. Licensed & insured, locally owned. Call (503) 932-8244 for a free estimate."
+        canonical="/"
+      />
       <Header />
       <JsonLd data={localBusinessSchema} />
       <main>
@@ -22,7 +37,7 @@ const HomePage = () => {
                 <Phone className="h-5 w-5" /> Get a Free Estimate
               </a>
               <Link to="/contact" className="border-2 border-primary-foreground text-primary-foreground px-8 py-4 rounded-md font-bold text-lg hover:bg-primary-foreground/10 transition-colors">
-                Contact Us
+                Schedule Service Online
               </Link>
             </div>
           </div>
@@ -61,7 +76,7 @@ const HomePage = () => {
                     <div className="text-secondary mb-4">{icons[cat.slug]}</div>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-secondary transition-colors">{cat.name}</h3>
                     <p className="text-sm text-muted-foreground mb-4">{cat.description.slice(0, 120)}...</p>
-                    <span className="text-secondary font-semibold text-sm">View Services →</span>
+                    <span className="text-secondary font-semibold text-sm">Explore {cat.name} Services →</span>
                   </Link>
                 );
               })}
@@ -92,12 +107,12 @@ const HomePage = () => {
           <div className="container-custom">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Recent Projects in Las Vegas</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[1,2,3,4,5,6].map(i => (
-                <img key={i} src={`/media/right-on-plumbing-heating-and-air-project-0${i}-las-vegas-nv.jpg`} alt={`Right On Plumbing, Heating and Air project Las Vegas, NV`} className="rounded-lg w-full h-48 md:h-64 object-cover" loading="lazy" width="400" height="300" />
+              {projectAltTexts.map((alt, i) => (
+                <img key={i} src={`/media/right-on-plumbing-heating-and-air-project-0${i + 1}-las-vegas-nv.jpg`} alt={alt} className="rounded-lg w-full h-48 md:h-64 object-cover" loading="lazy" width="400" height="300" />
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link to="/gallery" className="cta-gradient text-secondary-foreground px-6 py-3 rounded-md font-bold hover:opacity-90 transition-opacity">View Full Gallery</Link>
+              <Link to="/gallery" className="cta-gradient text-secondary-foreground px-6 py-3 rounded-md font-bold hover:opacity-90 transition-opacity">Browse Our Full Project Gallery</Link>
             </div>
           </div>
         </section>
@@ -136,7 +151,7 @@ const HomePage = () => {
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link to="/reviews" className="text-secondary font-bold hover:underline">Read All Reviews →</Link>
+              <Link to="/reviews" className="text-secondary font-bold hover:underline">Read All Customer Reviews →</Link>
             </div>
           </div>
         </section>
