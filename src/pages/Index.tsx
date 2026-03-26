@@ -10,7 +10,7 @@ const HomePage = () => {
       <JsonLd data={localBusinessSchema} />
       <main>
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center" style={{ backgroundImage: "url(/images/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <section className="relative min-h-[70vh] flex items-center" style={{ backgroundImage: "url(/media/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
           <div className="hero-overlay absolute inset-0" />
           <div className="container-custom relative z-10 py-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary-foreground max-w-3xl leading-tight mb-6">
@@ -93,7 +93,7 @@ const HomePage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Recent Projects in Las Vegas</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {[1,2,3,4,5,6].map(i => (
-                <img key={i} src={`/images/right-on-plumbing-heating-and-air-project-0${i}-las-vegas-nv.jpg`} alt={`Right On Plumbing, Heating and Air project Las Vegas, NV`} className="rounded-lg w-full h-48 md:h-64 object-cover" loading="lazy" width="400" height="300" />
+                <img key={i} src={`/media/right-on-plumbing-heating-and-air-project-0${i}-las-vegas-nv.jpg`} alt={`Right On Plumbing, Heating and Air project Las Vegas, NV`} className="rounded-lg w-full h-48 md:h-64 object-cover" loading="lazy" width="400" height="300" />
               ))}
             </div>
             <div className="text-center mt-8">

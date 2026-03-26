@@ -20,7 +20,7 @@ const LocationPage = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <img src="/images/right-on-plumbing-heating-and-air-project-03-las-vegas-nv.jpg" alt={`${BUSINESS.industry} services in ${location.city}, ${location.state}`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
+            <img src="/media/right-on-plumbing-heating-and-air-project-03-las-vegas-nv.jpg" alt={`${BUSINESS.industry} services in ${location.city}, ${location.state}`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
             
             <p className="text-muted-foreground mb-6 leading-relaxed">{location.content}</p>
 

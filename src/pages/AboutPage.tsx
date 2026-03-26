@@ -17,7 +17,7 @@ const AboutPage = () => {
             <p className="text-muted-foreground mb-4 leading-relaxed">Today, we're proud to serve homeowners and businesses across <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link>, <Link to="/henderson" className="text-secondary font-semibold hover:underline">Henderson</Link>, and <Link to="/boulder-city" className="text-secondary font-semibold hover:underline">Boulder City</Link> with a full range of plumbing, HVAC, and electrical services.</p>
             <p className="text-muted-foreground leading-relaxed">Every technician on our team is licensed, insured, and committed to providing the highest quality workmanship. We believe in transparent pricing, clear communication, and standing behind every job we complete.</p>
           </div>
-          <img src="/images/right-on-plumbing-heating-and-air-project-06-las-vegas-nv.jpg" alt="Right On Plumbing, Heating and Air team at work in Las Vegas, NV" className="rounded-lg w-full h-80 object-cover" loading="lazy" width="600" height="400" />
+          <img src="/media/right-on-plumbing-heating-and-air-project-06-las-vegas-nv.jpg" alt="Right On Plumbing, Heating and Air team at work in Las Vegas, NV" className="rounded-lg w-full h-80 object-cover" loading="lazy" width="600" height="400" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
           {[

@@ -40,7 +40,7 @@ const ServiceDetailPage = ({ service, parentName }: { service: ReturnType<typeof
           <h1 className="text-3xl md:text-4xl font-bold mb-6">{service.name} in Las Vegas, NV</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <img src={`/images/right-on-plumbing-heating-and-air-project-${imgNum}-las-vegas-nv.jpg`} alt={`${service.name} service — Right On Plumbing, Heating and Air Las Vegas, NV`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
+              <img src={`/media/right-on-plumbing-heating-and-air-project-${imgNum}-las-vegas-nv.jpg`} alt={`${service.name} service — Right On Plumbing, Heating and Air Las Vegas, NV`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
               <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
               <h2 className="text-2xl font-bold mb-4">Benefits of {service.name}</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
