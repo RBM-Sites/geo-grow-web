@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Shield, Award, MapPin, Users } from "lucide-react";
@@ -13,9 +13,9 @@ const AboutPage = () => {
         canonical="/about"
       />
       <Header />
+      <PageHero title={`About ${BUSINESS.name}`} subtitle={`Locally owned for ${BUSINESS.yearsInBusiness}+ years — licensed, insured, and committed to quality.`} bgImage="/media/right-on-plumbing-heating-and-air-project-06-las-vegas-nv.jpg" />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About" }]} />
       <main className="container-custom section-padding">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">About {BUSINESS.name}</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
           <div>
             <p className="text-muted-foreground mb-4 leading-relaxed">With over {BUSINESS.yearsInBusiness} years of experience serving the Las Vegas Valley, {BUSINESS.name} has built a reputation for honest, reliable, and expert {BUSINESS.industry.toLowerCase()} services. We started as a small, locally owned operation with a simple mission: treat every customer's home like our own.</p>

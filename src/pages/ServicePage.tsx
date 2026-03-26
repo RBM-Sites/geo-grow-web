@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { getCategoryBySlug, getServiceBySlug, BUSINESS, SERVICE_CATEGORIES, ServiceItem } from "@/data/business";
 import { Phone } from "lucide-react";
@@ -54,9 +54,9 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
         description={`Professional ${category.name.toLowerCase()} services in Las Vegas, NV. ${BUSINESS.name} offers expert solutions — licensed, insured, free estimates. Call ${BUSINESS.phoneFormatted}.`}
         canonical={`/${category.slug}`}
       />
+      <PageHero title={`${category.name} in Las Vegas, NV`} subtitle={`Professional ${category.name.toLowerCase()} services — licensed, insured, free estimates.`} bgImage="/media/right-on-plumbing-heating-and-air-project-04-las-vegas-nv.jpg" />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: category.name }]} />
       <main className="container-custom section-padding">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">{category.name} in Las Vegas, NV</h1>
         <p className="text-muted-foreground mb-4 max-w-3xl leading-relaxed">{category.description}</p>
         <p className="text-muted-foreground mb-8 max-w-3xl leading-relaxed">
           Our team serves homeowners across <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link>, <Link to="/henderson" className="text-secondary font-semibold hover:underline">Henderson</Link>, and <Link to="/boulder-city" className="text-secondary font-semibold hover:underline">Boulder City</Link> with reliable, same-day {category.name.toLowerCase()} when you need it most.
@@ -92,10 +92,10 @@ const ServiceDetailPage = ({ service, parentName, siblings }: { service: ReturnT
         description={`Need ${service.name.toLowerCase()} in Las Vegas? ${BUSINESS.name} provides fast, reliable service — licensed & insured. Free estimates. Call ${BUSINESS.phoneFormatted}.`}
         canonical={`/${service.parentSlug}/${service.slug}`}
       />
+      <PageHero title={`${service.name} in Las Vegas, NV`} subtitle={`Fast, reliable ${service.name.toLowerCase()} by licensed technicians.`} bgImage={`/media/right-on-plumbing-heating-and-air-project-${imgNum}-las-vegas-nv.jpg`} />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: parentName, href: `/${service.parentSlug}` }, { label: service.name }]} />
       <main className="container-custom section-padding">
         <article>
-          <h1 className="text-3xl md:text-4xl font-bold mb-6">{service.name} in Las Vegas, NV</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <img src={`/media/right-on-plumbing-heating-and-air-project-${imgNum}-las-vegas-nv.jpg`} alt={`${service.name} completed by ${BUSINESS.name} for a Las Vegas, NV homeowner`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />

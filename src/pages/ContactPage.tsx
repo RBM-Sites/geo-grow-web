@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Header, Footer, Breadcrumbs, JsonLd, localBusinessSchema } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, JsonLd, localBusinessSchema, PageHero } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
@@ -13,12 +13,9 @@ const ContactPage = () => {
         canonical="/contact"
       />
       <Header />
+      <PageHero title={`Contact ${BUSINESS.name}`} subtitle="Ready to schedule service or have a question? Reach out — we offer free estimates and fast response times." bgImage="/media/right-on-plumbing-heating-and-air-project-07-las-vegas-nv.jpg" />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
       <main className="container-custom section-padding">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">Contact {BUSINESS.name}</h1>
-        <p className="text-muted-foreground mb-10 max-w-2xl">
-          Ready to schedule service or have a question about your plumbing, HVAC, or electrical needs? Reach out to our Las Vegas team — we offer free estimates and fast response times.
-        </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info + Map */}
