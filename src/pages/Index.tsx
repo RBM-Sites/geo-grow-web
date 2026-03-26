@@ -25,7 +25,7 @@ const HomePage = () => {
       <JsonLd data={localBusinessSchema} />
       <main>
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center" style={{ backgroundImage: "url(/media/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <section className="relative min-h-[70vh] flex items-center" style={{ backgroundImage: "url(/media/hero-homepage-plumbing-hvac-las-vegas.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
           <div className="hero-overlay absolute inset-0" />
           <div className="container-custom relative z-10 py-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary-foreground max-w-3xl leading-tight mb-6">
