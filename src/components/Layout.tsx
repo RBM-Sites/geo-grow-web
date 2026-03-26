@@ -1,109 +1,128 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BUSINESS } from "@/data/business";
 import { Phone, Mail, MapPin, Clock, Facebook, Menu, X } from "lucide-react";
 
 export const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="w-full">
-      <div className="bg-brand-dark text-primary-foreground">
-        <div className="container-custom flex flex-wrap items-center justify-between py-2 text-sm gap-2">
-          <div className="flex items-center gap-4 flex-wrap">
-            <a href={`mailto:${BUSINESS.email}`} className="flex items-center gap-1 hover:text-secondary transition-colors">
-              <Mail className="h-3 w-3" /> <span className="hidden sm:inline">{BUSINESS.email}</span>
-            </a>
-            <span className="hidden md:flex items-center gap-1">
-              <MapPin className="h-3 w-3" /> {BUSINESS.fullAddress}
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href={BUSINESS.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <Facebook className="h-4 w-4 hover:text-secondary transition-colors" />
-            </a>
-            <a href={`tel:${BUSINESS.phone}`} className="flex items-center gap-1 font-semibold hover:text-secondary transition-colors">
-              <Phone className="h-3 w-3" /> {BUSINESS.phoneFormatted}
-            </a>
-          </div>
-        </div>
-      </div>
-      <nav className="bg-card shadow-md sticky top-0 z-50 overflow-visible">
-        <div className="container-custom flex items-center justify-between py-3">
-          <Link to="/" className="flex-shrink-0 relative z-10">
-            <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-[7.5rem] md:h-[9rem] w-auto -mt-4 -mb-[2.75rem] drop-shadow-md" width="180" height="144" />
-          </Link>
-          {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-6 text-sm font-semibold font-heading">
-            <Link to="/" className="hover:text-secondary transition-colors">Home</Link>
-            <div className="relative group">
-              <span className="cursor-pointer hover:text-secondary transition-colors">Services ▾</span>
-              <div className="absolute left-0 top-full hidden group-hover:block bg-card shadow-lg rounded-md py-2 min-w-[220px] z-50">
-                <Link to="/drainage-service" className="block px-4 py-2 hover:bg-muted text-sm">Drainage Service</Link>
-                <Link to="/plumber" className="block px-4 py-2 hover:bg-muted text-sm">Plumber</Link>
-                <Link to="/air-conditioning-contractor" className="block px-4 py-2 hover:bg-muted text-sm">AC Contractor</Link>
-                <Link to="/air-conditioning-repair-service" className="block px-4 py-2 hover:bg-muted text-sm">AC Repair Service</Link>
-                <Link to="/air-duct-cleaning-service" className="block px-4 py-2 hover:bg-muted text-sm">Air Duct Cleaning</Link>
-                <Link to="/furnace-repair-service" className="block px-4 py-2 hover:bg-muted text-sm">Furnace Repair</Link>
-                <Link to="/heating-contractor" className="block px-4 py-2 hover:bg-muted text-sm">Heating Contractor</Link>
-                <Link to="/hvac-contractor" className="block px-4 py-2 hover:bg-muted text-sm">HVAC Contractor</Link>
-                <Link to="/mechanical-contractor" className="block px-4 py-2 hover:bg-muted text-sm">Mechanical Contractor</Link>
-              </div>
+    <>
+      <header className="w-full">
+        <div className="bg-brand-dark text-primary-foreground">
+          <div className="container-custom flex flex-wrap items-center justify-between py-2 text-sm gap-2">
+            <div className="flex items-center gap-4 flex-wrap">
+              <a href={`mailto:${BUSINESS.email}`} className="flex items-center gap-1 hover:text-secondary transition-colors">
+                <Mail className="h-3 w-3" /> <span className="hidden sm:inline">{BUSINESS.email}</span>
+              </a>
+              <span className="hidden md:flex items-center gap-1">
+                <MapPin className="h-3 w-3" /> {BUSINESS.fullAddress}
+              </span>
             </div>
-            <div className="relative group">
-              <span className="cursor-pointer hover:text-secondary transition-colors">Service Areas ▾</span>
-              <div className="absolute left-0 top-full hidden group-hover:block bg-card shadow-lg rounded-md py-2 min-w-[200px] z-50">
-                <Link to="/las-vegas" className="block px-4 py-2 hover:bg-muted text-sm">Las Vegas</Link>
-                <Link to="/henderson" className="block px-4 py-2 hover:bg-muted text-sm">Henderson</Link>
-                <Link to="/boulder-city" className="block px-4 py-2 hover:bg-muted text-sm">Boulder City</Link>
-              </div>
-            </div>
-            <Link to="/about" className="hover:text-secondary transition-colors">About</Link>
-            <Link to="/gallery" className="hover:text-secondary transition-colors">Gallery</Link>
-            <Link to="/reviews" className="hover:text-secondary transition-colors">Reviews</Link>
-            <Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link>
-          </div>
-          <div className="flex items-center gap-3">
-            <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground px-5 py-2.5 rounded-md font-bold text-sm hover:opacity-90 transition-opacity hidden sm:flex items-center gap-2">
-              <Phone className="h-4 w-4" /> Call Now
-            </a>
-            {/* Mobile hamburger */}
-            <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden p-2 text-foreground" aria-label="Toggle navigation menu">
-              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-        {/* Mobile menu */}
-        {mobileOpen && (
-          <div className="lg:hidden bg-card border-t border-border px-4 pb-4 shadow-lg">
-            <div className="flex flex-col text-sm font-semibold font-heading">
-              <Link to="/" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Home</Link>
-              <span className="py-3 border-b border-border text-muted-foreground text-xs uppercase tracking-wider">Services</span>
-              <Link to="/drainage-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Drainage Service</Link>
-              <Link to="/plumber" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Plumber</Link>
-              <Link to="/air-conditioning-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">AC Contractor</Link>
-              <Link to="/air-conditioning-repair-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">AC Repair Service</Link>
-              <Link to="/air-duct-cleaning-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Air Duct Cleaning</Link>
-              <Link to="/furnace-repair-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Furnace Repair</Link>
-              <Link to="/heating-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Heating Contractor</Link>
-              <Link to="/hvac-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">HVAC Contractor</Link>
-              <Link to="/mechanical-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 border-b border-border hover:text-secondary">Mechanical Contractor</Link>
-              <span className="py-3 border-b border-border text-muted-foreground text-xs uppercase tracking-wider">Service Areas</span>
-              <Link to="/las-vegas" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Las Vegas</Link>
-              <Link to="/henderson" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Henderson</Link>
-              <Link to="/boulder-city" onClick={() => setMobileOpen(false)} className="py-2 pl-4 border-b border-border hover:text-secondary">Boulder City</Link>
-              <Link to="/about" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">About</Link>
-              <Link to="/gallery" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Gallery</Link>
-              <Link to="/reviews" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Reviews</Link>
-              <Link to="/contact" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Contact</Link>
-              <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground mt-4 py-3 rounded-md font-bold text-center flex items-center justify-center gap-2">
-                <Phone className="h-4 w-4" /> Call {BUSINESS.phoneFormatted}
+            <div className="flex items-center gap-4">
+              <a href={BUSINESS.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <Facebook className="h-4 w-4 hover:text-secondary transition-colors" />
+              </a>
+              <a href={`tel:${BUSINESS.phone}`} className="flex items-center gap-1 font-semibold hover:text-secondary transition-colors">
+                <Phone className="h-3 w-3" /> {BUSINESS.phoneFormatted}
               </a>
             </div>
           </div>
-        )}
-      </nav>
-    </header>
+        </div>
+        <nav className={`sticky top-0 z-50 overflow-visible transition-all duration-300 ${scrolled ? "bg-transparent shadow-none" : "bg-card shadow-md"}`}>
+          <div className="container-custom flex items-center justify-between py-3">
+            <Link to="/" className="flex-shrink-0 relative z-10">
+              <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-[7.5rem] md:h-[9rem] w-auto -mt-4 -mb-[2.75rem] drop-shadow-md" width="180" height="144" />
+            </Link>
+            {/* Desktop nav */}
+            <div className={`hidden lg:flex items-center gap-6 text-sm font-semibold font-heading transition-colors duration-300 ${scrolled ? "text-primary-foreground" : ""}`}>
+              <Link to="/" className="hover:text-secondary transition-colors">Home</Link>
+              <div className="relative group">
+                <span className="cursor-pointer hover:text-secondary transition-colors">Services ▾</span>
+                <div className="absolute left-0 top-full hidden group-hover:block bg-card shadow-lg rounded-md py-2 min-w-[220px] z-50 text-foreground">
+                  <Link to="/drainage-service" className="block px-4 py-2 hover:bg-muted text-sm">Drainage Service</Link>
+                  <Link to="/plumber" className="block px-4 py-2 hover:bg-muted text-sm">Plumber</Link>
+                  <Link to="/air-conditioning-contractor" className="block px-4 py-2 hover:bg-muted text-sm">AC Contractor</Link>
+                  <Link to="/air-conditioning-repair-service" className="block px-4 py-2 hover:bg-muted text-sm">AC Repair Service</Link>
+                  <Link to="/air-duct-cleaning-service" className="block px-4 py-2 hover:bg-muted text-sm">Air Duct Cleaning</Link>
+                  <Link to="/furnace-repair-service" className="block px-4 py-2 hover:bg-muted text-sm">Furnace Repair</Link>
+                  <Link to="/heating-contractor" className="block px-4 py-2 hover:bg-muted text-sm">Heating Contractor</Link>
+                  <Link to="/hvac-contractor" className="block px-4 py-2 hover:bg-muted text-sm">HVAC Contractor</Link>
+                  <Link to="/mechanical-contractor" className="block px-4 py-2 hover:bg-muted text-sm">Mechanical Contractor</Link>
+                </div>
+              </div>
+              <div className="relative group">
+                <span className="cursor-pointer hover:text-secondary transition-colors">Service Areas ▾</span>
+                <div className="absolute left-0 top-full hidden group-hover:block bg-card shadow-lg rounded-md py-2 min-w-[200px] z-50 text-foreground">
+                  <Link to="/las-vegas" className="block px-4 py-2 hover:bg-muted text-sm">Las Vegas</Link>
+                  <Link to="/henderson" className="block px-4 py-2 hover:bg-muted text-sm">Henderson</Link>
+                  <Link to="/boulder-city" className="block px-4 py-2 hover:bg-muted text-sm">Boulder City</Link>
+                </div>
+              </div>
+              <Link to="/about" className="hover:text-secondary transition-colors">About</Link>
+              <Link to="/gallery" className="hover:text-secondary transition-colors">Gallery</Link>
+              <Link to="/reviews" className="hover:text-secondary transition-colors">Reviews</Link>
+              <Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link>
+            </div>
+            <div className="flex items-center gap-3">
+              <a href={`tel:${BUSINESS.phone}`} className={`cta-gradient text-secondary-foreground px-5 py-2.5 rounded-md font-bold text-sm hover:opacity-90 transition-opacity hidden sm:flex items-center gap-2 ${scrolled ? "hidden sm:hidden" : ""}`}>
+                <Phone className="h-4 w-4" /> Call Now
+              </a>
+              {/* Mobile hamburger */}
+              <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 transition-colors ${scrolled ? "text-white" : "text-foreground"}`} aria-label="Toggle navigation menu">
+                {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
+          </div>
+          {/* Mobile menu */}
+          {mobileOpen && (
+            <div className="lg:hidden bg-card border-t border-border px-4 pb-4 shadow-lg">
+              <div className="flex flex-col text-sm font-semibold font-heading">
+                <Link to="/" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Home</Link>
+                <span className="py-3 border-b border-border text-muted-foreground text-xs uppercase tracking-wider">Services</span>
+                <Link to="/drainage-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Drainage Service</Link>
+                <Link to="/plumber" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Plumber</Link>
+                <Link to="/air-conditioning-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">AC Contractor</Link>
+                <Link to="/air-conditioning-repair-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">AC Repair Service</Link>
+                <Link to="/air-duct-cleaning-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Air Duct Cleaning</Link>
+                <Link to="/furnace-repair-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Furnace Repair</Link>
+                <Link to="/heating-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Heating Contractor</Link>
+                <Link to="/hvac-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">HVAC Contractor</Link>
+                <Link to="/mechanical-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 border-b border-border hover:text-secondary">Mechanical Contractor</Link>
+                <span className="py-3 border-b border-border text-muted-foreground text-xs uppercase tracking-wider">Service Areas</span>
+                <Link to="/las-vegas" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Las Vegas</Link>
+                <Link to="/henderson" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Henderson</Link>
+                <Link to="/boulder-city" onClick={() => setMobileOpen(false)} className="py-2 pl-4 border-b border-border hover:text-secondary">Boulder City</Link>
+                <Link to="/about" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">About</Link>
+                <Link to="/gallery" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Gallery</Link>
+                <Link to="/reviews" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Reviews</Link>
+                <Link to="/contact" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Contact</Link>
+                <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground mt-4 py-3 rounded-md font-bold text-center flex items-center justify-center gap-2">
+                  <Phone className="h-4 w-4" /> Call {BUSINESS.phoneFormatted}
+                </a>
+              </div>
+            </div>
+          )}
+        </nav>
+      </header>
+
+      {/* Sticky bottom click-to-call bar — appears on scroll */}
+      <div className={`fixed bottom-0 left-0 right-0 z-[60] transition-transform duration-300 ${scrolled ? "translate-y-0" : "translate-y-full"}`}>
+        <a
+          href={`tel:${BUSINESS.phone}`}
+          className="cta-gradient flex items-center justify-center gap-2 py-4 text-secondary-foreground font-bold text-lg shadow-[0_-4px_12px_rgba(0,0,0,0.15)]"
+        >
+          <Phone className="h-5 w-5" /> Call Now — {BUSINESS.phoneFormatted}
+        </a>
+      </div>
+    </>
   );
 };
 
