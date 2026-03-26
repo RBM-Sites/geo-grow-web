@@ -16,11 +16,12 @@ export const Header = () => {
   return (
     <>
       <header className="w-full">
-        <div className="bg-brand-dark text-primary-foreground">
+        {/* Top utility strip — desktop only */}
+        <div className="hidden lg:block bg-brand-dark text-primary-foreground">
           <div className="container-custom flex flex-wrap items-center justify-between py-2 text-sm gap-2">
             <div className="flex items-center gap-4 flex-wrap">
               <a href={`mailto:${BUSINESS.email}`} className="flex items-center gap-1 hover:text-secondary transition-colors">
-                <Mail className="h-3 w-3" /> <span className="hidden sm:inline">{BUSINESS.email}</span>
+                <Mail className="h-3 w-3" /> <span>{BUSINESS.email}</span>
               </a>
               <span className="hidden md:flex items-center gap-1">
                 <MapPin className="h-3 w-3" /> {BUSINESS.fullAddress}
@@ -37,9 +38,9 @@ export const Header = () => {
           </div>
         </div>
         <nav className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ${scrolled ? "bg-transparent shadow-none" : "bg-card shadow-md"}`}>
-          <div className="container-custom flex items-center justify-between py-1">
+          <div className="container-custom flex items-center justify-between py-0 lg:py-1">
             <Link to="/" className="flex-shrink-0 relative z-10">
-              <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-[10rem] md:h-[12rem] w-auto -mt-4 -mb-[3.75rem] drop-shadow-md" width="220" height="192" />
+              <img src={BUSINESS.logo} alt={BUSINESS.logoAlt} className="h-[10rem] md:h-[12rem] w-auto -mb-[4.5rem] drop-shadow-md" width="220" height="192" />
             </Link>
             {/* Desktop nav */}
             <div className={`hidden lg:flex items-center gap-6 text-sm font-semibold font-heading transition-colors duration-300 ${scrolled ? "text-primary-foreground" : ""}`}>
@@ -75,8 +76,8 @@ export const Header = () => {
               <a href={`tel:${BUSINESS.phone}`} className={`cta-gradient text-secondary-foreground px-5 py-2.5 rounded-md font-bold text-sm hover:opacity-90 transition-opacity hidden sm:flex items-center gap-2 ${scrolled ? "hidden sm:hidden" : ""}`}>
                 <Phone className="h-4 w-4" /> Call Now
               </a>
-              {/* Mobile hamburger */}
-              <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 transition-colors ${scrolled ? "text-white" : "text-foreground"}`} aria-label="Toggle navigation menu">
+              {/* Mobile hamburger — dark pill backing for visibility on scroll */}
+              <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 rounded-full transition-all ${scrolled ? "text-white bg-brand-dark/60 backdrop-blur-sm shadow-md" : "text-foreground"}`} aria-label="Toggle navigation menu">
                 {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
