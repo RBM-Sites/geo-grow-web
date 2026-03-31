@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Header, Footer } from "@/components/Layout";
+import { Header, Footer, GoogleMapEmbed } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS } from "@/data/business";
 import { Phone, CheckCircle } from "lucide-react";
@@ -34,6 +34,7 @@ const ThankYouPage = () => {
           <Link to="/reviews" className="text-secondary font-semibold hover:underline">Read Customer Reviews</Link>
         </div>
       </main>
+      <GoogleMapEmbed />
       <Footer />
     </>
   );

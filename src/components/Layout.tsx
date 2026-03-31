@@ -236,6 +236,22 @@ export const CTABanner = () => (
   </section>
 );
 
+export const GoogleMapEmbed = () => (
+  <section className="w-full">
+    <iframe
+      title={`${BUSINESS.name} location on Google Maps`}
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d543395.2790567018!2d-115.15446405!3d36.14924595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8eba5a2c1f23d%3A0x16d9b7a75a36309a!2sRight%20On%20Plumbing%20LLC!5e1!3m2!1sen!2sus!4v1774979859726!5m2!1sen!2sus"
+      width="100%"
+      height="400"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      className="w-full"
+    />
+  </section>
+);
+
 export const JsonLd = ({ data }: { data: object }) => (
   <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
 );

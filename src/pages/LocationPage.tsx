@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero, GoogleMapEmbed } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { getLocationBySlug, BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Phone } from "lucide-react";
@@ -233,6 +233,7 @@ const LocationPage = () => {
         </div>
       </main>
       <CTABanner />
+      <GoogleMapEmbed />
       <JsonLd data={localBusinessSchema} />
       <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: location.faqs.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
       <Footer />

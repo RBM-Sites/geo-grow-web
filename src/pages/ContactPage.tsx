@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Header, Footer, Breadcrumbs, JsonLd, localBusinessSchema, PageHero } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, JsonLd, localBusinessSchema, PageHero, GoogleMapEmbed } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
@@ -65,7 +65,7 @@ const ContactPage = () => {
             <div className="rounded-lg overflow-hidden border border-border">
               <iframe
                 title={`${BUSINESS.name} location on Google Maps`}
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3220.5!2d-115.1398!3d36.1699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s6621+Cowboy+Trial%2C+Las+Vegas%2C+NV+81314!5e0!3m2!1sen!2sus!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d543395.2790567018!2d-115.15446405!3d36.14924595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8eba5a2c1f23d%3A0x16d9b7a75a36309a!2sRight%20On%20Plumbing%20LLC!5e1!3m2!1sen!2sus!4v1774979859726!5m2!1sen!2sus"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
@@ -107,6 +107,7 @@ const ContactPage = () => {
           </div>
         </div>
       </main>
+      <GoogleMapEmbed />
       <JsonLd data={localBusinessSchema} />
       <Footer />
     </>

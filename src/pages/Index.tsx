@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Header, Footer, CTABanner, JsonLd, localBusinessSchema } from "@/components/Layout";
+import { Header, Footer, CTABanner, JsonLd, localBusinessSchema, GoogleMapEmbed } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Phone, Shield, Award, Star, MapPin, Wrench, Thermometer, Droplets } from "lucide-react";
@@ -202,6 +202,7 @@ const HomePage = () => {
           ]
         }} />
       </main>
+      <GoogleMapEmbed />
       <Footer />
     </>
   );

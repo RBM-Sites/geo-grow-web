@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero, GoogleMapEmbed } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { getCategoryBySlug, getServiceBySlug, BUSINESS, SERVICE_CATEGORIES, ServiceItem } from "@/data/business";
 import { Phone } from "lucide-react";
@@ -542,10 +542,10 @@ const ServicePage = () => {
   if (serviceSlug) {
     const service = getServiceBySlug(categorySlug, serviceSlug);
     if (!service) return null;
-    return <><Header /><ServiceDetailPage service={service} parentName={category.name} siblings={category.services} /><Footer /></>;
+    return <><Header /><ServiceDetailPage service={service} parentName={category.name} siblings={category.services} /><GoogleMapEmbed /><Footer /></>;
   }
 
-  return <><Header /><ServiceCategoryPage category={category} /><Footer /></>;
+  return <><Header /><ServiceCategoryPage category={category} /><GoogleMapEmbed /><Footer /></>;
 };
 
 export default ServicePage;

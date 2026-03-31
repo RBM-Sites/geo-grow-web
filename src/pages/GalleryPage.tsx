@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, PageHero, GoogleMapEmbed } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS } from "@/data/business";
 import { X } from "lucide-react";
@@ -92,6 +92,7 @@ const GalleryPage = () => {
       )}
 
       <CTABanner />
+      <GoogleMapEmbed />
       <JsonLd data={localBusinessSchema} />
       <Footer />
     </>
