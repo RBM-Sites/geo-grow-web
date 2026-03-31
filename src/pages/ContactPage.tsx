@@ -92,10 +92,24 @@ const ContactPage = () => {
               <p className="text-muted-foreground text-sm mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
               
               {/* PLACEHOLDER: Embed intake form code here */}
-              <div className="bg-card border-2 border-dashed border-border rounded-lg p-10 text-center">
-                <p className="text-muted-foreground font-medium mb-2">Intake Form Placeholder</p>
-                <p className="text-sm text-muted-foreground">Your form embed code will be placed here.</p>
-              </div>
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/iL4p3848WjTeVv8Ft1y4"
+                style={{ width: "100%", height: "686px", border: "none", borderRadius: "4px" }}
+                id="inline-iL4p3848WjTeVv8Ft1y4"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Website Contact Form"
+                data-height="686"
+                data-layout-iframe-id="inline-iL4p3848WjTeVv8Ft1y4"
+                data-form-id="iL4p3848WjTeVv8Ft1y4"
+                title="Website Contact Form"
+                loading="lazy"
+              />
               
               <div className="mt-6 text-center">
                 <p className="text-sm text-muted-foreground">Or call us directly:</p>
