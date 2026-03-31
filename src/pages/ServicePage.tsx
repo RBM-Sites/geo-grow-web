@@ -542,10 +542,10 @@ const ServicePage = () => {
   if (serviceSlug) {
     const service = getServiceBySlug(categorySlug, serviceSlug);
     if (!service) return null;
-    return <><Header /><ServiceDetailPage service={service} parentName={category.name} siblings={category.services} /><Footer /></>;
+    return <><Header /><ServiceDetailPage service={service} parentName={category.name} siblings={category.services} /><GoogleMapEmbed /><Footer /></>;
   }
 
-  return <><Header /><ServiceCategoryPage category={category} /><Footer /></>;
+  return <><Header /><ServiceCategoryPage category={category} /><GoogleMapEmbed /><Footer /></>;
 };
 
 export default ServicePage;
