@@ -107,6 +107,7 @@ const ContactPage = () => {
           </div>
         </div>
       </main>
+      <GoogleMapEmbed />
       <JsonLd data={localBusinessSchema} />
       <Footer />
     </>

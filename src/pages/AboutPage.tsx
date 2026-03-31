@@ -42,6 +42,7 @@ const AboutPage = () => {
         <p className="text-muted-foreground mb-4">We offer a comprehensive range of services including <Link to="/plumber" className="text-secondary font-semibold hover:underline">residential and commercial plumbing</Link>, <Link to="/air-conditioning-contractor" className="text-secondary font-semibold hover:underline">air conditioning installation and repair</Link>, <Link to="/furnace-repair-service" className="text-secondary font-semibold hover:underline">furnace diagnostics and repair</Link>, <Link to="/air-duct-cleaning-service" className="text-secondary font-semibold hover:underline">professional air duct cleaning</Link>, and <Link to="/mechanical-contractor" className="text-secondary font-semibold hover:underline">commercial mechanical contracting</Link>.</p>
       </main>
       <CTABanner />
+      <GoogleMapEmbed />
       <JsonLd data={localBusinessSchema} />
       <Footer />
     </>

@@ -65,6 +65,7 @@ const ReviewsPage = () => {
         </div>
       </main>
       <CTABanner />
+      <GoogleMapEmbed />
       <JsonLd data={{
         ...localBusinessSchema,
         aggregateRating: {

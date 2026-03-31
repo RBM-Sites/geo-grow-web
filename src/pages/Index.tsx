@@ -202,6 +202,7 @@ const HomePage = () => {
           ]
         }} />
       </main>
+      <GoogleMapEmbed />
       <Footer />
     </>
   );

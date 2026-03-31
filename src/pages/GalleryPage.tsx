@@ -92,6 +92,7 @@ const GalleryPage = () => {
       )}
 
       <CTABanner />
+      <GoogleMapEmbed />
       <JsonLd data={localBusinessSchema} />
       <Footer />
     </>

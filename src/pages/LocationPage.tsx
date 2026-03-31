@@ -233,6 +233,7 @@ const LocationPage = () => {
         </div>
       </main>
       <CTABanner />
+      <GoogleMapEmbed />
       <JsonLd data={localBusinessSchema} />
       <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: location.faqs.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
       <Footer />
