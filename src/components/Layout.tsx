@@ -238,6 +238,7 @@ export const CTABanner = () => (
 
 export const GoogleMapEmbed = () => (
   <section className="container-custom py-12">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Our Service Area</h2>
     <div className="rounded-xl overflow-hidden shadow-lg border border-border">
       <iframe
         title={`${BUSINESS.name} location on Google Maps`}
