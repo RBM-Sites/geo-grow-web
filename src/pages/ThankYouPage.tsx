@@ -34,6 +34,7 @@ const ThankYouPage = () => {
           <Link to="/reviews" className="text-secondary font-semibold hover:underline">Read Customer Reviews</Link>
         </div>
       </main>
+      <GoogleMapEmbed />
       <Footer />
     </>
   );
