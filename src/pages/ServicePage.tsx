@@ -301,7 +301,7 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
         {/* Service grid — listed below the rich content */}
         <h2 className="text-2xl font-bold mb-6">Our {category.name} Services in Las Vegas</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {category.services.map(s => {
+          {category.services.filter(s => !s.hideFromMenu).map(s => {
             const img = getServiceImage(s.slug, category.slug);
             return (
               <Link to={`/${category.slug}/${s.slug}`} key={s.slug} className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow group">
