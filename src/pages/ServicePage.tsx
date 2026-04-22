@@ -22,7 +22,7 @@ const SERVICE_IMAGES: Record<string, { src: string; alt: string }> = {
   "clogged-drain-repair": { src: "/media/service-clogged-drain-repair-las-vegas.jpg", alt: "Emergency clogged drain repair with drain snake equipment at a Las Vegas, NV residence" },
   "sewer-camera-inspection": { src: "/media/service-drainage-sewer-camera-inspection-las-vegas.jpg", alt: "Sewer camera inspection equipment diagnosing pipe issues in Las Vegas, NV" },
   "sewer-line-replacement": { src: "/media/service-sewer-line-replacement-las-vegas.jpg", alt: "New PVC sewer line being laid in a trench at a Las Vegas residential property" },
-  "trenchless-sewer-repair": { src: "/media/service-trenchless-sewer-repair-las-vegas.jpg", alt: "Trenchless sewer repair pipe lining equipment at a Las Vegas residential property" },
+  
   // Plumber category & services
   "plumber": { src: "/media/service-plumber-water-heater-installation-las-vegas.jpg", alt: "Professional plumbing services including water heater installation in Las Vegas, NV" },
   "water-heater-replacement": { src: "/media/service-water-heater-replacement-las-vegas.jpg", alt: "Tank water heater replacement with copper piping in a Las Vegas garage" },
@@ -169,7 +169,7 @@ const CATEGORY_CONTENT: Record<string, { sections: { heading: string; body: JSX.
             <p>The Mojave Desert's unique soil composition — primarily caliche and compacted clay — places extraordinary stress on underground sewer lines. Seasonal ground shifting, coupled with the mineral-heavy water sourced from Lake Mead, accelerates pipe corrosion and scale buildup inside residential drain systems.</p>
             <p>These aren't problems you can ignore; left unattended, a slow drain can escalate into a full sewer backup that causes thousands of dollars in water damage and creates serious health hazards.</p>
             <p>Our drainage technicians carry HD sewer cameras, hydro-jetting equipment, and motorized augers on every service call so they can move from diagnosis to resolution in a single visit. Whether you need routine <Link to="/drainage-service/drain-cleaning" className="text-secondary font-semibold hover:underline">drain cleaning</Link> to prevent buildup or an emergency response for a <Link to="/drainage-service/clogged-drain-repair" className="text-secondary font-semibold hover:underline">clogged drain repair</Link>, our team arrives prepared.</p>
-            <p>For homeowners dealing with aging cast-iron or Orangeburg sewer lines, we also offer <Link to="/drainage-service/trenchless-sewer-repair" className="text-secondary font-semibold hover:underline">trenchless sewer repair</Link> — a minimally invasive method that rehabilitates damaged pipes without excavating your driveway or destroying desert landscaping.</p>
+            <p>For homeowners dealing with aging cast-iron or Orangeburg sewer lines, we provide complete <Link to="/drainage-service/sewer-line-replacement" className="text-secondary font-semibold hover:underline">sewer line replacement</Link> backed by a thorough <Link to="/drainage-service/sewer-camera-inspection" className="text-secondary font-semibold hover:underline">sewer camera inspection</Link> so you know exactly what's happening underground before any work begins.</p>
           </>
         ),
       },
