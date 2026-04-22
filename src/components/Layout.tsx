@@ -181,6 +181,7 @@ export const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Service Areas</h3>
             <ul className="space-y-2 text-sm opacity-80">
               <li><Link to="/las-vegas" className="hover:text-secondary transition-colors">Las Vegas, NV</Link></li>
+              <li><Link to="/north-las-vegas" className="hover:text-secondary transition-colors">North Las Vegas, NV</Link></li>
               <li><Link to="/henderson" className="hover:text-secondary transition-colors">Henderson, NV</Link></li>
               <li><Link to="/boulder-city" className="hover:text-secondary transition-colors">Boulder City, NV</Link></li>
             </ul>
@@ -284,7 +285,7 @@ export const localBusinessSchema = {
     opens: h.open,
     closes: h.close,
   })),
-  areaServed: ["Las Vegas", "Henderson", "Boulder City"].map(c => ({ "@type": "City", name: c })),
+  areaServed: ["Las Vegas", "North Las Vegas", "Henderson", "Boulder City"].map(c => ({ "@type": "City", name: c })),
   image: "https://rightonplumbing.org/media/right-on-plumbing-heating-and-air-logo.jpeg",
   logo: "https://rightonplumbing.org/media/right-on-plumbing-heating-and-air-logo.jpeg",
   sameAs: [BUSINESS.social.facebook, BUSINESS.social.google],
