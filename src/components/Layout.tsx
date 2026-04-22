@@ -66,6 +66,7 @@ export const Header = () => {
                 <span className="cursor-pointer hover:text-secondary transition-colors">Service Areas ▾</span>
                 <div className="absolute left-0 top-full hidden group-hover:block bg-card shadow-lg rounded-md py-2 min-w-[200px] z-50 text-foreground">
                   <Link to="/las-vegas" className="block px-4 py-2 hover:bg-muted text-sm">Las Vegas</Link>
+                  <Link to="/north-las-vegas" className="block px-4 py-2 hover:bg-muted text-sm">North Las Vegas</Link>
                   <Link to="/henderson" className="block px-4 py-2 hover:bg-muted text-sm">Henderson</Link>
                   <Link to="/boulder-city" className="block px-4 py-2 hover:bg-muted text-sm">Boulder City</Link>
                 </div>
@@ -102,6 +103,7 @@ export const Header = () => {
                 <Link to="/mechanical-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 border-b border-border hover:text-secondary">Mechanical Contractor</Link>
                 <span className="py-3 border-b border-border text-muted-foreground text-xs uppercase tracking-wider">Service Areas</span>
                 <Link to="/las-vegas" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Las Vegas</Link>
+                <Link to="/north-las-vegas" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">North Las Vegas</Link>
                 <Link to="/henderson" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Henderson</Link>
                 <Link to="/boulder-city" onClick={() => setMobileOpen(false)} className="py-2 pl-4 border-b border-border hover:text-secondary">Boulder City</Link>
                 <Link to="/about" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">About</Link>
