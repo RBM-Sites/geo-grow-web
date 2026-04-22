@@ -44,6 +44,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://rightonplumbing.org/north-las-vegas</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://rightonplumbing.org/boulder-city</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>

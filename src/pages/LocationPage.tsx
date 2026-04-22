@@ -37,7 +37,7 @@ const LocationPage = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <img src={`/media/right-on-plumbing-heating-and-air-project-0${location.slug === "las-vegas" ? "1" : location.slug === "henderson" ? "3" : "5"}-las-vegas-nv.jpg`} alt={`${BUSINESS.name} technician providing ${BUSINESS.industry.toLowerCase()} service in ${location.city}, ${location.state}`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
+            <img src={`/media/right-on-plumbing-heating-and-air-project-0${location.slug === "las-vegas" ? "1" : location.slug === "henderson" ? "3" : location.slug === "north-las-vegas" ? "2" : "5"}-las-vegas-nv.jpg`} alt={`${BUSINESS.name} technician providing ${BUSINESS.industry.toLowerCase()} service in ${location.city}, ${location.state}`} className="rounded-lg w-full h-64 object-cover mb-6" loading="eager" width="800" height="400" />
             
             {/* Split long location content into shorter paragraphs */}
             {splitIntoParagraphs(location.content).map((para, i) => (
@@ -208,7 +208,10 @@ const LocationPage = () => {
               Our technicians know {location.city} inside and out. Here are some of the neighborhoods and communities where we regularly provide {BUSINESS.industry.toLowerCase()} services:
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">
-              {location.slug === "las-vegas" && ["Summerlin", "Spring Valley", "Downtown Las Vegas", "North Las Vegas", "Enterprise", "Whitney", "Sunrise Manor", "Paradise", "Southwest Las Vegas"].map(n => (
+              {location.slug === "las-vegas" && ["Summerlin", "Spring Valley", "Downtown Las Vegas", "Enterprise", "Whitney", "Sunrise Manor", "Paradise", "Southwest Las Vegas"].map(n => (
+                <span key={n} className="bg-muted px-3 py-2 rounded-md text-sm font-medium">{n}</span>
+              ))}
+              {location.slug === "north-las-vegas" && ["Aliante", "Eldorado", "Centennial Hills Border", "Sunrise Manor Border", "Nellis AFB Area", "Craig Ranch", "Tule Springs", "Valley Vista", "Park Highlands"].map(n => (
                 <span key={n} className="bg-muted px-3 py-2 rounded-md text-sm font-medium">{n}</span>
               ))}
               {location.slug === "henderson" && ["Green Valley", "MacDonald Ranch", "Anthem", "Seven Hills", "Cadence", "Lake Las Vegas", "Inspirada", "The District", "Pittman"].map(n => (
