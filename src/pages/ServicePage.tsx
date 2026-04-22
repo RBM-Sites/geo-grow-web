@@ -92,11 +92,7 @@ const SERVICE_IMAGES: Record<string, { src: string; alt: string }> = {
   "hvac-maintenance": { src: "/media/service-hvac-maintenance-las-vegas.jpg", alt: "HVAC maintenance service with filter replacement and system care in Las Vegas, NV" },
   "hvac-inspection": { src: "/media/service-hvac-inspection-las-vegas.jpg", alt: "HVAC inspection with thermal diagnostics and checklist in Las Vegas, NV" },
   "thermostat-installation": { src: "/media/service-hvac-contractor-thermostat-las-vegas.jpg", alt: "Thermostat installation on residential wall in Las Vegas, NV" },
-  "smart-thermostat-installation": { src: "/media/service-smart-thermostat-installation-las-vegas.jpg", alt: "Smart thermostat installation for energy savings in a Las Vegas home" },
-  "whole-house-humidifier-installation": { src: "/media/service-humidifier-installation-las-vegas.jpg", alt: "Whole house humidifier unit installed on HVAC ductwork in Las Vegas, NV" },
-  "whole-house-dehumidifier-installation": { src: "/media/service-whole-house-dehumidifier-installation-las-vegas.jpg", alt: "Whole-house dehumidifier connected to HVAC ductwork in Las Vegas, NV" },
   "uv-air-purifier-installation": { src: "/media/service-uv-air-purifier-las-vegas.jpg", alt: "UV germicidal air purifier glowing inside HVAC ductwork in Las Vegas, NV" },
-  "air-scrubber-installation": { src: "/media/service-air-scrubber-installation-las-vegas.jpg", alt: "Air scrubber installation integrated into HVAC ductwork in Las Vegas, NV" },
   // Mechanical Contractor category & services
   "mechanical-contractor": { src: "/media/service-mechanical-contractor-commercial-hvac-las-vegas.jpg", alt: "Commercial rooftop HVAC unit on a Las Vegas building with desert mountains" },
   "commercial-hvac-installation": { src: "/media/service-mechanical-contractor-commercial-hvac-las-vegas.jpg", alt: "Commercial HVAC installation for a Las Vegas business" },
