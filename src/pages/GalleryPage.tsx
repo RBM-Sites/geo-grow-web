@@ -13,7 +13,7 @@ const images = [
   { src: "/media/right-on-plumbing-heating-and-air-project-06-las-vegas-nv.jpg", alt: "Tankless water heater upgrade for a Boulder City, NV residence" },
   { src: "/media/right-on-plumbing-heating-and-air-project-07-las-vegas-nv.jpg", alt: "Furnace repair completed during winter in Las Vegas, NV" },
   { src: "/media/right-on-plumbing-heating-and-air-project-08-las-vegas-nv.jpg", alt: "Air duct cleaning improving indoor air quality in a Las Vegas home" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-09-las-vegas-nv.jpg", alt: "Trenchless sewer line repair minimizing yard disruption in Henderson" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-09-las-vegas-nv.jpg", alt: "Sewer line replacement minimizing yard disruption in Henderson" },
   { src: "/media/right-on-plumbing-heating-and-air-project-10-las-vegas-nv.jpg", alt: "Commercial plumbing installation for a Las Vegas business" },
   { src: "/media/right-on-plumbing-heating-and-air-project-11-las-vegas-nv.jpg", alt: "Bathroom plumbing remodel including new fixtures in Las Vegas" },
   { src: "/media/right-on-plumbing-heating-and-air-project-12-las-vegas-nv.jpg", alt: "Completed HVAC maintenance by the Right On Plumbing team in Las Vegas" },
