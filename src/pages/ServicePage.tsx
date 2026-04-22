@@ -34,8 +34,6 @@ const SERVICE_IMAGES: Record<string, { src: string; alt: string }> = {
   "faucet-repair": { src: "/media/service-plumber-faucet-repair-las-vegas.jpg", alt: "Faucet repair and cartridge replacement in a Las Vegas kitchen" },
   "faucet-installation": { src: "/media/service-faucet-installation-las-vegas.jpg", alt: "Kitchen faucet installation and repair service in Las Vegas, NV" },
   "leak-detection": { src: "/media/service-leak-detection-las-vegas.jpg", alt: "Electronic leak detection equipment diagnosing residential plumbing in Las Vegas, NV" },
-  "backflow-testing": { src: "/media/service-backflow-testing-las-vegas.jpg", alt: "Backflow preventer testing with pressure gauges in Las Vegas, NV" },
-  "bathroom-remodeling": { src: "/media/service-bathroom-remodeling-las-vegas.jpg", alt: "Bathroom remodeling plumbing with new vanity and copper supply lines in Las Vegas, NV" },
   "emergency-plumber": { src: "/media/service-emergency-plumber-las-vegas.jpg", alt: "Emergency plumber repairing pipes under a kitchen sink in Las Vegas, NV" },
   "commercial-plumber": { src: "/media/service-commercial-plumber-las-vegas.jpg", alt: "Commercial plumbing rough-in with large diameter pipes in a Las Vegas building" },
   // AC Contractor category & services
