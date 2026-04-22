@@ -18,7 +18,7 @@ const HomePage = () => {
     <>
       <SEO
         title="Plumbing & HVAC in Las Vegas, NV | Right On Plumbing, Heating and Air"
-        description="Right On Plumbing, Heating and Air provides expert plumbing and HVAC services in Las Vegas, NV. Licensed & insured, locally owned. Call (503) 932-8244 for a free estimate."
+        description="Right On Plumbing, Heating and Air provides expert plumbing and HVAC services in Las Vegas, NV. Licensed & insured, locally owned. Call (702) 888-0488 for a free estimate."
         canonical="/"
       />
       <Header />
@@ -180,7 +180,7 @@ const HomePage = () => {
             <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
             {[
               { q: "What services does Right On Plumbing, Heating and Air provide?", a: "We provide comprehensive plumbing and HVAC services including drain cleaning, water heater installation, AC repair and installation, furnace repair, and much more for residential and commercial properties in Las Vegas, NV." },
-              { q: "Do you offer free estimates?", a: "Yes, we provide free estimates and free inspections for all our services. Call (503) 932-8244 to schedule yours." },
+              { q: "Do you offer free estimates?", a: "Yes, we provide free estimates and free inspections for all our services. Call (702) 888-0488 to schedule yours." },
               { q: "Are you licensed and insured?", a: "Yes, Right On Plumbing, Heating and Air is fully licensed and insured to perform plumbing and HVAC work in Las Vegas, NV and surrounding areas." },
               { q: "What areas do you serve?", a: "We serve Las Vegas, Henderson, Boulder City, and surrounding communities in the Las Vegas Valley." },
             ].map((faq, i) => (
@@ -196,7 +196,7 @@ const HomePage = () => {
           "@type": "FAQPage",
           mainEntity: [
             { "@type": "Question", name: "What services does Right On Plumbing, Heating and Air provide?", acceptedAnswer: { "@type": "Answer", text: "We provide comprehensive plumbing and HVAC services including drain cleaning, water heater installation, AC repair and installation, furnace repair, and much more for residential and commercial properties in Las Vegas, NV." }},
-            { "@type": "Question", name: "Do you offer free estimates?", acceptedAnswer: { "@type": "Answer", text: "Yes, we provide free estimates and free inspections for all our services. Call (503) 932-8244 to schedule yours." }},
+            { "@type": "Question", name: "Do you offer free estimates?", acceptedAnswer: { "@type": "Answer", text: "Yes, we provide free estimates and free inspections for all our services. Call (702) 888-0488 to schedule yours." }},
             { "@type": "Question", name: "Are you licensed and insured?", acceptedAnswer: { "@type": "Answer", text: "Yes, Right On Plumbing, Heating and Air is fully licensed and insured to perform plumbing and HVAC work in Las Vegas, NV and surrounding areas." }},
             { "@type": "Question", name: "What areas do you serve?", acceptedAnswer: { "@type": "Answer", text: "We serve Las Vegas, Henderson, Boulder City, and surrounding communities in the Las Vegas Valley." }},
           ]
