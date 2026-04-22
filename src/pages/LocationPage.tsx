@@ -100,48 +100,6 @@ const LocationPage = () => {
               ))}
             </div>
 
-            {/* === Air Duct Cleaning Service === */}
-            <h2 className="text-2xl font-bold mb-3">Air Duct Cleaning in {location.city}, {location.state}</h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              Desert dust, pet dander, and construction debris accumulate quickly in {location.city} ductwork. Our <Link to="/air-duct-cleaning-service" className="text-secondary font-semibold hover:underline">air duct cleaning service</Link> removes built-up contaminants that reduce airflow and degrade indoor air quality. We use professional HEPA-filtered vacuums and rotary brush systems to clean supply and return ducts, registers, and plenums — leaving your home's air noticeably cleaner.
-            </p>
-            <h3 className="text-lg font-semibold mb-2">Other Duct Cleaning Services We Offer in {location.city}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
-              {SERVICE_CATEGORIES.find(c => c.slug === "air-duct-cleaning-service")?.services.map(s => (
-                <Link key={s.slug} to={`/air-duct-cleaning-service/${s.slug}`} className="flex items-center gap-2 px-3 py-2 rounded-md bg-muted hover:bg-accent transition-colors text-sm font-medium">
-                  <span className="text-secondary">→</span> {s.name}
-                </Link>
-              ))}
-            </div>
-
-            {/* === Furnace Repair Service === */}
-            <h2 className="text-2xl font-bold mb-3">Furnace Repair in {location.city}, {location.state}</h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              Desert winters bring overnight lows into the 30s, and a broken furnace can leave your {location.city} home uncomfortably cold. Our <Link to="/furnace-repair-service" className="text-secondary font-semibold hover:underline">furnace repair service</Link> covers gas and electric furnaces of all brands — from ignitor and flame sensor replacements to blower motor repairs and heat exchanger inspections. We prioritize safety and efficiency on every call.
-            </p>
-            <h3 className="text-lg font-semibold mb-2">Other Furnace Services We Offer in {location.city}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
-              {SERVICE_CATEGORIES.find(c => c.slug === "furnace-repair-service")?.services.map(s => (
-                <Link key={s.slug} to={`/furnace-repair-service/${s.slug}`} className="flex items-center gap-2 px-3 py-2 rounded-md bg-muted hover:bg-accent transition-colors text-sm font-medium">
-                  <span className="text-secondary">→</span> {s.name}
-                </Link>
-              ))}
-            </div>
-
-            {/* === Heating Contractor === */}
-            <h2 className="text-2xl font-bold mb-3">Heating Contractor in {location.city}, {location.state}</h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              As a full-service <Link to="/heating-contractor" className="text-secondary font-semibold hover:underline">heating contractor</Link>, we install and maintain heating systems that keep {location.city} homes warm during the cooler months. Whether you need a new furnace installation, a heat pump upgrade, or routine maintenance to extend the life of your existing system, our licensed technicians deliver reliable results backed by warranty.
-            </p>
-            <h3 className="text-lg font-semibold mb-2">Other Heating Services We Offer in {location.city}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
-              {SERVICE_CATEGORIES.find(c => c.slug === "heating-contractor")?.services.map(s => (
-                <Link key={s.slug} to={`/heating-contractor/${s.slug}`} className="flex items-center gap-2 px-3 py-2 rounded-md bg-muted hover:bg-accent transition-colors text-sm font-medium">
-                  <span className="text-secondary">→</span> {s.name}
-                </Link>
-              ))}
-            </div>
-
             {/* === HVAC Contractor === */}
             <h2 className="text-2xl font-bold mb-3">HVAC Contractor in {location.city}, {location.state}</h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -151,20 +109,6 @@ const LocationPage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
               {SERVICE_CATEGORIES.find(c => c.slug === "hvac-contractor")?.services.map(s => (
                 <Link key={s.slug} to={`/hvac-contractor/${s.slug}`} className="flex items-center gap-2 px-3 py-2 rounded-md bg-muted hover:bg-accent transition-colors text-sm font-medium">
-                  <span className="text-secondary">→</span> {s.name}
-                </Link>
-              ))}
-            </div>
-
-            {/* === Mechanical Contractor === */}
-            <h2 className="text-2xl font-bold mb-3">Mechanical Contractor in {location.city}, {location.state}</h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              As a licensed <Link to="/mechanical-contractor" className="text-secondary font-semibold hover:underline">mechanical contractor</Link>, we go beyond standard plumbing and HVAC work to handle complex mechanical systems in {location.city} homes and light commercial properties. From gas line installation and backflow prevention to whole-house repiping, our team brings the expertise and equipment needed for jobs that require a higher level of technical skill and code compliance.
-            </p>
-            <h3 className="text-lg font-semibold mb-2">Other Mechanical Services We Offer in {location.city}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
-              {SERVICE_CATEGORIES.find(c => c.slug === "mechanical-contractor")?.services.map(s => (
-                <Link key={s.slug} to={`/mechanical-contractor/${s.slug}`} className="flex items-center gap-2 px-3 py-2 rounded-md bg-muted hover:bg-accent transition-colors text-sm font-medium">
                   <span className="text-secondary">→</span> {s.name}
                 </Link>
               ))}

@@ -55,11 +55,7 @@ export const Header = () => {
                   <Link to="/plumber" className="block px-4 py-2 hover:bg-muted text-sm">Plumber</Link>
                   <Link to="/air-conditioning-contractor" className="block px-4 py-2 hover:bg-muted text-sm">AC Contractor</Link>
                   <Link to="/air-conditioning-repair-service" className="block px-4 py-2 hover:bg-muted text-sm">AC Repair Service</Link>
-                  <Link to="/air-duct-cleaning-service" className="block px-4 py-2 hover:bg-muted text-sm">Air Duct Cleaning</Link>
-                  <Link to="/furnace-repair-service" className="block px-4 py-2 hover:bg-muted text-sm">Furnace Repair</Link>
-                  <Link to="/heating-contractor" className="block px-4 py-2 hover:bg-muted text-sm">Heating Contractor</Link>
                   <Link to="/hvac-contractor" className="block px-4 py-2 hover:bg-muted text-sm">HVAC Contractor</Link>
-                  <Link to="/mechanical-contractor" className="block px-4 py-2 hover:bg-muted text-sm">Mechanical Contractor</Link>
                 </div>
               </div>
               <div className="relative group">
@@ -96,11 +92,7 @@ export const Header = () => {
                 <Link to="/plumber" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Plumber</Link>
                 <Link to="/air-conditioning-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">AC Contractor</Link>
                 <Link to="/air-conditioning-repair-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">AC Repair Service</Link>
-                <Link to="/air-duct-cleaning-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Air Duct Cleaning</Link>
-                <Link to="/furnace-repair-service" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Furnace Repair</Link>
-                <Link to="/heating-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Heating Contractor</Link>
-                <Link to="/hvac-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">HVAC Contractor</Link>
-                <Link to="/mechanical-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 border-b border-border hover:text-secondary">Mechanical Contractor</Link>
+                <Link to="/hvac-contractor" onClick={() => setMobileOpen(false)} className="py-2 pl-4 border-b border-border hover:text-secondary">HVAC Contractor</Link>
                 <span className="py-3 border-b border-border text-muted-foreground text-xs uppercase tracking-wider">Service Areas</span>
                 <Link to="/las-vegas" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">Las Vegas</Link>
                 <Link to="/north-las-vegas" onClick={() => setMobileOpen(false)} className="py-2 pl-4 hover:text-secondary">North Las Vegas</Link>
@@ -170,11 +162,7 @@ export const Footer = () => {
               <li><Link to="/plumber" className="hover:text-secondary transition-colors">Plumber</Link></li>
               <li><Link to="/air-conditioning-contractor" className="hover:text-secondary transition-colors">AC Contractor</Link></li>
               <li><Link to="/air-conditioning-repair-service" className="hover:text-secondary transition-colors">AC Repair</Link></li>
-              <li><Link to="/air-duct-cleaning-service" className="hover:text-secondary transition-colors">Air Duct Cleaning</Link></li>
-              <li><Link to="/furnace-repair-service" className="hover:text-secondary transition-colors">Furnace Repair</Link></li>
-              <li><Link to="/heating-contractor" className="hover:text-secondary transition-colors">Heating Contractor</Link></li>
               <li><Link to="/hvac-contractor" className="hover:text-secondary transition-colors">HVAC Contractor</Link></li>
-              <li><Link to="/mechanical-contractor" className="hover:text-secondary transition-colors">Mechanical Contractor</Link></li>
             </ul>
           </div>
           <div>

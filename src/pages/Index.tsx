@@ -61,10 +61,10 @@ const HomePage = () => {
               {BUSINESS.name} is the locally owned company <Link to="/las-vegas" className="text-secondary font-semibold hover:underline">Las Vegas</Link> homeowners call for everything from a leaking faucet to a complete HVAC overhaul. Our licensed technicians handle <Link to="/drainage-service" className="text-secondary font-semibold hover:underline">drainage service</Link> — including <Link to="/drainage-service/drain-cleaning" className="text-secondary font-semibold hover:underline">drain cleaning</Link> and <Link to="/drainage-service/sewer-camera-inspection" className="text-secondary font-semibold hover:underline">sewer camera inspections</Link> — alongside full-service <Link to="/plumber" className="text-secondary font-semibold hover:underline">plumbing</Link> and <Link to="/hvac-contractor" className="text-secondary font-semibold hover:underline">HVAC contracting</Link>.
             </p>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              When summer temperatures push past 115°, a working air conditioner isn't optional — it's survival. That's why our <Link to="/air-conditioning-repair-service" className="text-secondary font-semibold hover:underline">AC repair service</Link> offers same-day response across the valley. And when winter nights dip below freezing, our <Link to="/furnace-repair-service" className="text-secondary font-semibold hover:underline">furnace repair</Link> team keeps your family warm without the runaround.
+              When summer temperatures push past 115°, a working air conditioner isn't optional — it's survival. That's why our <Link to="/air-conditioning-repair-service" className="text-secondary font-semibold hover:underline">AC repair service</Link> offers same-day response across the valley. From <Link to="/air-conditioning-contractor" className="text-secondary font-semibold hover:underline">new AC installations</Link> to <Link to="/hvac-contractor/hvac-tune-up" className="text-secondary font-semibold hover:underline">seasonal HVAC tune-ups</Link>, we keep your system running through every Las Vegas summer.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              We proudly serve homeowners in <Link to="/henderson" className="text-secondary font-semibold hover:underline">Henderson</Link> and <Link to="/boulder-city" className="text-secondary font-semibold hover:underline">Boulder City</Link> with the same dedication. Whether you need a <Link to="/plumber/tankless-water-heater-installation" className="text-secondary font-semibold hover:underline">tankless water heater installation</Link> or <Link to="/air-duct-cleaning-service" className="text-secondary font-semibold hover:underline">air duct cleaning</Link>, <Link to="/contact" className="text-secondary font-semibold hover:underline">contact us for a free estimate</Link> and see why our neighbors trust us with their homes.
+              We proudly serve homeowners in <Link to="/north-las-vegas" className="text-secondary font-semibold hover:underline">North Las Vegas</Link>, <Link to="/henderson" className="text-secondary font-semibold hover:underline">Henderson</Link>, and <Link to="/boulder-city" className="text-secondary font-semibold hover:underline">Boulder City</Link> with the same dedication. Whether you need a <Link to="/plumber/tankless-water-heater-installation" className="text-secondary font-semibold hover:underline">tankless water heater installation</Link> or a <Link to="/hvac-contractor/smart-thermostat-installation" className="text-secondary font-semibold hover:underline">smart thermostat upgrade</Link>, <Link to="/contact" className="text-secondary font-semibold hover:underline">contact us for a free estimate</Link> and see why our neighbors trust us with their homes.
             </p>
           </div>
         </section>
@@ -81,11 +81,7 @@ const HomePage = () => {
                   "plumber": <Wrench className="h-8 w-8" />,
                   "air-conditioning-contractor": <Thermometer className="h-8 w-8" />,
                   "air-conditioning-repair-service": <Thermometer className="h-8 w-8" />,
-                  "air-duct-cleaning-service": <Wrench className="h-8 w-8" />,
-                  "furnace-repair-service": <Thermometer className="h-8 w-8" />,
-                  "heating-contractor": <Thermometer className="h-8 w-8" />,
                   "hvac-contractor": <Thermometer className="h-8 w-8" />,
-                  "mechanical-contractor": <Wrench className="h-8 w-8" />,
                 };
                 return (
                   <Link to={`/${cat.slug}`} key={cat.slug} className="bg-card rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-border group">
