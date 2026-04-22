@@ -45,7 +45,7 @@ const SERVICE_IMAGES: Record<string, { src: string; alt: string }> = {
   "central-ac-installation": { src: "/media/service-central-ac-installation-unique-las-vegas.jpg", alt: "Central AC air handler installation for whole-home cooling in Las Vegas, NV" },
   "new-ac-unit-installation": { src: "/media/service-new-ac-unit-installation-las-vegas.jpg", alt: "New AC unit installed on concrete pad at a Las Vegas desert home" },
   "air-conditioning-system-installation": { src: "/media/service-air-conditioning-system-installation-las-vegas.jpg", alt: "Complete split air conditioning system installation in Las Vegas, NV" },
-  "window-ac-installation": { src: "/media/service-window-ac-installation-las-vegas.jpg", alt: "Window AC unit being installed in a residential window in Las Vegas, NV" },
+  
   // AC Repair category & services
   "air-conditioning-repair-service": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "AC repair technician diagnosing condenser unit issues in Las Vegas, NV" },
   "ac-repair": { src: "/media/service-ac-repair-technician-las-vegas.jpg", alt: "AC repair service restoring cooling to a Las Vegas home" },
