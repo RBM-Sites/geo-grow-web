@@ -4,12 +4,12 @@ export const BUSINESS = {
   phoneFormatted: "(702) 888-0488",
   email: "Info@rightonplumbing.org",
   address: {
-    street: "6621 Cowboy Trial",
+    street: "6621 Cowboy Trail",
     city: "Las Vegas",
     state: "NV",
     zip: "81314",
   },
-  fullAddress: "6621 Cowboy Trial, Las Vegas, NV 81314",
+  fullAddress: "6621 Cowboy Trail, Las Vegas, NV 81314",
   hours: [
     { day: "Monday", open: "7:30 AM", close: "5:30 PM" },
     { day: "Tuesday", open: "7:30 AM", close: "5:30 PM" },
