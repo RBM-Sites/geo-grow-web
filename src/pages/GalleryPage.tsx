@@ -30,7 +30,7 @@ const GalleryPage = () => {
         canonical="/gallery"
       />
       <Header />
-      <PageHero title="Our Work — Recent Projects in Las Vegas" subtitle="Browse recent plumbing and HVAC projects across Las Vegas, Henderson, and Boulder City." bgImage="/media/hero-gallery-projects-las-vegas.jpg" />
+      <PageHero title="Our Work — Recent Projects in Las Vegas" subtitle="Browse recent plumbing and HVAC projects across Las Vegas, North Las Vegas, Henderson, and Boulder City." bgImage="/media/hero-gallery-projects-las-vegas.jpg" />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Project Gallery" }]} />
       <main className="container-custom section-padding">
 
