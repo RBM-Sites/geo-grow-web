@@ -5,18 +5,18 @@ import { BUSINESS } from "@/data/business";
 import { X } from "lucide-react";
 
 const images = [
-  { src: "/media/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg", alt: "Residential water heater installation by Right On Plumbing in Las Vegas, NV" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-02-las-vegas-nv.jpg", alt: "Emergency drain cleaning service at a Las Vegas home" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-03-las-vegas-nv.jpg", alt: "New AC unit installed for a Henderson, NV homeowner" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-04-las-vegas-nv.jpg", alt: "Whole-home HVAC system replacement in the Las Vegas Valley" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-05-las-vegas-nv.jpg", alt: "Sewer camera inspection revealing root intrusion in Las Vegas" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-06-las-vegas-nv.jpg", alt: "Tankless water heater upgrade for a Boulder City, NV residence" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-07-las-vegas-nv.jpg", alt: "Furnace repair completed during winter in Las Vegas, NV" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-08-las-vegas-nv.jpg", alt: "Air duct cleaning improving indoor air quality in a Las Vegas home" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-09-las-vegas-nv.jpg", alt: "Sewer line replacement minimizing yard disruption in Henderson" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-10-las-vegas-nv.jpg", alt: "Commercial plumbing installation for a Las Vegas business" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-11-las-vegas-nv.jpg", alt: "Bathroom plumbing remodel including new fixtures in Las Vegas" },
-  { src: "/media/right-on-plumbing-heating-and-air-project-12-las-vegas-nv.jpg", alt: "Completed HVAC maintenance by the Right On Plumbing team in Las Vegas" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg", alt: "Thermogun used to find water" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-02-las-vegas-nv.jpg", alt: "Free standing tub installation" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-03-las-vegas-nv.jpg", alt: "Sewer Repair" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-04-las-vegas-nv.jpg", alt: "Shower Valve, Shower head and Rain Head Installation" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-05-las-vegas-nv.jpg", alt: "2 tankless water heater installation" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-06-las-vegas-nv.jpg", alt: "Rooftop packaged unit installation" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-07-las-vegas-nv.jpg", alt: "Single tankless water heater installation" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-08-las-vegas-nv.jpg", alt: "Whole House Water Filtration System Install" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-09-las-vegas-nv.jpg", alt: "Tankless Water Heater" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-10-las-vegas-nv.jpg", alt: "Traditional Water Heater and Whole Home Filtration" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-11-las-vegas-nv.jpg", alt: "New shower valves installation" },
+  { src: "/media/right-on-plumbing-heating-and-air-project-12-las-vegas-nv.jpg", alt: "Rooftop Packaged Unit installation" },
 ];
 
 const GalleryPage = () => {
