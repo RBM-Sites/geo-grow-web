@@ -2,327 +2,164 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rightonplumbing.org/</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/about</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/contact</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/reviews</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/gallery</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <!-- /thank-you excluded: noindex page -->
-  <url>
-    <loc>https://rightonplumbing.org/las-vegas</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/henderson</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/north-las-vegas</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/boulder-city</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/drainage-service</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/drainage-service/drain-cleaning</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/drainage-service/clogged-drain-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/drainage-service/sewer-camera-inspection</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/drainage-service/sewer-line-replacement</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/plumber</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/water-heater-replacement</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/water-heater-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/tankless-water-heater-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/tankless-water-heater</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/whole-house-water-filtration</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/sewer-line-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/toilet-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/toilet-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/faucet-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/faucet-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/leak-detection</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/emergency-plumber</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/plumber/commercial-plumber</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/air-conditioning-contractor</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-contractor/ac-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-contractor/air-conditioner-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-contractor/ac-replacement</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-contractor/ductless-ac-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-contractor/central-ac-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-contractor/new-ac-unit-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-contractor/air-conditioning-system-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/air-conditioning-repair-service</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-repair-service/air-conditioner-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-repair-service/air-conditioning-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-not-cooling-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-not-turning-on-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-refrigerant-recharge</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-leak-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-compressor-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-fan-motor-replacement</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-capacitor-replacement</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/hvac-contractor</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/las-vegas</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/henderson</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/north-las-vegas</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/boulder-city</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/drainage-service/drain-cleaning</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/drainage-service/clogged-drain-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/drainage-service/sewer-camera-inspection</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/drainage-service/sewer-line-replacement</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/water-heater-replacement</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/water-heater-installation</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/tankless-water-heater-installation</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/sewer-line-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/toilet-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/toilet-installation</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/faucet-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/faucet-installation</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/leak-detection</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/emergency-plumber</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/commercial-plumber</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/tankless-water-heater</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/plumber/whole-house-water-filtration</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-contractor/ac-installation</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-contractor/air-conditioner-installation</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-contractor/ac-replacement</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-contractor/ductless-ac-installation</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-contractor/central-ac-installation</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-contractor/new-ac-unit-installation</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-contractor/air-conditioning-system-installation</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-repair-service/air-conditioner-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-repair-service/air-conditioning-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-not-cooling-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-not-turning-on-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-refrigerant-recharge</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-leak-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-compressor-repair</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-fan-motor-replacement</loc>
+  </url>
+  <url>
+    <loc>https://rightonplumbing.org/air-conditioning-repair-service/ac-capacitor-replacement</loc>
   </url>
   <url>
     <loc>https://rightonplumbing.org/hvac-contractor/hvac-tune-up</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/hvac-contractor/hvac-maintenance</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/hvac-contractor/hvac-inspection</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/hvac-contractor/thermostat-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/hvac-contractor/uv-air-purifier-installation</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rightonplumbing.org/hvac-contractor/heat-pump-repair</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
-  </urlset>
+</urlset>
