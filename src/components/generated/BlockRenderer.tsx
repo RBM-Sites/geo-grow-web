@@ -18,7 +18,7 @@ import {
 } from "@/lib/generatedContent";
 
 /** Internal hrefs use the SPA router; absolute URLs get a real anchor. */
-const SmartLink = ({ href, className, children }: { href: string; className?: string; children: ReactNode }) =>
+export const SmartLink = ({ href, className, children }: { href: string; className?: string; children: ReactNode }) =>
   /^https?:\/\//i.test(href) ? (
     <a href={href} className={className} target="_blank" rel="noopener noreferrer">
       {children}
@@ -50,7 +50,7 @@ const renderEmphasis = (text: string): ReactNode[] => {
 };
 
 /** Render text that may contain inline link tokens as React nodes. */
-const InlineText = ({ text }: { text: unknown }) => {
+export const InlineText = ({ text }: { text: unknown }) => {
   const segments = splitTextWithLinkTokens(asText(text));
   if (segments.length === 0) return null;
   return (

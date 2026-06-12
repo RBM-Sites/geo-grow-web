@@ -229,6 +229,13 @@ export function getPageBySlug(slug: string): GeneratedPage | null {
   return PAGES.get(cleaned) ?? null;
 }
 
+/** Manifest entry for a non-blog page slug (used to read content_type). */
+export function getEntryBySlug(slug: string): ManifestEntry | null {
+  const cleaned = cleanSlug(slug);
+  if (!cleaned) return null;
+  return MANIFEST.find((m) => m.slug === cleaned) ?? null;
+}
+
 /** Page payload for a blog post (accepts bare or "blog/"-prefixed slugs). */
 export function getBlogBySlug(slug: string): GeneratedPage | null {
   const cleaned = cleanSlug(bareBlogSlug(asText(slug)));
@@ -257,6 +264,19 @@ export function getBlogBySlug(slug: string): GeneratedPage | null {
 // Anything unresolved returns null and MUST be rendered as plain text.
 
 function resolveFoundationUrl(target: string): string | null {
+  // Two-segment target like "plumber/water-heater-replacement" → foundation
+  // /<category>/<service> detail page. When the category half doesn't exist
+  // on this site, fall back to resolving the bare service slug (the publisher
+  // sometimes files a service under a category this site doesn't have).
+  const slash = target.indexOf("/");
+  if (slash > 0) {
+    const head = target.slice(0, slash);
+    const tail = target.slice(slash + 1);
+    if (getCategoryBySlug(head)?.services.some((s) => s.slug === tail)) {
+      return `/${head}/${tail}`;
+    }
+    return resolveFoundationUrl(tail);
+  }
   // Direct category or location page: /<slug>
   if (getCategoryBySlug(target) || getLocationBySlug(target)) return `/${target}`;
   // Service page: /<parent>/<service>
@@ -472,6 +492,11 @@ export function normalizeImages(images: unknown): NormalizedImage[] {
       alt: asText(img.alt) || asText(img.alt_text),
       slot: asText(img.slot).toLowerCase(),
     }));
+}
+
+/** Preferred hero image: the explicit "hero" slot first, else the first image. */
+export function pickHeroImage(images: NormalizedImage[]): NormalizedImage | null {
+  return images.find((img) => img.slot === "hero") ?? images[0] ?? null;
 }
 
 /** Normalize faq_pairs: keep entries with at least a question or an answer. */

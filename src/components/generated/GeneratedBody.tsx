@@ -17,6 +17,7 @@ import {
   formatDisplayDate,
   normalizeFaqPairs,
   normalizeImages,
+  pickHeroImage,
   resolveInternalLinkUrl,
   substituteLinkTokensHtml,
   type GeneratedPage,
@@ -35,7 +36,7 @@ const GeneratedBody = ({ page }: { page: GeneratedPage }) => {
         : "";
 
   const images = normalizeImages(page.images);
-  const heroImage = images.find((img) => img.slot === "hero") ?? images[0] ?? null;
+  const heroImage = pickHeroImage(images);
   const inlineImages = images.filter((img) => img !== heroImage);
 
   // The publisher emits FAQs both as body faq blocks AND as a faq_pairs field.

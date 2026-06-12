@@ -1,12 +1,28 @@
 // Renders an AI-generated (publisher-committed) page from src/content/pages/.
 // Reached via the slug fallback routers in App.tsx — only after the slug has
 // failed to match a foundation location/category/service route.
+//
+// Layout selection:
+//   - content_type "location_page" / "neighborhood_page" → the foundation
+//     LocationPage's visual design (GeneratedLocationLayout: hero-image
+//     banner, sectioned content, service card grids, sticky call sidebar)
+//   - everything else (service_page, unknown) → the generic article layout
+//     (GeneratedBody), unchanged.
 
 import { Header, Footer, Breadcrumbs, CTABanner, GoogleMapEmbed, PageHero } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import NotFound from "./NotFound";
 import GeneratedBody from "@/components/generated/GeneratedBody";
-import { asText, getPageBySlug, normalizeSchemaJson } from "@/lib/generatedContent";
+import GeneratedLocationLayout from "@/components/generated/GeneratedLocationLayout";
+import {
+  asText,
+  extractBlocks,
+  getEntryBySlug,
+  getPageBySlug,
+  normalizeImages,
+  normalizeSchemaJson,
+  pickHeroImage,
+} from "@/lib/generatedContent";
 
 const DEFAULT_HERO_BG = "/media/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg";
 
@@ -20,20 +36,37 @@ const GeneratedPage = ({ slug }: { slug: string }) => {
   const canonicalPath = `/${asText(slug).replace(/^\/+/, "")}`;
   const schemaJson = normalizeSchemaJson(page.schema_json);
 
-  const townLine = [asText(page.town_name), asText(page.state)].filter(Boolean).join(", ");
+  const townName = asText(page.town_name);
+  const townLine = [townName, asText(page.state)].filter(Boolean).join(", ");
+
+  // Manifest content_type wins; fall back to the payload's own field. The
+  // location layout also requires structured blocks — legacy HTML-only
+  // payloads keep the article renderer, which knows how to handle them.
+  const contentType = asText(getEntryBySlug(slug)?.content_type) || asText(page.content_type);
+  const isLocationStyle =
+    (contentType === "location_page" || contentType === "neighborhood_page") &&
+    !!extractBlocks(page.body_content);
+
+  // Location-style pages put the hero-slot image behind the PageHero banner,
+  // exactly like the foundation location pages (article pages keep rendering
+  // it inline below the H1 instead).
+  const heroImage = isLocationStyle ? pickHeroImage(normalizeImages(page.images)) : null;
+
+  const subtitle =
+    isLocationStyle && townName
+      ? `Trusted plumbing and HVAC services for ${townName} homeowners.`
+      : townLine
+        ? `Serving ${townLine} and the greater Las Vegas Valley.`
+        : undefined;
 
   return (
     <>
       <SEO title={title} description={description} canonical={canonicalPath} />
       <Header />
-      <PageHero
-        title={h1}
-        subtitle={townLine ? `Serving ${townLine} and the greater Las Vegas Valley.` : undefined}
-        bgImage={DEFAULT_HERO_BG}
-      />
+      <PageHero title={h1} subtitle={subtitle} bgImage={heroImage?.url || DEFAULT_HERO_BG} />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: h1 }]} />
       <main className="container-custom section-padding">
-        <GeneratedBody page={page} />
+        {isLocationStyle ? <GeneratedLocationLayout page={page} /> : <GeneratedBody page={page} />}
       </main>
       <CTABanner />
       <GoogleMapEmbed />

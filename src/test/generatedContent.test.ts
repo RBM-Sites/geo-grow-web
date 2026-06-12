@@ -18,9 +18,22 @@ import {
 } from "@/lib/generatedContent";
 
 describe("generatedContent loader", () => {
-  it("returns an empty manifest before first publish", () => {
-    expect(listEntries()).toEqual([]);
-    expect(listEntries("blog_post")).toEqual([]);
+  // The publisher has committed real content, so the manifest is no longer
+  // empty — assert well-formedness instead of a fixed snapshot so future
+  // publishes can't break the suite.
+  it("loads only well-formed manifest entries", () => {
+    for (const entry of listEntries()) {
+      expect(typeof entry.slug).toBe("string");
+      expect(entry.slug.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("every committed page is reachable through its manifest entry", () => {
+    for (const entry of listEntries()) {
+      const payload =
+        entry.content_type === "blog_post" ? getBlogBySlug(entry.slug) : getPageBySlug(entry.slug);
+      expect(payload, `payload missing for manifest slug "${entry.slug}"`).not.toBeNull();
+    }
   });
 
   it("returns null for unknown or unsafe slugs", () => {
@@ -41,6 +54,19 @@ describe("resolveIntent", () => {
   it("resolves service intents against foundation service routes", () => {
     expect(resolveIntent("service:drain-cleaning")).toBe("/drainage-service/drain-cleaning");
     expect(resolveIntent("service:ac-repair")).toBe("/air-conditioning-repair-service/ac-repair");
+  });
+
+  it("resolves two-segment category/service intents against foundation routes", () => {
+    expect(resolveIntent("service:plumber/water-heater-replacement")).toBe(
+      "/plumber/water-heater-replacement"
+    );
+    // Category half doesn't exist on this site → fall back to the bare
+    // service slug under its real foundation category.
+    expect(resolveIntent("service:furnace-repair-service/heat-pump-repair")).toBe(
+      "/hvac-contractor/heat-pump-repair"
+    );
+    // Neither half exists → null (rendered as plain text, never a 404 link)
+    expect(resolveIntent("service:septic-system-service/septic-tank-pumping")).toBeNull();
   });
 
   it("resolves category and location intents against foundation routes", () => {
