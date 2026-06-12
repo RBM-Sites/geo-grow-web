@@ -945,7 +945,20 @@
       "question": "Do I need flood protection for monsoon season in Paradise?"
     }
   ],
-  "images": null,
+  "images": [
+    {
+      "url": "https://pgnqlvedsdgabcnkjqym.supabase.co/storage/v1/object/public/page-images/f3f78843-caf0-4752-8e13-beba623b2f6e/c6ca13fb-8bdf-4d5f-8e17-9f4dbdfd5fdb/professional-hero-image-hero.png",
+      "slot": "hero",
+      "alt_text": "Professional hero image",
+      "file_name": "f3f78843-caf0-4752-8e13-beba623b2f6e/c6ca13fb-8bdf-4d5f-8e17-9f4dbdfd5fdb/professional-hero-image-hero.png"
+    },
+    {
+      "url": "https://pgnqlvedsdgabcnkjqym.supabase.co/storage/v1/object/public/page-images/f3f78843-caf0-4752-8e13-beba623b2f6e/c6ca13fb-8bdf-4d5f-8e17-9f4dbdfd5fdb/professional-image-2-image-image_2.png",
+      "slot": "image_2",
+      "alt_text": "Professional image 2 image",
+      "file_name": "f3f78843-caf0-4752-8e13-beba623b2f6e/c6ca13fb-8bdf-4d5f-8e17-9f4dbdfd5fdb/professional-image-2-image-image_2.png"
+    }
+  ],
   "internal_links": [
     {
       "intent": "service:air-conditioning-contractor/ac-installation",
@@ -1028,5 +1041,5 @@
       "anchor_text": "Spring Valley"
     }
   ],
-  "published_at": "2026-06-12T18:11:10.708Z"
+  "published_at": "2026-06-12T18:11:10.708+00:00"
 }
