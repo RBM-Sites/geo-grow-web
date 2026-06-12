@@ -292,7 +292,26 @@
       "question": "Do you offer same-day and emergency plumbing in Wyeth Ranch?"
     }
   ],
-  "images": null,
+  "images": [
+    {
+      "url": "https://pgnqlvedsdgabcnkjqym.supabase.co/storage/v1/object/public/page-images/f3f78843-caf0-4752-8e13-beba623b2f6e/2a882c8e-e786-4de4-8fa7-169a4fc20a83/professional-hero-image-hero.png",
+      "slot": "hero",
+      "alt_text": "Professional hero image",
+      "file_name": "f3f78843-caf0-4752-8e13-beba623b2f6e/2a882c8e-e786-4de4-8fa7-169a4fc20a83/professional-hero-image-hero.png"
+    },
+    {
+      "url": "https://pgnqlvedsdgabcnkjqym.supabase.co/storage/v1/object/public/page-images/f3f78843-caf0-4752-8e13-beba623b2f6e/2a882c8e-e786-4de4-8fa7-169a4fc20a83/professional-image-2-image-image_2.png",
+      "slot": "image_2",
+      "alt_text": "Professional image 2 image",
+      "file_name": "f3f78843-caf0-4752-8e13-beba623b2f6e/2a882c8e-e786-4de4-8fa7-169a4fc20a83/professional-image-2-image-image_2.png"
+    },
+    {
+      "url": "https://pgnqlvedsdgabcnkjqym.supabase.co/storage/v1/object/public/page-images/f3f78843-caf0-4752-8e13-beba623b2f6e/2a882c8e-e786-4de4-8fa7-169a4fc20a83/professional-image-3-image-image_3.png",
+      "slot": "image_3",
+      "alt_text": "Professional image 3 image",
+      "file_name": "f3f78843-caf0-4752-8e13-beba623b2f6e/2a882c8e-e786-4de4-8fa7-169a4fc20a83/professional-image-3-image-image_3.png"
+    }
+  ],
   "internal_links": [
     {
       "intent": "service:water-heater-replacement",
@@ -405,5 +424,5 @@
       "anchor_text": "Plumbing in Las Vegas, NV"
     }
   ],
-  "published_at": "2026-06-12T18:11:03.872Z"
+  "published_at": "2026-06-12T18:11:03.872+00:00"
 }
