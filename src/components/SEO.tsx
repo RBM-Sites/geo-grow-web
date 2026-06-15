@@ -9,7 +9,7 @@ interface SEOProps {
   noindex?: boolean;
 }
 
-const SITE_URL = "https://rightonplumbing.org";
+const SITE_URL = "https://rightonplumbingandair.com";
 
 const SEO = ({ title, description, canonical, ogImage = "/media/og-image.png", ogType = "website", noindex = false }: SEOProps) => {
   const fullCanonical = `${SITE_URL}${canonical}`;

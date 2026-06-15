@@ -23,7 +23,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-const SITE_URL = (process.env.VITE_SITE_URL || "https://rightonplumbing.org").replace(/\/+$/, "");
+const SITE_URL = (process.env.VITE_SITE_URL || "https://rightonplumbingandair.com").replace(/\/+$/, "");
 
 // ---------------------------------------------------------------------------
 // Foundation routes — parsed from src/data/business.ts. The file is TypeScript

@@ -23,6 +23,7 @@ import {
   normalizeSchemaJson,
   pickHeroImage,
 } from "@/lib/generatedContent";
+import { getLocationBySlug } from "@/data/business";
 
 const DEFAULT_HERO_BG = "/media/right-on-plumbing-heating-and-air-project-01-las-vegas-nv.jpg";
 
@@ -59,12 +60,23 @@ const GeneratedPage = ({ slug }: { slug: string }) => {
         ? `Serving ${townLine} and the greater Las Vegas Valley.`
         : undefined;
 
+  // Neighborhood pages nest under their parent foundation city when known:
+  // Home › {parentCity} › {h1}. Otherwise the flat Home › {h1} crumb.
+  const parentLocation = isLocationStyle ? getLocationBySlug(asText(page.parent_location_slug)) : undefined;
+  const breadcrumbs = parentLocation
+    ? [
+        { label: "Home", href: "/" },
+        { label: parentLocation.city, href: `/${parentLocation.slug}` },
+        { label: h1 },
+      ]
+    : [{ label: "Home", href: "/" }, { label: h1 }];
+
   return (
     <>
       <SEO title={title} description={description} canonical={canonicalPath} />
       <Header />
       <PageHero title={h1} subtitle={subtitle} bgImage={heroImage?.url || DEFAULT_HERO_BG} />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: h1 }]} />
+      <Breadcrumbs items={breadcrumbs} />
       <main className="container-custom section-padding">
         {isLocationStyle ? <GeneratedLocationLayout page={page} /> : <GeneratedBody page={page} />}
       </main>

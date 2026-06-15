@@ -255,7 +255,7 @@ export const localBusinessSchema = {
   "@type": ["LocalBusiness", "Plumber", "HVACBusiness"],
   name: BUSINESS.name,
   description: `${BUSINESS.industry} services in Las Vegas, NV. Licensed & insured, locally owned & operated. Free estimates.`,
-  url: "https://rightonplumbing.org",
+  url: "https://rightonplumbingandair.com",
   telephone: BUSINESS.phone,
   email: BUSINESS.email,
   address: {
@@ -274,8 +274,8 @@ export const localBusinessSchema = {
     closes: h.close,
   })),
   areaServed: ["Las Vegas", "North Las Vegas", "Henderson", "Boulder City"].map(c => ({ "@type": "City", name: c })),
-  image: "https://rightonplumbing.org/media/right-on-plumbing-heating-and-air-logo.jpeg",
-  logo: "https://rightonplumbing.org/media/right-on-plumbing-heating-and-air-logo.jpeg",
+  image: "https://rightonplumbingandair.com/media/right-on-plumbing-heating-and-air-logo.jpeg",
+  logo: "https://rightonplumbingandair.com/media/right-on-plumbing-heating-and-air-logo.jpeg",
   sameAs: [BUSINESS.social.facebook, BUSINESS.social.google],
   priceRange: "$$",
 };
