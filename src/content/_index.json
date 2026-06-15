@@ -20,5 +20,16 @@
     "state": "NV",
     "meta_description": "Plumbing, heating & AC in Paradise, NV from a local team. 24/7 emergency service, hard-water solutions, AC repair & install. Call Right On Plumbing today.",
     "focus_keyword": "plumbing paradise nv"
+  },
+  {
+    "slug": "summerlin-south",
+    "page_title": "Plumbing in Summerlin South, NV | Right On",
+    "content_type": "location_page",
+    "parent_location_slug": null,
+    "neighborhood_name": null,
+    "town_name": "Summerlin South",
+    "state": "NV",
+    "meta_description": "Plumbing, heating & AC in Summerlin South handled fast by a local team. Hard-water solutions, same-day AC repair, furnace fixes & 24/7 emergency service.",
+    "focus_keyword": "plumbing summerlin south nv"
   }
 ]
