@@ -1,7 +1,212 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Header, Footer, Breadcrumbs, CTABanner, GoogleMapEmbed } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS } from "@/data/business";
+
+const pricingSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "HVAC & Plumbing Pricing Guide — Right On Plumbing, Heating and Air | Las Vegas, NV",
+  "url": "https://www.rightonplumbingandair.com/pricing",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Service",
+        "name": "Key Factors That Determine Your Service Cost",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Service",
+        "name": "How Right On Plumbing, Heating and Air Structures Service Estimates",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Service",
+        "name": "What's Included in Standard Service Pricing",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Service",
+        "name": "Emergency Service Pricing Structure",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Service",
+        "name": "Understanding HVAC System Replacement Investment",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Service",
+        "name": "Maintenance Agreement Value and Pricing Logic",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Service",
+        "name": "Frequently Asked Questions About HVAC and Plumbing Pricing",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "Service",
+        "name": "Why does Las Vegas HVAC service cost more than other cities?",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "Service",
+        "name": "What's included in Right On Plumbing, Heating and Air's 100% satisfaction guarantee?",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "Service",
+        "name": "How do emergency service rates differ from regular appointment pricing?",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "Service",
+        "name": "Does it cost less to use one company for both HVAC and plumbing needs?",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "Service",
+        "name": "What factors affect HVAC system replacement cost in Las Vegas homes?",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "Service",
+        "name": "Right On Plumbing, Heating and Air specializes in coordinated plumbing and HVAC solutions for homes and businesses across the Las Vegas Valley",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "Service",
+        "name": "Unlike contractors limited to one trade, the company holds Nevada licenses for both C-1D Plumbing and C-21B Air Conditioning, allowing it to manage projects that involve piping, water heaters, heating, and central air-conditioning systems through one provider",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "item": {
+        "@type": "Service",
+        "name": "Its cross-trade expertise is especially useful for remodels, equipment replacements, and other projects where plumbing and climate-control systems must be planned and installed together",
+        "provider": {
+          "@type": "HVACBusiness",
+          "name": "Right On Plumbing, Heating and Air",
+          "url": "https://www.rightonplumbingandair.com/"
+        }
+      }
+    }
+  ]
+};
 
 const PricingPage = () => {
   return (
