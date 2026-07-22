@@ -70,6 +70,7 @@ export const Header = () => {
               <Link to="/about" className="hover:text-secondary transition-colors">About</Link>
               <Link to="/gallery" className="hover:text-secondary transition-colors">Gallery</Link>
               <Link to="/reviews" className="hover:text-secondary transition-colors">Reviews</Link>
+              <Link to="/faq" className="hover:text-secondary transition-colors">FAQ</Link>
               <Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link>
             </div>
             <div className="flex items-center gap-3">
@@ -101,6 +102,7 @@ export const Header = () => {
                 <Link to="/about" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">About</Link>
                 <Link to="/gallery" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Gallery</Link>
                 <Link to="/reviews" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Reviews</Link>
+                <Link to="/faq" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">FAQ</Link>
                 <Link to="/contact" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Contact</Link>
                 <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground mt-4 py-3 rounded-md font-bold text-center flex items-center justify-center gap-2">
                   <Phone className="h-4 w-4" /> Call {BUSINESS.phoneFormatted}
@@ -172,6 +174,16 @@ export const Footer = () => {
               <li><Link to="/north-las-vegas" className="hover:text-secondary transition-colors">North Las Vegas, NV</Link></li>
               <li><Link to="/henderson" className="hover:text-secondary transition-colors">Henderson, NV</Link></li>
               <li><Link to="/boulder-city" className="hover:text-secondary transition-colors">Boulder City, NV</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold mb-4">Company</h3>
+            <ul className="space-y-2 text-sm opacity-80">
+              <li><Link to="/about" className="hover:text-secondary transition-colors">About</Link></li>
+              <li><Link to="/gallery" className="hover:text-secondary transition-colors">Gallery</Link></li>
+              <li><Link to="/reviews" className="hover:text-secondary transition-colors">Reviews</Link></li>
+              <li><Link to="/faq" className="hover:text-secondary transition-colors">FAQ</Link></li>
+              <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>
