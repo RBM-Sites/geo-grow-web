@@ -75,7 +75,7 @@ const whyChooseUsSchema = {
             "@type": "EducationalOccupationalCredential",
             "credentialCategory": "certification",
             "name": "EPA Section 608 certification for refrigerant handling",
-            "url": "https://www.epa.gov/section608"
+            "url": "https://www.epa.gov/"
           },
           {
             "@type": "EducationalOccupationalCredential",
@@ -270,7 +270,7 @@ const WhyChooseUsPage = () => {
 
           <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">EPA Section 608 Certification: Federal Refrigerant Safety Compliance</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            EPA Section 608 certification is a federal requirement established by the Environmental Protection Agency that every HVAC technician must hold to legally handle refrigerants in air conditioning and heating systems. This certification is not optional—it is mandated by law under the Clean Air Act. Right On Plumbing, Heating and Air ensures all technicians maintain current EPA Section 608 certification (<a href="https://www.epa.gov/section608" target="_blank" rel="noopener noreferrer" className="text-secondary font-semibold hover:underline">verify EPA certification requirements</a>), which means they have passed rigorous testing on proper refrigerant recovery, recycling, and handling procedures. This matters to customers because improper refrigerant handling can result in environmental damage, federal fines, system contamination, and unsafe operation of your HVAC equipment. When you hire an EPA-certified technician, you are guaranteed that refrigerant work is performed legally, safely, and according to federal environmental standards. Unlicensed or uncertified technicians performing refrigerant work can leave your system vulnerable to leaks, contamination, or complete failure—and you could be held liable for environmental violations.
+            EPA Section 608 certification is a federal requirement established by the Environmental Protection Agency that every HVAC technician must hold to legally handle refrigerants in air conditioning and heating systems. This certification is not optional—it is mandated by law under the Clean Air Act. Right On Plumbing, Heating and Air ensures all technicians maintain current EPA Section 608 certification (<a href="https://www.epa.gov/" target="_blank" rel="noopener noreferrer" className="text-secondary font-semibold hover:underline">verify EPA certification requirements</a>), which means they have passed rigorous testing on proper refrigerant recovery, recycling, and handling procedures. This matters to customers because improper refrigerant handling can result in environmental damage, federal fines, system contamination, and unsafe operation of your HVAC equipment. When you hire an EPA-certified technician, you are guaranteed that refrigerant work is performed legally, safely, and according to federal environmental standards. Unlicensed or uncertified technicians performing refrigerant work can leave your system vulnerable to leaks, contamination, or complete failure—and you could be held liable for environmental violations.
           </p>
 
           <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">Licensed HVAC and Plumbing Contractors in Nevada: State-Verified Qualifications</h2>
