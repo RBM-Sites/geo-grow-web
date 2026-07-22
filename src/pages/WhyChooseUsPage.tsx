@@ -155,62 +155,6 @@ const whyChooseUsSchema = {
             "@type": "Answer",
             "text": "Las Vegas's extreme desert climate creates unique HVAC challenges that require specialized expertise. Right On Plumbing, Heating and Air understands proper system sizing for extreme heat loads, how dust and sand affect equipment longevity, hard water scaling issues, and the continuous-operation stress that Las Vegas summers place on air conditioning systems. Local technicians design, install, and maintain systems for actual desert conditions rather than generic national standards, which extends equipment life and prevents failures during peak demand."
           }
-        },
-        {
-          "@type": "Question",
-          "name": "What does EPA Section 608 certification mean for my HVAC repair?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "EPA Section 608 certification is a federal requirement that proves HVAC technicians are legally authorized to handle refrigerants in air conditioning and heating systems. Right On Plumbing, Heating and Air ensures all technicians hold current EPA certification, which means refrigerant work on your system is performed legally, safely, and according to federal environmental standards. Without EPA certification, technicians cannot legally purchase, handle, or dispose of refrigerants, and improper handling can damage your system and result in federal fines."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Right On Plumbing, Heating and Air licensed and insured in Nevada?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, Right On Plumbing, Heating and Air maintains active contractor licenses through the Nevada State Contractors Board for both HVAC and plumbing work, and carries required bonding and insurance including general liability and workers' compensation. You can verify their licensing status through the Nevada State Contractors Board website. Licensed, bonded, and insured status protects you financially if property damage or worker injuries occur during service."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does factory training on HVAC brands matter for my equipment?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Factory training means technicians are taught directly by equipment manufacturers and understand brand-specific installation procedures, diagnostic protocols, and troubleshooting techniques that general HVAC education doesn't cover. Right On Plumbing, Heating and Air technicians receive factory training on major brands, which results in faster diagnosis, proper installation that preserves warranty coverage, and repairs that address root causes. Many manufacturers require factory training for warranty-authorized repairs, so factory-trained technicians can perform warranty work without voiding your equipment coverage."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is included in Right On Plumbing, Heating and Air's 100% satisfaction guarantee?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The 100% satisfaction guarantee means if you're not completely satisfied with the work performed, Right On Plumbing, Heating and Air will return to correct issues at no additional charge or provide appropriate compensation. This guarantee creates accountability and gives you recourse if quality concerns arise after service. It demonstrates the company's confidence in work quality and ensures you're not stuck with incomplete or substandard repairs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Right On Plumbing, Heating and Air offer same-day service for HVAC emergencies?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, Right On Plumbing, Heating and Air offers same-day service for many repairs and installations, and provides 24/7 emergency service availability for urgent issues. In Las Vegas's extreme desert climate where summer temperatures exceed 110°F, rapid response to HVAC failures is critical for safety and comfort. Same-day service requires sophisticated scheduling, adequate staffing, and parts inventory that many competitors cannot provide."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why should I use one company for both HVAC and plumbing services?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Right On Plumbing, Heating and Air offers both comprehensive HVAC and plumbing services, which provides convenience through one service call, one invoice, and coordinated scheduling rather than juggling multiple contractors. Many home service issues involve both trades—water heaters, condensate drains, and ventilation systems require expertise in both areas. Using one provider eliminates finger-pointing between multiple companies when problems arise and often results in cost savings through bundled service."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What makes Las Vegas HVAC needs different from other climates?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Las Vegas's extreme desert climate creates unique HVAC challenges that require specialized expertise. Right On Plumbing, Heating and Air understands proper system sizing for extreme heat loads, how dust and sand affect equipment longevity, hard water scaling issues, and the continuous-operation stress that Las Vegas summers place on air conditioning systems. Local technicians design, install, and maintain systems for actual desert conditions rather than generic national standards, which extends equipment life and prevents failures during peak demand."
-          }
         }
       ]
     }
