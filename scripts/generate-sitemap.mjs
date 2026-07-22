@@ -41,7 +41,7 @@ const servicePaths = [...businessSrc.matchAll(/slug:\s*"([^"]+)",\s*parentSlug:\
 const categoryPaths = [...businessSrc.matchAll(/slug:\s*"([^"]+)",\s*description:/g)].map((m) => `/${m[1]}`);
 const locationPaths = [...businessSrc.matchAll(/slug:\s*"([^"]+)",\s*state:/g)].map((m) => `/${m[1]}`);
 
-const staticPaths = ["/", "/about", "/contact", "/reviews", "/gallery", "/faq"];
+const staticPaths = ["/", "/about", "/contact", "/reviews", "/gallery", "/faq", "/pricing"];
 
 // ---------------------------------------------------------------------------
 // Generated-content routes from the publisher manifest
