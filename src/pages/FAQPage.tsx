@@ -54,7 +54,11 @@ const FaqPage = () => {
               <h3 className="text-lg font-bold mb-2" itemProp="name">Are you licensed and insured to provide plumbing and HVAC services in Nevada?</h3>
               <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
                 <p className="text-muted-foreground leading-relaxed" itemProp="text">
-                  Yes. Right On Plumbing, Heating and Air is fully licensed and insured to perform plumbing and HVAC work in Nevada. Our technicians carry the required state and local credentials, and we maintain comprehensive liability insurance and workers’ compensation coverage for your protection.
+                  Yes. Right On Plumbing, Heating and Air is fully licensed and insured to perform plumbing and HVAC work in Nevada. Our technicians carry the required state and local credentials, and we maintain comprehensive liability insurance and workers’ compensation coverage for your protection. You can verify contractor licensing requirements through the{" "}
+                  <a href="https://www.nvcontractorsboard.com/" target="_blank" rel="noopener noreferrer" className="text-secondary font-semibold hover:underline">
+                    Nevada State Contractors Board
+                  </a>
+                  .
                 </p>
               </div>
             </div>
