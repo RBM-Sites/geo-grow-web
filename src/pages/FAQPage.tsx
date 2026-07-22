@@ -8,7 +8,113 @@ const faqPageSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "name": "Frequently Asked Questions — Right On Plumbing, Heating and Air | Las Vegas HVAC & Plumbing",
-  "mainEntity": []
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Right On Plumbing, Heating and Air licensed and insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Right On Plumbing, Heating and Air is a fully licensed, bonded, and insured contractor operating in Nevada. The company maintains required state contractor licenses through the Nevada State Contractors Board for both HVAC and plumbing work. Being bonded and insured protects customers and ensures compliance with Nevada state requirements for professional service providers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What certifications do your HVAC technicians hold?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Right On Plumbing, Heating and Air technicians hold EPA Section 608 certification for refrigerant handling, which is federally required to legally work with air conditioning and heating system refrigerants (verify EPA requirements). This certification ensures proper and safe refrigerant management according to environmental protection standards. The company also maintains Nevada state contractor licenses for all HVAC and plumbing services provided."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer any guarantees on your work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Right On Plumbing, Heating and Air offers a 100% satisfaction guarantee on all services performed. This guarantee demonstrates the company's commitment to quality workmanship and ensures that customers are completely satisfied with every job. If any issues arise with the work performed, the company will make it right."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas does Right On Plumbing, Heating and Air serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Right On Plumbing, Heating and Air serves the entire Las Vegas valley, including Las Vegas, Henderson, and North Las Vegas. As a locally-focused company, they have specialized knowledge of the area's unique desert climate challenges, local building codes, and the specific HVAC and plumbing needs common to homes and businesses in the region. This local expertise helps them address issues like extreme summer heat stress on cooling systems and hard water impacts on plumbing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer 24/7 emergency service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Right On Plumbing, Heating and Air provides 24-hour emergency services for urgent plumbing and HVAC issues. Whether your air conditioning fails during a Las Vegas summer heatwave or you experience a plumbing emergency in the middle of the night, the company offers round-the-clock availability. This ensures customers never have to wait until regular business hours when facing heating, cooling, or plumbing emergencies that require immediate attention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you respond to service calls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Response times vary depending on the nature of the service request and current demand, but Right On Plumbing, Heating and Air prioritizes emergency calls requiring immediate attention. For non-emergency service appointments, the company works to schedule at times convenient for customers. Because they serve the local Las Vegas valley exclusively, technicians can typically reach most service locations efficiently without long travel times from distant offices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of services does Right On Plumbing, Heating and Air provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Right On Plumbing, Heating and Air offers comprehensive HVAC and plumbing services under one company. This includes heating system repairs and installations, air conditioning services, plumbing repairs, and maintenance for both residential and commercial customers. Unlike competitors who specialize in only HVAC or only plumbing, this dual capability provides convenience for customers who need multiple home services from a single trusted provider, streamlining scheduling and building long-term service relationships."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve both residential and commercial customers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Right On Plumbing, Heating and Air provides services to both residential homes and commercial properties throughout the Las Vegas valley. This versatility means they have experience with everything from single-family home HVAC systems to commercial building heating, cooling, and plumbing infrastructure. Whether you're a homeowner or business owner in Las Vegas, Henderson, or North Las Vegas, the company can handle your HVAC and plumbing needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do your services cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Service costs vary depending on the specific work required, equipment needed, and complexity of the job. Right On Plumbing, Heating and Air provides estimates before beginning work so customers understand the costs involved. For detailed information about pricing structures and what factors influence service costs, visit the company's pricing page. The company's 100% satisfaction guarantee ensures that customers receive quality work that justifies the investment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I choose Right On Plumbing, Heating and Air over other contractors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Right On Plumbing, Heating and Air combines the personalized service of a family-owned business with professional licensing, bonding, and insurance. The company offers both HVAC and plumbing services, 24/7 emergency availability, and a 100% satisfaction guarantee. Their specialized expertise in Las Vegas desert climate challenges—including extreme heat stress on cooling systems and hard water plumbing issues—provides value that generic national chains cannot match. Learn more about the company's qualifications and commitment to quality on their credibility profile page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do if my air conditioner stops working in the summer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contact Right On Plumbing, Heating and Air immediately for 24/7 emergency service. During Las Vegas summers, a non-functioning air conditioner is a genuine emergency as indoor temperatures can quickly become dangerous. Check your thermostat settings and circuit breaker first, but if the system still won't run, professional diagnosis is necessary. The company's technicians have specialized experience with desert climate cooling system failures and can quickly identify whether the issue involves refrigerant levels, compressor problems, or other common Las Vegas HVAC challenges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I schedule HVAC maintenance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most HVAC professionals recommend annual maintenance for heating and cooling systems, though Las Vegas's extreme climate may warrant more frequent attention. Regular maintenance helps prevent emergency failures during peak summer heat when air conditioning systems work hardest. Right On Plumbing, Heating and Air can assess your specific system and usage patterns to recommend an appropriate maintenance schedule that balances cost with reliability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get same-day service for non-emergency issues?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Same-day service availability depends on the current schedule and demand, but Right On Plumbing, Heating and Air works to accommodate urgent needs whenever possible. Emergency issues always receive priority, while routine maintenance and non-urgent repairs can typically be scheduled within a reasonable timeframe. Because the company focuses exclusively on the Las Vegas valley rather than covering vast service territories, technicians can often reach customers more quickly than contractors traveling from distant locations."
+      }
+    }
+  ],
+  "url": "https://www.rightonplumbingandair.com/faq"
 };
 
 const FaqPage = () => {
