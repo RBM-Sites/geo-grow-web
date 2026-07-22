@@ -18,6 +18,7 @@ import ThankYouPage from "./pages/ThankYouPage";
 import GeneratedPage from "./pages/GeneratedPage";
 import BlogPage from "./pages/BlogPage";
 import BlogIndexPage from "./pages/BlogIndexPage";
+import FAQPage from "./pages/FAQPage";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
 
           {/* Generated blog content (publisher-committed JSON) */}
