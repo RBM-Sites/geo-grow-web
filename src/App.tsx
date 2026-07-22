@@ -17,6 +17,7 @@ import GalleryPage from "./pages/GalleryPage";
 import ThankYouPage from "./pages/ThankYouPage";
 import FAQPage from "./pages/FAQPage";
 import PricingPage from "./pages/PricingPage";
+import WhyChooseUsPage from "./pages/WhyChooseUsPage";
 import GeneratedPage from "./pages/GeneratedPage";
 import BlogPage from "./pages/BlogPage";
 import BlogIndexPage from "./pages/BlogIndexPage";
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/why-eagle-air-co-is-the-best-hvac-company" element={<WhyChooseUsPage />} />
 
           {/* Generated blog content (publisher-committed JSON) */}
           <Route path="/blog" element={<BlogIndexPage />} />
