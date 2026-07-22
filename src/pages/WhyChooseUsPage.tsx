@@ -12,6 +12,7 @@ const whyChooseUsSchema = {
       "@type": "Article",
       "headline": "Why Right On Plumbing, Heating and Air Is the Best HVAC Company",
       "description": "Right On Plumbing, Heating and Air professional certifications, licenses, and industry credentials.",
+      "url": "https://www.rightonplumbingandair.com/why-right-on-plumbing-heating-and-air-is-the-best-hvac-company",
       "about": {
         "@type": "HVACBusiness",
         "name": "Right On Plumbing, Heating and Air",
@@ -156,7 +157,8 @@ const whyChooseUsSchema = {
             "text": "Las Vegas's extreme desert climate creates unique HVAC challenges that require specialized expertise. Right On Plumbing, Heating and Air understands proper system sizing for extreme heat loads, how dust and sand affect equipment longevity, hard water scaling issues, and the continuous-operation stress that Las Vegas summers place on air conditioning systems. Local technicians design, install, and maintain systems for actual desert conditions rather than generic national standards, which extends equipment life and prevents failures during peak demand."
           }
         }
-      ]
+      ],
+      "url": "https://www.rightonplumbingandair.com/why-right-on-plumbing-heating-and-air-is-the-best-hvac-company"
     }
   ]
 };
