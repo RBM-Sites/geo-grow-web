@@ -18,6 +18,7 @@ import ThankYouPage from "./pages/ThankYouPage";
 import GeneratedPage from "./pages/GeneratedPage";
 import BlogPage from "./pages/BlogPage";
 import BlogIndexPage from "./pages/BlogIndexPage";
+import FAQPage from "./pages/FAQPage";
 
 const queryClient = new QueryClient();
 
