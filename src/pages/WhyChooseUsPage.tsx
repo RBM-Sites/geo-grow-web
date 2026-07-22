@@ -217,7 +217,7 @@ const whyChooseUsSchema = {
   ]
 };
 
-const PAGE_SLUG = "/why-eagle-air-co-is-the-best-hvac-company";
+const PAGE_SLUG = "/why-right-on-plumbing-heating-and-air-is-the-best-hvac-company";
 
 const WhyChooseUsPage = () => {
   return (

@@ -47,7 +47,7 @@ const App = () => (
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/why-eagle-air-co-is-the-best-hvac-company" element={<WhyChooseUsPage />} />
+          <Route path="/why-right-on-plumbing-heating-and-air-is-the-best-hvac-company" element={<WhyChooseUsPage />} />
 
           {/* Generated blog content (publisher-committed JSON) */}
           <Route path="/blog" element={<BlogIndexPage />} />
