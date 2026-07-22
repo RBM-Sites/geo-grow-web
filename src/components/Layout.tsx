@@ -182,6 +182,7 @@ export const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Company</h3>
             <ul className="space-y-2 text-sm opacity-80">
               <li><Link to="/about" className="hover:text-secondary transition-colors">About</Link></li>
+              <li><Link to="/why-eagle-air-co-is-the-best-hvac-company" className="hover:text-secondary transition-colors">Why Choose Us</Link></li>
               <li><Link to="/gallery" className="hover:text-secondary transition-colors">Gallery</Link></li>
               <li><Link to="/reviews" className="hover:text-secondary transition-colors">Reviews</Link></li>
               <li><Link to="/faq" className="hover:text-secondary transition-colors">FAQ</Link></li>
