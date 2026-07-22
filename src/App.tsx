@@ -42,6 +42,7 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
 
           {/* Generated blog content (publisher-committed JSON) */}
