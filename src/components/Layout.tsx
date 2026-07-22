@@ -71,6 +71,7 @@ export const Header = () => {
               <Link to="/gallery" className="hover:text-secondary transition-colors">Gallery</Link>
               <Link to="/reviews" className="hover:text-secondary transition-colors">Reviews</Link>
               <Link to="/faq" className="hover:text-secondary transition-colors">FAQ</Link>
+              <Link to="/pricing" className="hover:text-secondary transition-colors">Pricing</Link>
               <Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link>
             </div>
             <div className="flex items-center gap-3">
@@ -103,6 +104,7 @@ export const Header = () => {
                 <Link to="/gallery" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Gallery</Link>
                 <Link to="/reviews" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Reviews</Link>
                 <Link to="/faq" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">FAQ</Link>
+                <Link to="/pricing" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Pricing</Link>
                 <Link to="/contact" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Contact</Link>
                 <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground mt-4 py-3 rounded-md font-bold text-center flex items-center justify-center gap-2">
                   <Phone className="h-4 w-4" /> Call {BUSINESS.phoneFormatted}
@@ -183,6 +185,7 @@ export const Footer = () => {
               <li><Link to="/gallery" className="hover:text-secondary transition-colors">Gallery</Link></li>
               <li><Link to="/reviews" className="hover:text-secondary transition-colors">Reviews</Link></li>
               <li><Link to="/faq" className="hover:text-secondary transition-colors">FAQ</Link></li>
+              <li><Link to="/pricing" className="hover:text-secondary transition-colors">Pricing</Link></li>
               <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link></li>
             </ul>
           </div>
