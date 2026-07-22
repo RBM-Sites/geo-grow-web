@@ -70,8 +70,6 @@ export const Header = () => {
               <Link to="/about" className="hover:text-secondary transition-colors">About</Link>
               <Link to="/gallery" className="hover:text-secondary transition-colors">Gallery</Link>
               <Link to="/reviews" className="hover:text-secondary transition-colors">Reviews</Link>
-              <Link to="/faq" className="hover:text-secondary transition-colors">FAQ</Link>
-              <Link to="/pricing" className="hover:text-secondary transition-colors">Pricing</Link>
               <Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link>
             </div>
             <div className="flex items-center gap-3">
@@ -103,8 +101,6 @@ export const Header = () => {
                 <Link to="/about" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">About</Link>
                 <Link to="/gallery" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Gallery</Link>
                 <Link to="/reviews" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Reviews</Link>
-                <Link to="/faq" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">FAQ</Link>
-                <Link to="/pricing" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Pricing</Link>
                 <Link to="/contact" onClick={() => setMobileOpen(false)} className="py-3 border-b border-border hover:text-secondary">Contact</Link>
                 <a href={`tel:${BUSINESS.phone}`} className="cta-gradient text-secondary-foreground mt-4 py-3 rounded-md font-bold text-center flex items-center justify-center gap-2">
                   <Phone className="h-4 w-4" /> Call {BUSINESS.phoneFormatted}
@@ -167,8 +163,6 @@ export const Footer = () => {
               <li><Link to="/air-conditioning-contractor" className="hover:text-secondary transition-colors">AC Contractor</Link></li>
               <li><Link to="/air-conditioning-repair-service" className="hover:text-secondary transition-colors">AC Repair</Link></li>
               <li><Link to="/hvac-contractor" className="hover:text-secondary transition-colors">HVAC Contractor</Link></li>
-              <li><Link to="/faq" className="hover:text-secondary transition-colors">FAQ</Link></li>
-              <li><Link to="/pricing" className="hover:text-secondary transition-colors">Pricing</Link></li>
             </ul>
           </div>
           <div>
