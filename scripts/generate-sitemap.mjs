@@ -1,8 +1,8 @@
 // Build-time sitemap generator.
 //
 // Enumerates:
-//   1. Static foundation routes (/, /about, /contact, /reviews, /gallery —
-//      /thank-you is intentionally excluded: it is a noindex page)
+//   1. Static foundation routes (/, /about, /contact, /reviews, /gallery,
+//      /faq — /thank-you is intentionally excluded: it is a noindex page)
 //   2. Foundation routes parsed from src/data/business.ts (categories,
 //      services, locations)
 //   3. Generated-content routes from src/content/_index.json (the manifest
@@ -41,7 +41,7 @@ const servicePaths = [...businessSrc.matchAll(/slug:\s*"([^"]+)",\s*parentSlug:\
 const categoryPaths = [...businessSrc.matchAll(/slug:\s*"([^"]+)",\s*description:/g)].map((m) => `/${m[1]}`);
 const locationPaths = [...businessSrc.matchAll(/slug:\s*"([^"]+)",\s*state:/g)].map((m) => `/${m[1]}`);
 
-const staticPaths = ["/", "/about", "/contact", "/reviews", "/gallery"];
+const staticPaths = ["/", "/about", "/contact", "/reviews", "/gallery", "/faq"];
 
 // ---------------------------------------------------------------------------
 // Generated-content routes from the publisher manifest
