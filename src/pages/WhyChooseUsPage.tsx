@@ -155,7 +155,7 @@ const whyChooseUsSchema = {
             "@type": "Answer",
             "text": "Las Vegas's extreme desert climate creates unique HVAC challenges that require specialized expertise. Right On Plumbing, Heating and Air understands proper system sizing for extreme heat loads, how dust and sand affect equipment longevity, hard water scaling issues, and the continuous-operation stress that Las Vegas summers place on air conditioning systems. Local technicians design, install, and maintain systems for actual desert conditions rather than generic national standards, which extends equipment life and prevents failures during peak demand."
           }
-        },
+        }
       ]
     }
   ]
