@@ -9,7 +9,6 @@ const faqPageSchema = {
   "@type": "FAQPage",
   "mainEntity": []
 };
-const faqPageSchemaScript = `<script type="application/ld+json">${JSON.stringify(faqPageSchema)}</script>`;
 
 const FaqPage = () => {
   return (
@@ -19,7 +18,9 @@ const FaqPage = () => {
         description="Get answers to common plumbing and HVAC questions from Right On Plumbing, Heating and Air. Serving Las Vegas, Henderson, North Las Vegas, and Boulder City, NV."
         canonical="/faq"
       />
-      <Helmet>{faqPageSchemaScript}</Helmet>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqPageSchema)}</script>
+      </Helmet>
       <Header />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Frequently Asked Questions" }]} />
 
