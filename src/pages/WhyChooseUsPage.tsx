@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Header, Footer, Breadcrumbs, CTABanner, GoogleMapEmbed } from "@/components/Layout";
+import { Header, Footer, Breadcrumbs, CTABanner, GoogleMapEmbed, PageHero } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS } from "@/data/business";
 
