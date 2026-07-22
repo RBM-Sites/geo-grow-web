@@ -216,6 +216,9 @@ const PricingPage = () => {
         description="Transparent HVAC and plumbing pricing in Las Vegas, Henderson, and North Las Vegas. Free estimates, upfront costs, and 24/7 emergency service from Right On Plumbing, Heating and Air."
         canonical="/pricing"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(pricingSchema)}</script>
+      </Helmet>
       <Header />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Pricing & Cost Guide" }]} />
 
