@@ -7,6 +7,7 @@ import { BUSINESS } from "@/data/business";
 const faqPageSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "name": "Frequently Asked Questions — Right On Plumbing, Heating and Air | Las Vegas HVAC & Plumbing",
   "mainEntity": []
 };
 
