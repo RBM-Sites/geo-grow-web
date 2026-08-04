@@ -74,6 +74,15 @@ export default function GoogleReviews({
     </div>
   );
 
+  const GoogleG = ({ size = 20 }) => (
+    <svg width={size} height={size} viewBox="0 0 48 48" aria-hidden="true" style={{ display: "block" }}>
+      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
+    </svg>
+  );
+
   const initials = (name) =>
     (name || "")
       .split(" ")
@@ -97,22 +106,49 @@ export default function GoogleReviews({
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-        <div
-          style={{
-            width: "36px",
-            height: "36px",
-            minWidth: "36px",
-            borderRadius: "9999px",
-            background: accent,
-            color: "#fff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "13px",
-            fontWeight: 600,
-          }}
-        >
-          {initials(review.author_name)}
+        <div style={{ position: "relative", width: "36px", height: "36px", minWidth: "36px" }}>
+          {review.profile_photo_url ? (
+            <img
+              src={review.profile_photo_url}
+              alt={`${review.author_name} Google profile photo`}
+              width="36"
+              height="36"
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              style={{ width: "36px", height: "36px", borderRadius: "9999px", objectFit: "cover", display: "block" }}
+            />
+          ) : (
+            <div
+              style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "9999px",
+                background: accent,
+                color: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "13px",
+                fontWeight: 600,
+              }}
+            >
+              {initials(review.author_name)}
+            </div>
+          )}
+          <span
+            style={{
+              position: "absolute",
+              right: "-3px",
+              bottom: "-3px",
+              background: cardBg,
+              borderRadius: "9999px",
+              padding: "2px",
+              display: "flex",
+              boxShadow: "0 0 0 1px " + border,
+            }}
+          >
+            <GoogleG size={12} />
+          </span>
         </div>
         <div>
           <p style={{ margin: 0, color: text, fontSize: "14px", fontWeight: 500 }}>
@@ -123,6 +159,7 @@ export default function GoogleReviews({
           </p>
         </div>
       </div>
+
       <div style={{ marginBottom: "10px" }}>
         <StarRow value={review.rating} />
       </div>
@@ -142,11 +179,12 @@ export default function GoogleReviews({
           marginBottom: "20px",
         }}
       >
+        <GoogleG size={26} />
         <span style={{ color: text, fontSize: "30px", fontWeight: 700, lineHeight: 1 }}>
           {data.rating}
         </span>
         <StarRow value={data.rating} />
-        <span style={{ color: sub, fontSize: "14px" }}>({data.user_ratings_total} reviews)</span>
+        <span style={{ color: sub, fontSize: "14px" }}>({data.user_ratings_total} Google reviews)</span>
       </div>
 
       <div
@@ -165,9 +203,30 @@ export default function GoogleReviews({
         ))}
       </div>
 
-      <p style={{ textAlign: "center", color: sub, fontSize: "12px", margin: "16px 0 0" }}>
-        Powered by Google Reviews
-      </p>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "6px",
+          margin: "16px 0 0",
+        }}
+      >
+        <GoogleG size={14} />
+        {data.url ? (
+          <a
+            href={data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: sub, fontSize: "12px", textDecoration: "underline" }}
+          >
+            Powered by Google Reviews
+          </a>
+        ) : (
+          <span style={{ color: sub, fontSize: "12px" }}>Powered by Google Reviews</span>
+        )}
+      </div>
+
     </div>
   );
 }
