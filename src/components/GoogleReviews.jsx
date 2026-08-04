@@ -214,9 +214,10 @@ export default function GoogleReviews({
       >
         <GoogleG size={14} />
         <a
-          href={`https://www.google.com/maps/place/?q=place_id:${placeId}`}
+          href={`https://search.google.com/local/reviews?placeid=${placeId}`}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer nofollow"
+          referrerPolicy="no-referrer"
           style={{ color: sub, fontSize: "12px", textDecoration: "underline" }}
         >
           Read our reviews on Google
