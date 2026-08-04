@@ -106,22 +106,49 @@ export default function GoogleReviews({
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-        <div
-          style={{
-            width: "36px",
-            height: "36px",
-            minWidth: "36px",
-            borderRadius: "9999px",
-            background: accent,
-            color: "#fff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "13px",
-            fontWeight: 600,
-          }}
-        >
-          {initials(review.author_name)}
+        <div style={{ position: "relative", width: "36px", height: "36px", minWidth: "36px" }}>
+          {review.profile_photo_url ? (
+            <img
+              src={review.profile_photo_url}
+              alt={`${review.author_name} Google profile photo`}
+              width="36"
+              height="36"
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              style={{ width: "36px", height: "36px", borderRadius: "9999px", objectFit: "cover", display: "block" }}
+            />
+          ) : (
+            <div
+              style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "9999px",
+                background: accent,
+                color: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "13px",
+                fontWeight: 600,
+              }}
+            >
+              {initials(review.author_name)}
+            </div>
+          )}
+          <span
+            style={{
+              position: "absolute",
+              right: "-3px",
+              bottom: "-3px",
+              background: cardBg,
+              borderRadius: "9999px",
+              padding: "2px",
+              display: "flex",
+              boxShadow: "0 0 0 1px " + border,
+            }}
+          >
+            <GoogleG size={12} />
+          </span>
         </div>
         <div>
           <p style={{ margin: 0, color: text, fontSize: "14px", fontWeight: 500 }}>
@@ -132,6 +159,7 @@ export default function GoogleReviews({
           </p>
         </div>
       </div>
+
       <div style={{ marginBottom: "10px" }}>
         <StarRow value={review.rating} />
       </div>
