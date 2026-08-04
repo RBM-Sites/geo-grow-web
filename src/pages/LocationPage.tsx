@@ -3,6 +3,7 @@ import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, Pa
 import SEO from "@/components/SEO";
 import { getLocationBySlug, BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Phone } from "lucide-react";
+import ReviewsSection from "@/components/ReviewsSection";
 
 /** Splits a long text block into shorter paragraphs of ~2-3 sentences each. */
 const splitIntoParagraphs = (text: string): string[] => {
@@ -179,6 +180,7 @@ const LocationPage = () => {
           </aside>
         </div>
       </main>
+      <ReviewsSection locationName={location.city} />
       <CTABanner />
       <GoogleMapEmbed />
       <JsonLd data={localBusinessSchema} />

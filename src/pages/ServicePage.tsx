@@ -3,6 +3,7 @@ import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, Pa
 import SEO from "@/components/SEO";
 import { getCategoryBySlug, getServiceBySlug, BUSINESS, SERVICE_CATEGORIES, ServiceItem } from "@/data/business";
 import { Phone } from "lucide-react";
+import ReviewsSection from "@/components/ReviewsSection";
 
 /** Splits a long text block into shorter paragraphs of ~2-3 sentences each. */
 const splitIntoParagraphs = (text: string): string[] => {
@@ -314,6 +315,7 @@ const ServiceCategoryPage = ({ category }: { category: ReturnType<typeof getCate
           })}
         </div>
       </main>
+      <ReviewsSection />
       <CTABanner />
       <JsonLd data={{ "@context": "https://schema.org", "@type": "Service", name: category.name, provider: { "@type": "LocalBusiness", name: BUSINESS.name }, areaServed: ["Las Vegas", "Henderson", "Boulder City"], serviceType: category.name }} />
     </>
@@ -379,6 +381,7 @@ const ServiceDetailPage = ({ service, parentName, siblings }: { service: ReturnT
           </div>
         </article>
       </main>
+      <ReviewsSection />
       <CTABanner />
       <JsonLd data={{ ...localBusinessSchema }} />
       <JsonLd data={{ "@context": "https://schema.org", "@type": "Service", name: service.name, description: service.description, provider: { "@type": "LocalBusiness", name: BUSINESS.name }, areaServed: ["Las Vegas", "Henderson", "Boulder City"], serviceType: service.name }} />

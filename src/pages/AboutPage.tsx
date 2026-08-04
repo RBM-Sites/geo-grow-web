@@ -3,6 +3,7 @@ import { Header, Footer, Breadcrumbs, CTABanner, JsonLd, localBusinessSchema, Pa
 import SEO from "@/components/SEO";
 import { BUSINESS, SERVICE_CATEGORIES, LOCATIONS } from "@/data/business";
 import { Shield, Award, MapPin, Users } from "lucide-react";
+import ReviewsSection from "@/components/ReviewsSection";
 
 const AboutPage = () => {
   return (
@@ -41,6 +42,7 @@ const AboutPage = () => {
         <h2 className="text-2xl font-bold mb-4">Our Services</h2>
         <p className="text-muted-foreground mb-4">We offer a comprehensive range of services including <Link to="/plumber" className="text-secondary font-semibold hover:underline">residential and commercial plumbing</Link>, <Link to="/drainage-service" className="text-secondary font-semibold hover:underline">drainage and sewer services</Link>, <Link to="/air-conditioning-contractor" className="text-secondary font-semibold hover:underline">air conditioning installation</Link>, <Link to="/air-conditioning-repair-service" className="text-secondary font-semibold hover:underline">AC repair</Link>, and <Link to="/hvac-contractor" className="text-secondary font-semibold hover:underline">complete HVAC contracting</Link>.</p>
       </main>
+      <ReviewsSection />
       <CTABanner />
       <GoogleMapEmbed />
       <JsonLd data={localBusinessSchema} />
