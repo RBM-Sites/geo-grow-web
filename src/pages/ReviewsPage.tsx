@@ -34,9 +34,9 @@ const ReviewsPage = () => {
 
         <div className="text-center mt-8">
           <a
-            href="https://maps.google.com/?cid=1646549068181549210"
+            href="https://search.google.com/local/reviews?placeid=ChIJPfLBoqXryIARmjA2Wqe32RY"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="cta-gradient text-secondary-foreground px-8 py-4 rounded-md font-bold hover:opacity-90 transition-opacity inline-flex items-center gap-2"
           >
             <Star className="h-5 w-5" /> See all 19 reviews on Google
