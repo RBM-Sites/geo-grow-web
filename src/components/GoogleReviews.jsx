@@ -213,18 +213,15 @@ export default function GoogleReviews({
         }}
       >
         <GoogleG size={14} />
-        {data.url ? (
-          <a
-            href={data.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: sub, fontSize: "12px", textDecoration: "underline" }}
-          >
-            Powered by Google Reviews
-          </a>
-        ) : (
-          <span style={{ color: sub, fontSize: "12px" }}>Powered by Google Reviews</span>
-        )}
+        <a
+          href={`https://www.google.com/maps/place/?q=place_id:${placeId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: sub, fontSize: "12px", textDecoration: "underline" }}
+        >
+          Read our reviews on Google
+        </a>
+
       </div>
 
     </div>
