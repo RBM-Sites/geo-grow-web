@@ -167,25 +167,6 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Reviews */}
-        <section className="section-padding bg-muted">
-          <div className="container-custom">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">What Our Customers Say</h2>
-            <GoogleReviews
-              placeId="ChIJPfLBoqXryIARmjA2Wqe32RY"
-              apiBase="https://pgnqlvedsdgabcnkjqym.supabase.co/functions/v1/reviews-proxy"
-              layout="carousel"
-              theme="light"
-              accent="#02365A"
-              minRating={4}
-              maxReviews={5}
-            />
-            <div className="text-center mt-8">
-              <Link to="/reviews" className="text-secondary font-bold hover:underline">Read All Customer Reviews →</Link>
-            </div>
-          </div>
-        </section>
-
         <CTABanner />
 
         {/* FAQ */}
