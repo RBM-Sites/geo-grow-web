@@ -149,19 +149,15 @@ const HomePage = () => {
         <section className="section-padding bg-muted">
           <div className="container-custom">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">What Our Customers Say</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { text: "Right On Plumbing fixed our AC the same day we called. Professional, courteous, and fair pricing. Highly recommend!", name: "Sarah M.", city: "Las Vegas" },
-                { text: "Had a plumbing emergency on a Saturday and they were at our door within an hour. Outstanding service from start to finish.", name: "Mike T.", city: "Henderson" },
-                { text: "Installed our new water heater and did an amazing job. Clean work, explained everything, and priced fairly.", name: "Jennifer L.", city: "Las Vegas" },
-              ].map((review, i) => (
-                <div key={i} className="bg-card rounded-lg p-6 shadow-md border border-border">
-                  <div className="flex gap-1 text-secondary mb-3">{[...Array(5)].map((_, j) => <Star key={j} className="h-5 w-5 fill-current" />)}</div>
-                  <p className="text-sm text-muted-foreground mb-4">"{review.text}"</p>
-                  <p className="font-bold text-sm">— {review.name}, {review.city}</p>
-                </div>
-              ))}
-            </div>
+            <GoogleReviews
+              placeId="ChIJPfLBoqXryIARmjA2Wqe32RY"
+              apiBase="https://pgnqlvedsdgabcnkjqym.supabase.co/functions/v1/reviews-proxy"
+              layout="carousel"
+              theme="light"
+              accent="#02365A"
+              minRating={4}
+              maxReviews={5}
+            />
             <div className="text-center mt-8">
               <Link to="/reviews" className="text-secondary font-bold hover:underline">Read All Customer Reviews →</Link>
             </div>
