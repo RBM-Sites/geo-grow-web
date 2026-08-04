@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Header, Footer, Breadcrumbs, CTABanner, GoogleMapEmbed } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { BUSINESS } from "@/data/business";
+import ReviewsSection from "@/components/ReviewsSection";
 
 const pricingSchema = {
   "@context": "https://schema.org",
@@ -384,6 +385,7 @@ const PricingPage = () => {
         </div>
       </main>
 
+      <ReviewsSection />
       <CTABanner />
       <GoogleMapEmbed />
       <Footer />

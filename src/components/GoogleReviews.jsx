@@ -221,9 +221,11 @@ export default function GoogleReviews({
         >
           Read our reviews on Google
         </a>
-
       </div>
 
+      <p style={{ textAlign: "center", color: sub, fontSize: "12px", margin: "8px 0 0" }}>
+        Powered by Google Reviews
+      </p>
     </div>
   );
 }
