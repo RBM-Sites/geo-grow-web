@@ -179,11 +179,12 @@ export default function GoogleReviews({
           marginBottom: "20px",
         }}
       >
+        <GoogleG size={26} />
         <span style={{ color: text, fontSize: "30px", fontWeight: 700, lineHeight: 1 }}>
           {data.rating}
         </span>
         <StarRow value={data.rating} />
-        <span style={{ color: sub, fontSize: "14px" }}>({data.user_ratings_total} reviews)</span>
+        <span style={{ color: sub, fontSize: "14px" }}>({data.user_ratings_total} Google reviews)</span>
       </div>
 
       <div
@@ -202,9 +203,30 @@ export default function GoogleReviews({
         ))}
       </div>
 
-      <p style={{ textAlign: "center", color: sub, fontSize: "12px", margin: "16px 0 0" }}>
-        Powered by Google Reviews
-      </p>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "6px",
+          margin: "16px 0 0",
+        }}
+      >
+        <GoogleG size={14} />
+        {data.url ? (
+          <a
+            href={data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: sub, fontSize: "12px", textDecoration: "underline" }}
+          >
+            Powered by Google Reviews
+          </a>
+        ) : (
+          <span style={{ color: sub, fontSize: "12px" }}>Powered by Google Reviews</span>
+        )}
+      </div>
+
     </div>
   );
 }
