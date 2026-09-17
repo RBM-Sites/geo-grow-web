@@ -37,6 +37,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <GeoGate>
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </GeoGate>
     </TooltipProvider>
   </QueryClientProvider>
   </HelmetProvider>
