@@ -21,6 +21,7 @@ import WhyChooseUsPage from "./pages/WhyChooseUsPage";
 import GeneratedPage from "./pages/GeneratedPage";
 import BlogPage from "./pages/BlogPage";
 import BlogIndexPage from "./pages/BlogIndexPage";
+import GeoGate from "@/components/GeoGate";
 
 const queryClient = new QueryClient();
 
