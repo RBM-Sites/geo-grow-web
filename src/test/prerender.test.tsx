@@ -18,7 +18,8 @@ describe("build-time prerender", () => {
     const { html, head } = render("/paradise");
     expect(html).toMatch(/<h1[\s>]/);
     expect(head).toContain('rel="canonical"');
-    expect(head).toContain("application/ld+json");
+    // The page schema is emitted as a <script> in the body, not via Helmet.
+    expect(html).toContain("application/ld+json");
   });
 
   it("renders the 404 page for an unknown route", () => {
