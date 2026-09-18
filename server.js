@@ -1,13 +1,18 @@
 // Static server for the prerendered build. No dependencies.
 //
-//   1. exact file under dist/            → serve it (hashed /assets get long cache)
-//   2. dist/<route>/index.html exists    → the prerendered page
-//   3. otherwise                         → dist/__spa.html, the plain SPA shell,
-//                                          so the client router shows its 404
+//   /                              → dist/__home.html   (prerendered homepage)
+//   exact file under dist/         → serve it (hashed /assets get long cache)
+//   dist/<route>/index.html exists → the prerendered page
+//   otherwise                      → dist/index.html, the plain SPA shell, with a
+//                                    404 status; the client router renders its
+//                                    404 page. Every real route is prerendered
+//                                    (scripts/prerender.mjs), so anything else
+//                                    genuinely doesn't exist.
 //
-// Step 2 is why this exists instead of `serve -s`: it must serve the
-// prerendered page for `/paradise` without redirecting to `/paradise/`
-// (a 301 there would contradict every canonical tag).
+// Why not `serve -s dist`: SPA-fallback servers rewrite every extensionless
+// URL to index.html before looking for <route>/index.html, so the prerendered
+// pages are never served. `serve -s` also 301s /paradise → /paradise/, which
+// contradicts every canonical tag.
 
 import http from "node:http";
 import { createReadStream, statSync } from "node:fs";
@@ -56,6 +61,9 @@ function send(res, file, status = 200) {
   createReadStream(file).pipe(res);
 }
 
+const SHELL = path.join(DIST, "index.html");
+const HOME = path.join(DIST, "__home.html");
+
 http
   .createServer((req, res) => {
     let pathname;
@@ -72,9 +80,10 @@ http
       return;
     }
 
+    if (safe === "/" || safe === path.sep) return send(res, isFile(HOME) ? HOME : SHELL);
     if (isFile(target)) return send(res, target);
     const prerendered = path.join(target, "index.html");
     if (isFile(prerendered)) return send(res, prerendered);
-    return send(res, path.join(DIST, "__spa.html"));
+    return send(res, SHELL, 404);
   })
   .listen(PORT, "0.0.0.0", () => console.log(`serving dist/ on :${PORT}`));

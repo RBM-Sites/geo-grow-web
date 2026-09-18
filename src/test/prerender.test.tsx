@@ -22,6 +22,13 @@ describe("build-time prerender", () => {
     expect(html).toContain("application/ld+json");
   });
 
+  it("renders the routes the sitemap deliberately omits, so they can be prerendered too", () => {
+    for (const route of ["/blog", "/thank-you"]) {
+      const { head } = render(route);
+      expect(head, route).toMatch(/<title[^>]*>[^<]+<\/title>/);
+    }
+  });
+
   it("renders the 404 page for an unknown route", () => {
     const { html } = render("/definitely-not-a-page");
     expect(html).toMatch(/404|not found/i);
