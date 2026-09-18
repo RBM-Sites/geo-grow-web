@@ -4,7 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -31,41 +31,57 @@ const ScrollToTop = () => {
   return null;
 };
 
-const App = () => (
-  <HelmetProvider>
+export const AppProviders = ({
+  children,
+  helmetContext,
+}: {
+  children: ReactNode;
+  helmetContext?: Record<string, unknown>;
+}) => (
+  <HelmetProvider context={helmetContext}>
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <GeoGate>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/reviews" element={<ReviewsPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/thank-you" element={<ThankYouPage />} />
-          <Route path="/faq" element={<FAQPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/why-right-on-plumbing-heating-and-air-is-the-best-hvac-company" element={<WhyChooseUsPage />} />
-
-          {/* Generated blog content (publisher-committed JSON) */}
-          <Route path="/blog" element={<BlogIndexPage />} />
-          <Route path="/blog/:slug" element={<BlogPage />} />
-
-          {/* Service category and detail pages */}
-          <Route path="/:categorySlug" element={<ServiceOrLocationRouter />} />
-          <Route path="/:categorySlug/:serviceSlug" element={<ServiceOrGeneratedRouter />} />
-
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-      </GeoGate>
+      <GeoGate>{children}</GeoGate>
     </TooltipProvider>
   </QueryClientProvider>
   </HelmetProvider>
+);
+
+// The route tree without a router, so the client (BrowserRouter) and the
+// build-time prerenderer (StaticRouter) share one definition.
+export const AppRoutes = () => (
+  <Routes>
+    <Route path="/" element={<Index />} />
+    <Route path="/about" element={<AboutPage />} />
+    <Route path="/contact" element={<ContactPage />} />
+    <Route path="/reviews" element={<ReviewsPage />} />
+    <Route path="/gallery" element={<GalleryPage />} />
+    <Route path="/thank-you" element={<ThankYouPage />} />
+    <Route path="/faq" element={<FAQPage />} />
+    <Route path="/pricing" element={<PricingPage />} />
+    <Route path="/why-right-on-plumbing-heating-and-air-is-the-best-hvac-company" element={<WhyChooseUsPage />} />
+
+    {/* Generated blog content (publisher-committed JSON) */}
+    <Route path="/blog" element={<BlogIndexPage />} />
+    <Route path="/blog/:slug" element={<BlogPage />} />
+
+    {/* Service category and detail pages */}
+    <Route path="/:categorySlug" element={<ServiceOrLocationRouter />} />
+    <Route path="/:categorySlug/:serviceSlug" element={<ServiceOrGeneratedRouter />} />
+
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+);
+
+const App = () => (
+  <AppProviders>
+    <BrowserRouter>
+      <ScrollToTop />
+      <AppRoutes />
+    </BrowserRouter>
+  </AppProviders>
 );
 
 // Router component that determines if a slug is a service category or location
